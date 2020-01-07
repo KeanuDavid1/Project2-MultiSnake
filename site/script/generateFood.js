@@ -1,12 +1,15 @@
 let apple;
 let burger;
+let foodstate;
 
 const generateFood = function() {
   let healtyOrNot = Math.round(Math.random());
   console.log(healtyOrNot);
   if (healtyOrNot == 0) {
+    foodstate = 0;
     generateHealtyFood();
   } else {
+    foodstate = 1;
     generateUnhealtyFood();
   }
 };
