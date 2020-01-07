@@ -3,6 +3,8 @@ let DOMCanvas;
 let gameArea;
 let ctx;
 let snakeArray = [];
+let randomInterval = Math.random() * 20000;
+console.log(randomInterval)
 
 // SETTINGS
 const snakeBlockSize = 20;
