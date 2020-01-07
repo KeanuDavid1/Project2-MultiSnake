@@ -16,8 +16,8 @@ const generateHealtyFood = function() {
     foodSize,
     foodSize,
     'img/Apple.svg',
-    Math.floor(Math.random()) * canvasWidth,
-    Math.floor(Math.random()) * canvasHeight,
+    Math.round(Math.random()) * canvasWidth,
+    Math.round(Math.random()) * canvasHeight,
     'image'
   );
 };
@@ -27,8 +27,8 @@ const generateUnhealtyFood = function() {
     foodSize,
     foodSize,
     'img/Burger.svg',
-    Math.floor(Math.random()) * canvasWidth,
-    Math.floor(Math.random()) * canvasHeight,
+    Math.round(Math.random()) * canvasWidth,
+    Math.round(Math.random()) * canvasHeight,
     'image'
   );
 };
