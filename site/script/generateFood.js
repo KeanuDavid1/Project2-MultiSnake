@@ -5,6 +5,7 @@ let burger;
 let pizza;
 let foodstate;
 
+// Deze functie kiest aan de hand van een random nummer als het een gezond of ongezond stuk voedsel wordt
 const generateFood = function() {
   let healtyOrNot = Math.round(Math.random());
   console.log(healtyOrNot);
@@ -15,6 +16,7 @@ const generateFood = function() {
   }
 };
 
+// Deze functie maakt de gezonde stukken voedsel aan de hand van de functie component in foodObjects.js
 const generateHealtyFood = function() {
   let whichHealty = Math.floor(Math.random() * 3);
   if (whichHealty == 0) {
@@ -50,6 +52,7 @@ const generateHealtyFood = function() {
   }
 };
 
+// Deze functie maakt de ongezonde stukken voedsel aan de hand van de functie component in foodObjects.js
 const generateUnhealtyFood = function() {
   let whichUnhealty = Math.floor(Math.random() * 2);
   if (whichUnhealty == 0) {

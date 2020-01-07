@@ -11,5 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //Hier creer ik de start condities van de game mode, simple game mode is gwn voor te testen.
   //Functie zit in simpleSnakeGameMode.js
   simpleGameMode();
+
+  //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   setInterval(generateFood, Math.floor(randomInterval));
 });
