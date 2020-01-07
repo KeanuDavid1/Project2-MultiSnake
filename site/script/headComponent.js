@@ -44,4 +44,22 @@ function headComponent(x, y, playerNumber) {
         this.direction = "right";
 
     };
+    this.isOutOfBounds = function () {
+        let myleft = this.x;
+        let myright = this.x + (this.width);
+        let mytop = this.y;
+        let mybottom = this.y + (this.height);
+        var otherleft = 20;
+        var otherright = 480 - 20;
+        var othertop = 20;
+        var otherbottom = 270 - 20;
+        let crash = false;
+        if ((mybottom < othertop) ||
+            (mytop > otherbottom) ||
+            (myright < otherleft) ||
+            (myleft > otherright)) {
+            crash = true;
+        }
+        return crash;
+    }
 }
