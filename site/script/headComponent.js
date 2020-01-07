@@ -15,4 +15,24 @@ function headComponent(x, y) {
         this.x += this.speedX;
         this.y += this.speedY;
     }
+    this.moveup = function () {
+        this.speedY = -movementSpeed;
+        this.speedX = 0;
+        this.direction = "up";
+    };
+    this.movedown = function () {
+        this.speedY = movementSpeed;
+        this.speedX = 0;
+        this.direction = "down";
+    };
+    this.moveleft = function () {
+        this.speedY = 0;
+        this.speedX = -movementSpeed;
+        this.direction = "left";
+    };
+    this.moveright = function () {
+        this.speedY = 0;
+        this.speedX = movementSpeed;
+        this.direction = "right";
+    };
 }
