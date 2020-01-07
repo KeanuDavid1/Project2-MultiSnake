@@ -3,5 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
     DOMCanvas = document.querySelector(".js-game-canvas");
     initGameArea(DOMCanvas);
     simpleGameMode();
+    generateFood();
 
 });
