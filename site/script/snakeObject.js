@@ -27,4 +27,7 @@ function snakeObject(x, y) {
             piece.update();
         }
     };
+    this.addNewPiece = function () {
+        let lastDirection = this.snak
+    }
 }
