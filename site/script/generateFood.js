@@ -1,7 +1,14 @@
 let apple;
 
 const generateFood = function() {
-  apple = new component(foodSize, foodSize, 'img/Apple.svg', 10, 120, 'image');
+  apple = new component(
+    foodSize,
+    foodSize,
+    'img/Apple.svg',
+    Math.random() * canvasWidth,
+    Math.random() * canvasHeight,
+    'image'
+  );
 };
 
 function component(width, height, color, x, y, type) {
