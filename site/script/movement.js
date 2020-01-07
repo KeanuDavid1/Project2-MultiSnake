@@ -1,4 +1,5 @@
 const keypressed = function () {
+    console.log(event.code);
     if (event.code == "ArrowUp") {
         snakeArray[0].moveup();
     }
@@ -10,5 +11,8 @@ const keypressed = function () {
     }
     else if (event.code == "ArrowRight") {
         snakeArray[0].moveright();
+    }
+    else if (event.code == "Space") {
+        snakeArray[0].addNewPiece();
     }
 }

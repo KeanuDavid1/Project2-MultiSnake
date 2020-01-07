@@ -1,10 +1,12 @@
-function bodyComponent(x, y) {
+function bodyComponent(x, y, orderNumber) {
     this.width = snakeBlockSize;
     this.height = snakeBlockSize;
     this.speedX = 0;
     this.speedY = 0;
     this.x = x;
     this.y = y;
+    this.direction;
+    this.order = orderNumber;
     this.update = function () {
         ctx = gameArea.context;
         ctx.fillStyle = "green";
