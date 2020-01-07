@@ -66,6 +66,7 @@ html {
 body{
     max-width: 100%;
     margin: auto;
+    background-color: var(--global-color-alpha);
 }
 
 /*
@@ -75,7 +76,7 @@ body{
  */
 
 ::selection {
-    background: #E85E00;
+    background: var(--global-color-gamma);
     color: white;
     text-shadow: none;
 }
@@ -98,32 +99,26 @@ img {
 */
 
 h1 {
-    font-family: "Times New Roman", serif;
-    font-style: 36px;
+    font-size: 48px;
     font-weight: normal;
     line-height: 40px;
-    margin: 0 0 48px;
-
 }
 
 h2 {
-    font-size: 23px;
+    font-size: 36px;
     line-height: 32px;
-    margin: 0 0 24px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 30px;
     line-height: 24px;
-    margin: 0 0 24px;
 }
 
 h4,
 h5,
 h6 {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 24px;
-    margin: 0 0 24px;
 }
 
 p,
@@ -133,7 +128,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0;
 }
 
 ul,
@@ -380,6 +375,76 @@ a:focus {
     border: 0;
   }
 
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+.c-menu-container {
+    display: flex;
+    align-items: center;
+    height: 100vmin;
+}
+
+.c-menu{
+    width: calc(var(--global-baseline) * 45);
+    height: auto;
+    margin: 0 auto;
+    background-color: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+}
+
+.c-menu__title{
+    font-size: 3rem;
+    margin-bottom: calc(var(--global-baseline) * 9);
+}
+
+.c-menu__button{
+    margin-bottom: calc(var(--global-baseline) * 2);
+}
+
+.c-menu__caption{
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+/*
+
+Component: Button
+---
+A reusable button
+
+*/
+
+.c-button{
+    width: calc(var(--global-baseline) * 32.5);
+    height: calc(var(--global-baseline) * 8.75);
+    background-color: var(--global-color-beta);
+    margin-bottom: inherit;
+    border: none;
+    font-family: "Roboto Slab";
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.c-button__text{
+    font-size: 1.5rem;  
+    color: inherit;
+}
+
+.c-button:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
+    border: solid 2px;
+}
+
+.c-button:focus{
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
+    border: solid 2px;
+}
 
 /*
     Media Queries
