@@ -379,6 +379,14 @@ a:focus {
   #COMPONENTS
 \*------------------------------------*/
 
+/* 
+
+Components: Menu
+---
+These components contain styling on main page elements
+
+*/
+
 .c-menu-container {
   display: flex;
   align-items: center;
