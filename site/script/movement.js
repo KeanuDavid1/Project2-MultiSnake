@@ -1,16 +1,24 @@
 const keypressed = function () {
     console.log(event.code);
     if (event.code == "ArrowUp") {
-        snakeArray[0].snakePieces[0].moveup();
+        if (snakeArray[0].snakePieces[0].direction != "down") {
+            snakeArray[0].snakePieces[0].moveup();
+        }
     }
     else if (event.code == "ArrowDown") {
-        snakeArray[0].snakePieces[0].movedown();
+        if (snakeArray[0].snakePieces[0].direction != "up") {
+            snakeArray[0].snakePieces[0].movedown();
+        }
     }
     else if (event.code == "ArrowLeft") {
-        snakeArray[0].snakePieces[0].moveleft();
+        if (snakeArray[0].snakePieces[0].direction != "right") {
+            snakeArray[0].snakePieces[0].moveleft();
+        }
     }
     else if (event.code == "ArrowRight") {
-        snakeArray[0].snakePieces[0].moveright();
+        if (snakeArray[0].snakePieces[0].direction != "left") {
+            snakeArray[0].snakePieces[0].moveright();
+        }
     }
     else if (event.code == "Space") {
         snakeArray[0].addNewPiece();

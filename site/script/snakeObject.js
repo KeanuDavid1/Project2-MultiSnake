@@ -1,10 +1,11 @@
 let lastDirection;
 let lastPositionX;
 let lastPositionY;
+let newComponent;
 
-function snakeObject(x, y) {
+function snakeObject(x, y, playerNumber) {
     this.snakePieces = [];
-    this.snakePieces.push(new headComponent(x, y));
+    this.snakePieces.push(new headComponent(x, y, playerNumber));
     this.update = function () {
         for (piece of this.snakePieces) {
             piece.newPos();
@@ -20,16 +21,23 @@ function snakeObject(x, y) {
         console.log(lastPositionX);
         console.log(lastPositionY);
         if (lastDirection == "left") {
-            this.snakePieces.push(new bodyComponent(lastPositionX + 25, lastPositionY, posLast + 1));
+            this.snakePieces.push(new bodyComponent(lastPositionX + snakePieceDistance, lastPositionY, posLast + 1, playerNumber));
+            this.snakePieces[posLast + 1].moveleft();
         }
         else if (lastDirection == "right") {
-            this.snakePieces.push(new bodyComponent(lastPositionX - 25, lastPositionY, posLast + 1));
+            this.snakePieces.push(new bodyComponent(lastPositionX - snakePieceDistance, lastPositionY, posLast + 1, playerNumber));
+            this.snakePieces[posLast + 1].moveright();
         }
         else if (lastDirection == "up") {
-            this.snakePieces.push(new bodyComponent(lastPositionX, lastPositionY + 25, posLast + 1));
+            this.snakePieces.push(new bodyComponent(lastPositionX, lastPositionY + snakePieceDistance, posLast + 1, playerNumber));
+            this.snakePieces[posLast + 1].moveup();
         }
         else if (lastDirection == "down") {
-            this.snakePieces.push(new bodyComponent(lastPositionX, lastPositionY - 25, posLast + 1));
+            this.snakePieces.push(new bodyComponent(lastPositionX, lastPositionY - snakePieceDistance, posLast + 1, playerNumber));
+            this.snakePieces[posLast + 1].movedown();
+        }
+        else {
+            this.snakePieces.push(new bodyComponent(lastPositionX + snakePieceDistance, lastPositionY, posLast + 1, playerNumber));
         }
     }
 }
