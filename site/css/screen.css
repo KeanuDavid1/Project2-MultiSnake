@@ -169,18 +169,18 @@ hr {
 }
 
 a {
-    color: RoyalBlue;
-    transition: all .1s ease-in-out;
+    color: white;
 }
 
 a:visited,
 a:active {
-    color: BlueViolet;
+    color: white;
+    text-decoration: none;
 }
 
 a:hover,
 a:focus {
-    color: Crimson;
+    color: var(--global-color-alpha-10-dark);
 }
 
 /*------------------------------------*\
@@ -444,6 +444,14 @@ A reusable button
 .c-button:focus{
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+.u-margin-bottom-md{
+  margin-bottom: calc(var(--global-baseline) * 2);
 }
 
 /*
