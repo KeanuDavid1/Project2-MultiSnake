@@ -4,14 +4,20 @@ let lastPositionY;
 let newComponent;
 
 function snakeObject(x, y, playerNumber) {
+    //Hier houden wij bij de snake onderdelen.
     this.snakePieces = [];
+    //Snake heeft altijd een hoofd dus voegen wij dit direct toe aan de snakePieces
     this.snakePieces.push(new headComponent(x, y, playerNumber));
+
+    //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
     this.update = function () {
         for (piece of this.snakePieces) {
             piece.newPos();
             piece.update();
         }
     };
+
+    //Spawnt een nieuwe snake body part in het tegengestelde beweeg richting van de laatste snake piece.
     this.addNewPiece = function () {
         let posLast = this.snakePieces.length - 1;
 

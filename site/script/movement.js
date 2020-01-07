@@ -1,3 +1,5 @@
+//Dit is de callback bij een key press event, we kijken naar welk toets er op geklikt werd en binden acties eraan.
+
 const keypressed = function () {
     console.log(event.code);
     if (event.code == "ArrowUp") {
