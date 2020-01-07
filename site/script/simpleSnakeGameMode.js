@@ -1,10 +1,7 @@
 const simpleGameMode = function () {
-    snakeArray.push(new snakeObject(100, 100));
+    snakeArray.push(new snakeObject(100, 100, 0));
+    snakeArray[0].addNewPiece();
+    snakeArray[0].snakePieces[0].moveup();
     document.addEventListener('keydown', keypressed);
-    // testMovement();
 }
 
-
-const testMovement = function () {
-    snakePieces.push(new bodyComponent(125, 100))
-}
