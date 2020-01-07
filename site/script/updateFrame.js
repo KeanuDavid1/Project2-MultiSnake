@@ -5,5 +5,6 @@ function updateGameArea() {
     for (snake of snakeArray) {
         snake.update();
     }
+    apple.update();
 
 }

@@ -183,6 +183,7 @@ a:focus {
     color: Crimson;
 }
 
+<<<<<<<<< Temporary merge branch 1
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
@@ -375,41 +376,11 @@ a:focus {
     border: 0;
   }
 
-/*------------------------------------*\
-  #COMPONENTS
-\*------------------------------------*/
+=========
+.c-container{
 
-.c-menu-container {
-    display: flex;
-    align-items: center;
-    height: 100vmin;
 }
-
-.c-menu{
-    width: calc(var(--global-baseline) * 45);
-    height: auto;
-    margin: 0 auto;
-    background-color: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: white;
-}
-
-.c-menu__title{
-    font-size: 3rem;
-    margin-bottom: calc(var(--global-baseline) * 9);
-}
-
-.c-menu__button{
-    margin-bottom: calc(var(--global-baseline) * 2);
-}
-
-.c-menu__caption{
-    font-size: 1rem;
-    width: 100%;
-    text-align: center;
-}
+>>>>>>>>> Temporary merge branch 2
 
 /*
 
