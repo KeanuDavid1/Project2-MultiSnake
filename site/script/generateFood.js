@@ -1,35 +1,34 @@
 let apple;
+let burger;
 
 const generateFood = function() {
+  let healtyOrNot = Math.round(Math.random());
+  console.log(healtyOrNot);
+  if (healtyOrNot == 0) {
+    generateHealtyFood();
+  } else {
+    generateUnhealtyFood();
+  }
+};
+
+const generateHealtyFood = function() {
   apple = new component(
     foodSize,
     foodSize,
     'img/Apple.svg',
-    Math.random() * canvasWidth,
-    Math.random() * canvasHeight,
+    Math.floor(Math.random()) * canvasWidth,
+    Math.floor(Math.random()) * canvasHeight,
     'image'
   );
 };
 
-function component(width, height, color, x, y, type) {
-  this.type = type;
-  if (type == 'image') {
-    this.image = new Image();
-    this.image.src = color;
-  }
-  this.width = width;
-  this.height = height;
-  this.speedX = 0;
-  this.speedY = 0;
-  this.x = x;
-  this.y = y;
-  this.update = function() {
-    ctx = gameArea.context;
-    if (type == 'image') {
-      ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-    } else {
-      ctx.fillStyle = color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-  };
-}
+const generateUnhealtyFood = function() {
+  burger = new component(
+    foodSize,
+    foodSize,
+    'img/Burger.svg',
+    Math.floor(Math.random()) * canvasWidth,
+    Math.floor(Math.random()) * canvasHeight,
+    'image'
+  );
+};

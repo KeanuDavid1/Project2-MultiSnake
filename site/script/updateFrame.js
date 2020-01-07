@@ -5,4 +5,6 @@ function updateGameArea() {
     snake.update();
   }
   apple.update();
+  burger.update();
+ 
 }
