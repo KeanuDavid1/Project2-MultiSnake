@@ -1,5 +1,54 @@
   
 /*
+
+Fonts
+---
+All the font-families used in the website
+
+*/
+
+@font-face {
+    font-family: "Roboto Slab";
+    font-weight: 400;
+    src: url("../fonts/roboto/RobotoSlab-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    font-weight: 600;
+    src: url("../fonts/roboto/RobotoSlab-Bold.ttf")
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    font-weight: 500;
+    src: url("../fonts/roboto/RobotoSlab-Medium.ttf")
+}
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+:root {
+    /* Colors */
+  
+    /* Alpha Colors */
+  
+    --global-color-alpha: #6B70B3;
+    --global-color-alpha-5-dark: #6268B3;
+    --global-color-alpha-10-dark: #515CB3;
+
+    --global-color-beta: #70BD51;
+
+    --global-color-omega: #FF8333;
+
+    --global-color-gamma: #B32E2B;
+    --global-color-gamma-5-light: #B34A48;
+
+  }
+  
+
+/*
     Elements: Page
     ---
     Default markup for page level elements
@@ -8,7 +57,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Helvetica Neue", Helvetica,arial,sans-serif;
+    font-family: "Roboto Slab", Helvetica, arial, sans-serif;
     color: #111;
     padding: 24px 24px 0;
 }
