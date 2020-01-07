@@ -14,4 +14,5 @@ function updateGameArea() {
     }
     apple.update();
 
+  burger.update();
 }
