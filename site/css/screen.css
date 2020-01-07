@@ -64,7 +64,6 @@ html {
 body{
     max-width: 42em;
     margin: auto;
-    background-color: var(--global-color-alpha);
 }
 
 /*
@@ -186,10 +185,6 @@ a:active {
 a:hover,
 a:focus {
     color: Crimson;
-}
-
-.c-container{
-
 }
 
 /*
