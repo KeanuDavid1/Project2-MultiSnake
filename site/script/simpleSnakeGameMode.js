@@ -6,7 +6,7 @@ const simpleGameMode = function () {
     //Voegt 1 body part toe
     snakeArray[0].addNewPiece();
     //Bepaalt de start direction
-    snakeArray[0].snakePieces[0].direction = "up";
+    // snakeArray[0].snakePieces[0].direction = "up";
     snakeArray[0].snakePieces[0].moveup();
     //Luistert naar de key presses
     document.addEventListener('keydown', keypressed);

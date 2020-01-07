@@ -25,7 +25,6 @@ function updateGameArea() {
         }
 
     }
-  }
   if (foodstate == 0) {
     apple.update();
   } else if (foodstate == 1) {

@@ -8,7 +8,7 @@ function headComponent(x, y, playerNumber) {
     this.x = x;
     this.y = y;
     this.player = playerNumber
-    this.direction = "none";
+    this.direction = "up";
 
     //Tekent het component op de canvas
     this.update = function () {
