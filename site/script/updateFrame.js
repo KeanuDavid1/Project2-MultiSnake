@@ -14,6 +14,12 @@ function updateGameArea() {
   if (foodstate == 0) {
     apple.update();
   } else if (foodstate == 1) {
+    pear.update();
+  } else if (foodstate == 2) {
+    carrot.update();
+  } else if (foodstate == 3) {
     burger.update();
+  } else if (foodstate == 4) {
+    pizza.update();
   }
 }
