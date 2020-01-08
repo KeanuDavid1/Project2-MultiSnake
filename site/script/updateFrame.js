@@ -46,7 +46,6 @@ function updateGameArea() {
 const checkIfEaten = function(foodType) {
   if (foodType.eatFood(snake.snakePieces[0])) {
     if (foodType == pear || foodType == apple || foodType == carrot) {
-      foodType.update();
       snakeArray[0].addNewPiece();
     } else {
       ctx = gameArea.context;
