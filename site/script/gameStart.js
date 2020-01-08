@@ -8,10 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
   //Functie zit in gameArea.js
   initGameArea(DOMCanvas);
 
-  //Hier creer ik de start condities van de game mode, simple game mode is gwn voor te testen.
+  // timer voor het spel start
+  setTimer()
+
+  // een timeout zodat het spel niet start voor de timer
+  setTimeout(function(){
+    //Hier creer ik de start condities van de game mode, simple game mode is gwn voor te testen.
   //Functie zit in simpleSnakeGameMode.js
   simpleGameMode();
 
   //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   setInterval(generateFood, Math.floor(randomInterval));
+  }, 3000)
 });
