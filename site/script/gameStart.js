@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
   simpleGameMode();
 
   //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
-  setInterval(generateFood, Math.floor(randomInterval));
   }, 3000)
+  
+  // dit moet uit de setTimeout anders spawned er geen eten
+  setInterval(generateFood, Math.floor(randomInterval));
+
 });
