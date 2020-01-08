@@ -23,16 +23,36 @@ function updateGameArea() {
       gameArea.stop();
     }
   }
-  // Zorgt dat enkel het stuk fruit die random gekozen werd in generateFood.js geupdate wordt
+  // Zorgt dat enkel het stuk fruit die random gekozen werd in generateFood.js geupdate wordt en verwijst door naar de funtie die kijkt wanneer de slang in aanraking komt met het eten
   if (foodstate == 0) {
     apple.update();
+    checkIfEaten(apple);
   } else if (foodstate == 1) {
     pear.update();
+    checkIfEaten(pear);
   } else if (foodstate == 2) {
     carrot.update();
+    checkIfEaten(carrot);
   } else if (foodstate == 3) {
     burger.update();
+    checkIfEaten(burger);
   } else if (foodstate == 4) {
     pizza.update();
+    checkIfEaten(pizza);
   }
 }
+
+// Kijkt wanneer de slang in aanraking komt met eten en verlengt de slang wanneer het voedsel gezond is, wanneer het voedsel ongezond is toont hij: "-5ptn"
+const checkIfEaten = function(foodType) {
+  if (foodType.eatFood(snake.snakePieces[0])) {
+    if (foodType == pear || foodType == apple || foodType == carrot) {
+      foodType.update();
+      snakeArray[0].addNewPiece();
+    } else {
+      ctx = gameArea.context;
+      ctx.font = '20px Arial';
+      ctx.fillStyle = 'red';
+      ctx.fillText('-5pts', 200, 150);
+    }
+  }
+};
