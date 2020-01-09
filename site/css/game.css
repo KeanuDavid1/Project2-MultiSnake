@@ -1,9 +1,9 @@
 body {
-    overflow: hidden;
-    padding: 0;
-  }
+  overflow: hidden;
+  padding: 0;
+}
 
-  /*---------------------/
+/*---------------------/
   COMPONENTS
   /---------------------*/
 
@@ -15,17 +15,31 @@ body {
   top: 0;
 }
 
-.c-game-area{
-    height: 100vmin;
-    width: 100%;
-    padding: 0;
+.c-game-area {
+  height: 100vmin;
+  width: 100%;
+  padding: 0;
 }
 
 .c-game-area__background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 1366px;
-    background-color: aqua;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1366px;
+  background-color: aqua;
+}
+
+.c-timer {
+  width: 100vw;
+  height: 100vh;
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ccd2ff;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
