@@ -14,14 +14,14 @@ html {
   width: auto;
   padding: 0;
   display: flex;
-  border: cyan 1px solid;
+  /* border: cyan 1px solid; */
 }
 
 .c-canvas {
   background-color: none;
   height: 100vmin;
   width: 1366px;
-  border: darkblue 1px solid;
+  /* border: darkblue 1px solid; */
 }
 
 .c-game-area__background {
