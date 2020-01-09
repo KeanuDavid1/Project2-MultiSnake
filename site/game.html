@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pulse Snake - Game</title>
+    <script src="script/gameVariables.js"></script>
+    <script src="script/bodyComponent.js"></script>
+    <script src="script/updateFrame.js"></script>
+    <script src="script/gameArea.js"></script>
+    <script src="script/generateFood.js"></script>
+    <script src="script/headComponent.js"></script>
+    <script src="script/movement.js"></script>
+
+    <script src="script/snakeObject.js"></script>
+    <script src="script/gameStart.js"></script>
+    <script src="script/simpleSnakeGameMode.js"></script>
+    <script src="script/foodObjects.js"></script>
+    <script src="script/gameStartTimer.js"></script>
+    <script src="script/textObject.js"></script>
+    <link rel="stylesheet" href="css/screen.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/game.css" />
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <div class="c-game-area">
+      <canvas class="js-game-canvas c-canvas"></canvas>
+      <div class="c-game-area__background"><img src="assets/images/gamescreen_playarea01.svg"></div>
+      <div class="c-playerinfo">
+        <!-- <div class="c-playerframe">
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+        </div> -->
+      </div>
+
+
+      <div class="c-timer" id="js-timer__container">
+        <div class="js-timer"></div>
+      </div>
+    </div>
+  </body>
+</html>
