@@ -75,10 +75,10 @@ function headComponent(x, y, playerNumber) {
         var myright = this.x + (this.width);
         var mytop = this.y;
         var mybottom = this.y + (this.height);
-        var otherleft = otherObject.x + 5;
-        var otherright = otherObject.x + (otherObject.width) - 5;
-        var othertop = otherObject.y + 5;
-        var otherbottom = otherObject.y + (otherObject.height) - 5;
+        var otherleft = otherObject.x + 2;
+        var otherright = otherObject.x + (otherObject.width) - 2;
+        var othertop = otherObject.y + 2;
+        var otherbottom = otherObject.y + (otherObject.height) - 2;
         let crash = true;
         if ((mybottom < othertop) ||
             (mytop > otherbottom) ||
