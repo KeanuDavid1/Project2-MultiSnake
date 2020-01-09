@@ -19,16 +19,37 @@
     <script src="script/foodObjects.js"></script>
     <script src="script/gameStartTimer.js"></script>
     <script src="script/textObject.js"></script>
-    <link rel="stylesheet" href="css/game.css" />
     <link rel="stylesheet" href="css/screen.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/game.css" />
   </head>
 
   <body>
     <div class="c-game-area">
-      <div class="c-game-area__background">
-        <img src="assets/images/gamescreen_playarea01.svg" />
-      </div>
       <canvas class="js-game-canvas c-canvas"></canvas>
+      <div class="c-game-area__background"><img src="assets/images/gamescreen_playarea01.svg"></div>
+      <div class="c-playerinfo">
+        <div class="c-playerframe">
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+          <div class="c-playercard">
+            <div class="c-playercard__flair"></div>
+            <h3>Speler 1</h3>
+          </div>
+        </div>
+      </div>
+
+
       <div class="c-timer" id="js-timer__container">
         <div class="js-timer"></div>
       </div>
