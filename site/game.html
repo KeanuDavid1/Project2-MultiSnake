@@ -12,19 +12,22 @@
     <script src="script/generateFood.js"></script>
     <script src="script/headComponent.js"></script>
     <script src="script/movement.js"></script>
-    
+
     <script src="script/snakeObject.js"></script>
     <script src="script/gameStart.js"></script>
     <script src="script/simpleSnakeGameMode.js"></script>
     <script src="script/foodObjects.js"></script>
     <script src="script/gameStartTimer.js"></script>
     <script src="script/textObject.js"></script>
-    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/game.css" />
+    <link rel="stylesheet" href="css/screen.css" />
   </head>
 
   <body>
-    <canvas class="js-game-canvas c-canvas">
-    </canvas>
-    <div class="js-timer">0</div>
+    <div class="c-game-area">
+      <div class="c-game-area__background"><img src="assets/images/gamescreen_playarea01.svg"></div>
+      <canvas class="js-game-canvas c-canvas"></canvas>
+      <div class="js-timer">0</div>
+    </div>
   </body>
 </html>
