@@ -20,7 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   }, 3000);
-
-  // dit moet uit de setTimeout anders spawned er geen eten
-  generateFood();
 });
