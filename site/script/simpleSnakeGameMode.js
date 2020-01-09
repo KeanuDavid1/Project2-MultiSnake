@@ -6,7 +6,8 @@ const simpleGameMode = function() {
   timer.style.display = 'none';
   //Spawn snake head
   snakeArray.push(new snakeObject(100, 100, 0));
-  //Voegt 1 body part toe
+  //Voegt 2 body parts toe
+  snakeArray[0].addNewPiece();
   snakeArray[0].addNewPiece();
   //Spawnt 1 voedsel stukje
   generateFood();
