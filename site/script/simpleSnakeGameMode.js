@@ -1,6 +1,6 @@
 //Hier komen alle condities voor deze gamemode in, spawnen van 1 snake, start direction, en keydown event listener.
 
-const simpleGameMode = function () {    
+const simpleGameMode = function () {
     //Spawn snake head
     snakeArray.push(new snakeObject(100, 100, 0));
     //Voegt 1 body part toe
@@ -10,5 +10,6 @@ const simpleGameMode = function () {
     snakeArray[0].snakePieces[0].moveup();
     //Luistert naar de key presses
     document.addEventListener('keydown', keypressed);
+    setInterval(generateFood, Math.floor(randomInterval));
 }
 
