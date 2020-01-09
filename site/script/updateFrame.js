@@ -27,7 +27,7 @@ function updateGameArea() {
     // bekijkt de food array en checked of de slang het eten aanraakt
     let i = 0;
     for (food of foodArray) {
-      food.update();
+      food.update(i);
       if (food.eatFood(snake.snakePieces[0]) && food.healthy == true) {
         foodArray.splice(i, 1);
         snakeArray[0].addNewPiece();
@@ -53,14 +53,11 @@ function updateGameArea() {
       x++;
     }
   }
-  }
+}
 
-  // for(i=0; i<foodArray.length; i++){
-  //   foodArray[i].update();
-  //   if (foodArray[i].eatFood(snake.snakePieces[0])) {
-  //     foodArray.pop(i)
-  //     snakeArray[0].addNewPiece();
-  // }}
-
-  
-
+// for(i=0; i<foodArray.length; i++){
+//   foodArray[i].update();
+//   if (foodArray[i].eatFood(snake.snakePieces[0])) {
+//     foodArray.pop(i)
+//     snakeArray[0].addNewPiece();
+// }}
