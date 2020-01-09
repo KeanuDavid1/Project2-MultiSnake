@@ -39,6 +39,7 @@ function updateGameArea() {
       }
       i++;
     }
+    i++
   }
   }
 
