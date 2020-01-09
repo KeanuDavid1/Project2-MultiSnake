@@ -17,7 +17,7 @@ function updateGameArea() {
       ctx = gameArea.context;
       ctx.font = '30px Arial';
       ctx.fillStyle = 'red';
-      ctx.fillText('Get rekt', 200, 150);
+      ctx.fillText('Game over', canvasWidth / 2 - 100, canvasHeight / 2);
 
       //Stopt de refresh functie en dus heel het spel.
       //Zie gameArea.js
@@ -53,4 +53,14 @@ function updateGameArea() {
       x++;
     }
   }
+  }
+
+  // for(i=0; i<foodArray.length; i++){
+  //   foodArray[i].update();
+  //   if (foodArray[i].eatFood(snake.snakePieces[0])) {
+  //     foodArray.pop(i)
+  //     snakeArray[0].addNewPiece();
+  // }}
+
+  
 }

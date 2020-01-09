@@ -1,3 +1,5 @@
+//Deze functie maakt een food object aan met extra property "healthy" om een verschillende actie te kunnen uitvoeren wanneer de slang bv. een appel of een hamburger eet.
+//Deze functie heeft ook de methode eatFood om te detecteren wanneer het hoofd van de slang het voedsel raakt.
 function component(width, height, color, x, y, type, healthy) {
   this.type = type;
   if (type == 'image') {
