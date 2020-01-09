@@ -24,20 +24,20 @@ function updateGameArea() {
     }
   }
 
-  for(i=0; i<foodArray.length; i++){
-    foodArray[i].update();
-    if (foodArray[i].eatFood(snake.snakePieces[0])) {
-      foodArray.pop(i)
-      snakeArray[0].addNewPiece();
-  }}
-
-  // let i = 0;
-  // for (food of foodArray) {
-  //   food.update();
-  //   if (food.eatFood(snake.snakePieces[0])) {
+  // for(i=0; i<foodArray.length; i++){
+  //   foodArray[i].update();
+  //   if (foodArray[i].eatFood(snake.snakePieces[0])) {
   //     foodArray.pop(i)
   //     snakeArray[0].addNewPiece();
-  //   }
-  //   i++
-  // }
+  // }}
+
+  let i = 0;
+  for (food of foodArray) {
+    food.update();
+    if (food.eatFood(snake.snakePieces[0])) {
+      foodArray.pop(i)
+      snakeArray[0].addNewPiece();
+    }
+    i++
+  }
 }
