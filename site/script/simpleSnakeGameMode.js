@@ -7,7 +7,7 @@ const simpleGameMode = function () {
     snakeArray[0].addNewPiece();
     //Bepaalt de start direction
     // snakeArray[0].snakePieces[0].direction = "up";
-    snakeArray[0].snakePieces[0].moveup();
+    snakeArray[0].snakePieces[0].movedown();
     //Luistert naar de key presses
     document.addEventListener('keydown', keypressed);
     setInterval(generateFood, 6000);

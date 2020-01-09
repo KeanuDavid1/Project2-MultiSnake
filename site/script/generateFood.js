@@ -1,5 +1,5 @@
 // Deze functie kiest welk soort voedsel er zal spawnen en voegt deze toe aan de voedsel arrey in gameVariables.js
-const generateFood = function() {
+const generateFood = function () {
   let food;
   let healthy;
   let whichFood = Math.round(Math.random() * 4);

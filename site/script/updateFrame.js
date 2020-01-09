@@ -17,27 +17,27 @@ function updateGameArea() {
       ctx = gameArea.context;
       ctx.font = '30px Arial';
       ctx.fillStyle = 'red';
-      ctx.fillText('Get rekt', 200, 150);
-      
+      ctx.fillText('Game over', canvasWidth / 2 - 100, canvasHeight / 2);
+
       //Stopt de refresh functie en dus heel het spel.
       //Zie gameArea.js
       gameArea.stop();
     }
     let i = 0;
-  for (food of foodArray) {
-    food.update();
-    if (food.eatFood(snake.snakePieces[0]) && food.healthy == true) {
-      foodArray.splice(i, 1)
-      snakeArray[0].addNewPiece();
-    } else if(food.eatFood(snake.snakePieces[0]) && food.healthy == false){
-      foodArray.splice(i, 1)
-      ctx = gameArea.context;
-      ctx.font = '30px Arial';
-      ctx.fillStyle = 'red';
-      ctx.fillText('Get rekt', 200, 150);
+    for (food of foodArray) {
+      food.update();
+      if (food.eatFood(snake.snakePieces[0]) && food.healthy == true) {
+        foodArray.splice(i, 1)
+        snakeArray[0].addNewPiece();
+      } else if (food.eatFood(snake.snakePieces[0]) && food.healthy == false) {
+        foodArray.splice(i, 1)
+        ctx = gameArea.context;
+        ctx.font = '30px Arial';
+        ctx.fillStyle = 'red';
+        ctx.fillText('Get rekt', 200, 150);
+      }
+      i++
     }
-    i++
-  }
   }
 
   // for(i=0; i<foodArray.length; i++){
@@ -47,5 +47,5 @@ function updateGameArea() {
   //     snakeArray[0].addNewPiece();
   // }}
 
-  
+
 }
