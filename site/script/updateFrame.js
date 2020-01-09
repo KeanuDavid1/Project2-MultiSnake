@@ -24,6 +24,7 @@ function updateGameArea() {
       gameArea.stop();
     }
 
+    // bekijkt de food array en checked of de slang het eten aanraakt
     let i = 0;
     for (food of foodArray) {
       food.update();
@@ -32,17 +33,20 @@ function updateGameArea() {
         snakeArray[0].addNewPiece();
       } else if (food.eatFood(snake.snakePieces[0]) && food.healthy == false) {
         foodArray.splice(i, 1);
-        showMessage = true;
-        currentFrame = frames;
-        textArray.push(new textObject(200, 150, 50, 50, "twee"))
+        textArray.push(new showText(snake.snakePieces[0].x, snake.snakePieces[0].y -30, "twee", frames + 120))
       }
     }
     i++;
   }
 
-  // for (text of textArray){
-
-  // }
+  let x = 0;
+  for(text of textArray){
+    textArray[x].update();
+    if (!textArray[x].update()){
+      textArray.splice(x, 1);
+    }
+    x++;
+  }
 
   // for(i=0; i<foodArray.length; i++){
   //   foodArray[i].update();

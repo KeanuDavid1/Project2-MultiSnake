@@ -5,8 +5,6 @@ let ctx;
 let snakeArray = [];
 let randomInterval = Math.random() * 20000;
 let frames = 0;
-let showMessage = false;
-let currentFrame;
 console.log(randomInterval)
 let foodArray = [];
 let textArray = [];

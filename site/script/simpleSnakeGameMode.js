@@ -10,6 +10,6 @@ const simpleGameMode = function () {
     snakeArray[0].snakePieces[0].moveup();
     //Luistert naar de key presses
     document.addEventListener('keydown', keypressed);
-    setInterval(generateFood, 6000);
+    setInterval(generateFood, 500);
 }
 
