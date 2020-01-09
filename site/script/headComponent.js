@@ -50,22 +50,41 @@ function headComponent(x, y, playerNumber) {
         this.direction = "right";
     };
 
-//Checkt of de head element out of bounds is.
+    //Checkt of de head element out of bounds is.
     this.isOutOfBounds = function () {
         let myleft = this.x;
         let myright = this.x + (this.width);
         let mytop = this.y;
         let mybottom = this.y + (this.height);
-        var otherleft = 20;
-        var otherright = 480 - 20;
-        var othertop = 20;
-        var otherbottom = 270 - 20;
+        var otherleft = snakeBlockSize;
+        var otherright = canvasWidth - snakeBlockSize;
+        var othertop = snakeBlockSize;
+        var otherbottom = canvasHeight - snakeBlockSize;
         let crash = false;
         if ((mybottom < othertop) ||
             (mytop > otherbottom) ||
             (myright < otherleft) ||
             (myleft > otherright)) {
             crash = true;
+        }
+        return crash;
+    }
+
+    this.collidesWith = function (otherObject) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherObject.x + 5;
+        var otherright = otherObject.x + (otherObject.width) - 5;
+        var othertop = otherObject.y + 5;
+        var otherbottom = otherObject.y + (otherObject.height) - 5;
+        let crash = true;
+        if ((mybottom < othertop) ||
+            (mytop > otherbottom) ||
+            (myright < otherleft) ||
+            (myleft > otherright)) {
+            crash = false;
         }
         return crash;
     }

@@ -2,6 +2,7 @@ let lastDirection;
 let lastPositionX;
 let lastPositionY;
 let newComponent;
+let collideCounter;
 
 function snakeObject(x, y, playerNumber) {
     //Hier houden wij bij de snake onderdelen.
@@ -45,5 +46,18 @@ function snakeObject(x, y, playerNumber) {
         else {
             this.snakePieces.push(new bodyComponent(lastPositionX + snakePieceDistance, lastPositionY, posLast + 1, playerNumber));
         }
+    }
+
+    this.collidesWithOwnTail = function () {
+        collideCounter = 0;
+        for (let snakePiece of this.snakePieces) {
+            if (collideCounter != 0 && collideCounter != 1) {
+                if (this.snakePieces[0].collidesWith(snakePiece)) {
+                    return true;
+                }
+            }
+            collideCounter++;
+        }
+        return false;
     }
 }

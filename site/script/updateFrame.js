@@ -1,4 +1,5 @@
 function updateGameArea() {
+  frames++;
   //Verwijdert alles dat op canvas getekend is.
   //Zit in gameArea.js
   gameArea.clear();
@@ -11,7 +12,7 @@ function updateGameArea() {
     //Checkt of de snake-head out of bounds is.
     //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
     //isOutOfBounds functie zit in headComponent.js
-    if (snake.snakePieces[0].isOutOfBounds()) {
+    if (snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) {
       //Om de tekst te maken als je het spel verliest.
       ctx = gameArea.context;
       ctx.font = '30px Arial';
