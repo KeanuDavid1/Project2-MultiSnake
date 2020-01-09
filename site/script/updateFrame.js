@@ -36,7 +36,7 @@ function updateGameArea() {
   for (food of foodArray) {
     food.update();
     if (food.eatFood(snake.snakePieces[0])) {
-      foodArray.pop(i)
+      foodArray.splice(i, 1)
       snakeArray[0].addNewPiece();
     }
     i++
