@@ -1,4 +1,4 @@
-function component(width, height, color, x, y, type) {
+function component(width, height, color, x, y, type, healthy) {
   this.type = type;
   if (type == 'image') {
     this.image = new Image();
@@ -10,6 +10,7 @@ function component(width, height, color, x, y, type) {
   this.speedY = 0;
   this.x = x;
   this.y = y;
+  this.healthy = healthy;
   this.update = function() {
     ctx = gameArea.context;
     if (type == 'image') {
