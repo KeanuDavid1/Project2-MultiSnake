@@ -24,8 +24,8 @@ const generateFood = function () {
       foodSize,
       foodSize,
       `img/${food}.svg`,
-      Math.random() * canvasWidth,
-      Math.random() * canvasHeight,
+      Math.random() * (canvasWidth - foodSize + 1) + foodSize,
+      Math.random() * (canvasHeight - foodSize + 1) + foodSize,
       'image',
       healthy
     )
