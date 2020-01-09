@@ -13,13 +13,19 @@ function component(width, height, color, x, y, type, healthy) {
   this.x = x;
   this.y = y;
   this.healthy = healthy;
-  this.update = function() {
+  this.startFrames = frames;
+  this.update = function(i) {
     ctx = gameArea.context;
     if (type == 'image') {
       ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     } else {
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    if (!this.healthy) {
+      if (frames == this.startFrames + 500) {
+        foodArray.splice(i, 1);
+      }
     }
   };
   this.eatFood = function(otherobj) {
