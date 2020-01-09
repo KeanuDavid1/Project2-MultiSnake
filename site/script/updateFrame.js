@@ -33,17 +33,23 @@ function updateGameArea() {
         snakeArray[0].addNewPiece();
       } else if (food.eatFood(snake.snakePieces[0]) && food.healthy == false) {
         foodArray.splice(i, 1);
+        // steekt een nieuwe text in textArray
         textArray.push(
           new showText(
             snake.snakePieces[0].x,
             snake.snakePieces[0].y - 30,
             '-100pt',
-            frames + 120
+            frames + 120,
+            "30px Arial",
+            "red"
           )
         );
       }
       i++;
     }
+
+    // dit overloopt textarray en houd bij wat er moet getoond worden 
+    // moet het niet meer getoond worden wordt het verwijdered
     let x = 0;
     for (text of textArray) {
       textArray[x].update();
