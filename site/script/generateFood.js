@@ -2,7 +2,7 @@
 const generateFood = function() {
   let food;
   let healthy;
-  let whichFood = Math.floor(Math.random() * 4);
+  let whichFood = Math.round(Math.random() * 4);
   if (whichFood == 0) {
     food = "Apple"
     healthy = true;
