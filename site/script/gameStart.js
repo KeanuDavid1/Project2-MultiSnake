@@ -22,6 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 3000)
   
   // dit moet uit de setTimeout anders spawned er geen eten
-  setInterval(generateFood, Math.floor(randomInterval));
+  
 
 });
