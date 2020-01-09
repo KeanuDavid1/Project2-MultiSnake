@@ -32,6 +32,11 @@ html {
   top: 0;
   z-index: -1;
 }
+.c-playercard h3{
+  margin: 16px;
+  margin-top: 32px;
+  color: #fff;
+}
 
 .c-timer {
   width: 100vw;
