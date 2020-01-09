@@ -31,5 +31,4 @@ const generateFood = function() {
     Math.random() * canvasHeight,
     'image', healthy
   ));
-
 };

@@ -33,25 +33,24 @@ function updateGameArea() {
         snakeArray[0].addNewPiece();
       } else if (food.eatFood(snake.snakePieces[0]) && food.healthy == false) {
         foodArray.splice(i, 1);
-        textArray.push(new showText(snake.snakePieces[0].x, snake.snakePieces[0].y -30, "twee", frames + 120))
+        textArray.push(
+          new showText(
+            snake.snakePieces[0].x,
+            snake.snakePieces[0].y - 30,
+            '-100pt',
+            frames + 120
+          )
+        );
       }
+      i++;
     }
-    i++;
-  }
-
-  let x = 0;
-  for(text of textArray){
-    textArray[x].update();
-    if (!textArray[x].update()){
-      textArray.splice(x, 1);
+    let x = 0;
+    for (text of textArray) {
+      textArray[x].update();
+      if (!textArray[x].update()) {
+        textArray.splice(x, 1);
+      }
+      x++;
     }
-    x++;
   }
-
-  // for(i=0; i<foodArray.length; i++){
-  //   foodArray[i].update();
-  //   if (foodArray[i].eatFood(snake.snakePieces[0])) {
-  //     foodArray.pop(i)
-  //     snakeArray[0].addNewPiece();
-  // }}
 }
