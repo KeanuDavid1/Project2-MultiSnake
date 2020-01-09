@@ -23,7 +23,7 @@ function component(width, height, color, x, y, type, healthy) {
       ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     if (!this.healthy) {
-      if (frames == this.startFrames + 500) {
+      if (frames == this.startFrames + 1000) {
         foodArray.splice(i, 1);
       }
     }
