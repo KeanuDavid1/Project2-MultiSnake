@@ -9,9 +9,9 @@ console.log(randomInterval)
 let foodArray = [];
 
 // SETTINGS
-const snakeBlockSize = 20;
-const movementSpeed = 1;
-const canvasWidth = 480;
-const canvasHeight = 270;
+const snakeBlockSize = 30;
+const movementSpeed = 2.5;
+const canvasWidth = 1366;
+const canvasHeight = 925;
 const snakePieceDistance = snakeBlockSize + 0;
-const foodSize = 30;
+const foodSize = snakeBlockSize *1.5;

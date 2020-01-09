@@ -26,9 +26,15 @@ function updateGameArea() {
     let i = 0;
   for (food of foodArray) {
     food.update();
-    if (food.eatFood(snake.snakePieces[0])) {
+    if (food.eatFood(snake.snakePieces[0]) && food.healthy == true) {
       foodArray.splice(i, 1)
       snakeArray[0].addNewPiece();
+    } else if(food.eatFood(snake.snakePieces[0]) && food.healthy == false){
+      foodArray.splice(i, 1)
+      ctx = gameArea.context;
+      ctx.font = '30px Arial';
+      ctx.fillStyle = 'red';
+      ctx.fillText('Get rekt', 200, 150);
     }
     i++
   }
