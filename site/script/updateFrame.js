@@ -27,6 +27,8 @@ function updateGameArea() {
     // bekijkt de food array en checked of de slang het eten aanraakt
     let i = 0;
     for (food of foodArray) {
+      console.log(`foodarraylength = ${foodArray.length}`)
+      console.log(`i = ${i}`)
       food.update(i);
       if (food.eatFood(snake.snakePieces[0]) && food.healthy == true) {
         foodArray.splice(i, 1);
