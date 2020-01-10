@@ -10,9 +10,9 @@ let foodArray = [];
 let textArray = [];
 
 // SETTINGS
-const snakeBlockSize = 30;
-const movementSpeed = 2.5;
+const snakeBlockSize = 36;
+const movementSpeed = 3;
 const canvasWidth = 1366;
 const canvasHeight = 960;
 const snakePieceDistance = snakeBlockSize + 0;
-const foodSize = snakeBlockSize;
+const foodSize = snakeBlockSize+10;

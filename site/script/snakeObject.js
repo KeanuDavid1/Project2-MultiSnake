@@ -21,7 +21,7 @@ function snakeObject(x, y, playerNumber) {
     //Spawnt een nieuwe snake body part in het tegengestelde beweeg richting van de laatste snake piece.
     this.addNewPiece = function () {
         let posLast = this.snakePieces.length - 1;
-
+        document.querySelector(".js-snake-length").innerHTML = this.snakePieces.length;
         lastDirection = this.snakePieces[posLast].direction;
         lastPositionX = this.snakePieces[posLast].x;
         lastPositionY = this.snakePieces[posLast].y;
