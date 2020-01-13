@@ -5,9 +5,10 @@ html {
   margin: 0;
 }
 
-body{
+body {
   background-image: url(../assets/images/homescreenbackground02.png);
   background-size: cover;
+  height: 100vh;
 }
 
 /*---------------------/
@@ -30,12 +31,14 @@ body{
 }
 
 .c-game-area__background {
-  height: fit-content;
+  height: 100vh;
   width: 1366px;
   position: absolute;
   left: 0;
   top: 0;
   z-index: -1;
+  background-image: url(../assets/images/forestgameboard-base02.svg);
+  background-size: cover;
 }
 
 .c-playercard h3 {
