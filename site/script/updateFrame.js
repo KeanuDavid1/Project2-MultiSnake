@@ -65,6 +65,8 @@ function updateGameArea() {
       } // voor obstakels
       else if (item.hitObj(snake.snakePieces[0]) && item.type == 2) {
         itemArray.splice(i, 1);
+        snake.health -= 1;
+        displayLives(snake.health);
         textArray.push(
           new showText(
             snake.snakePieces[0].x,
@@ -78,20 +80,18 @@ function updateGameArea() {
 
         // veranderd de kleur bij het aanraken van een rots
         let counter = 0;
-        var stun = setInterval(function(){
-          if (snake.bodyColor != snake.stunColor){
+        var stun = setInterval(function() {
+          if (snake.bodyColor != snake.stunColor) {
             snake.bodyColor = snake.stunColor;
-        } else{
-          snake.bodyColor = "green";
-        }
-        snake.updateColor();
-        counter++;
-        if (counter == 6){
-          clearInterval(stun)
-        }
-        }, 200)
-
-
+          } else {
+            snake.bodyColor = 'green';
+          }
+          snake.updateColor();
+          counter++;
+          if (counter == 6) {
+            clearInterval(stun);
+          }
+        }, 200);
       }
 
       // counter van snake array
