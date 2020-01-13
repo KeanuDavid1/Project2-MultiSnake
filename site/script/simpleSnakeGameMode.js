@@ -5,7 +5,7 @@ const simpleGameMode = function() {
   const timer = document.getElementById('js-timer__container');
   timer.style.display = 'none';
   //Spawn snake head
-  snakeArray.push(new snakeObject(100, 100, 0));
+  snakeArray.push(new snakeObject(100, 100, 0, "lightgreen", "green", 3, 0));
   //Voegt 2 body parts toe
   snakeArray[0].addNewPiece();
   snakeArray[0].addNewPiece();
