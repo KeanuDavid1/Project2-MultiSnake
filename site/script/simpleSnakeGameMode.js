@@ -17,4 +17,5 @@ const simpleGameMode = function() {
   //Luistert naar de key presses
   document.addEventListener('keydown', keypressed);
   setInterval(generateItem, 5000);
+  setInterval(generateRock, 10000);
 };
