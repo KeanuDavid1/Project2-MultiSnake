@@ -63,8 +63,10 @@ html {
 body {
   max-width: 100%;
   margin: auto;
-  background-color: var(--global-color-alpha);
-  background-color: #0B8F4B;
+  /* background-color: var(--global-color-alpha);
+  background-color: #0B8F4B; */
+  background-image: url(../assets/images/homescreenbackground02.png);
+  overflow: hidden;
 }
 
 /*
@@ -398,6 +400,10 @@ These components contain styling on main page elements
   flex-wrap: wrap;
   justify-content: center;
   color: white;
+  /* background-color: brown;
+  width: 420px;
+  height: 640px; */
+
 }
 
 .c-menu__title {
