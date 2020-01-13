@@ -22,7 +22,6 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
         }
     };
 
-        }
     this.updateColor = function(){
         for (piece of this.snakePieces) {
             piece.update(this.bodyColor);
