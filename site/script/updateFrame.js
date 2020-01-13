@@ -39,18 +39,13 @@ function updateGameArea() {
         snakeArray[0].addNewPiece();
         snake.score += addPoints;
         displayScore(snake.score);
-        console.log('De item type');
-        console.log(item.type);
-        console.log(itemArray);
 
         // als het slecht eten is
       } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
         itemArray.splice(i, 1);
         snake.score -= subtractPoints;
         displayScore(snake.score);
-        console.log('De item type');
-        console.log(item.type);
-        console.log(itemArray);
+        
         // steekt een nieuwe text in textArray
         textArray.push(
           new showText(
