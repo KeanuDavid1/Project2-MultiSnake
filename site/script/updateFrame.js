@@ -9,6 +9,9 @@ function updateGameArea() {
     //Tekent de snake onderdelen opnieuw
     //Functie zit in snakeObject.js
     snake.update();
+    //toon score & levens wanneer het spel start
+    displayScore(snake.score);
+    displayLives(snake.health);
     //Checkt of de snake-head out of bounds is.
     //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
     //isOutOfBounds functie zit in headComponent.js
@@ -33,14 +36,18 @@ function updateGameArea() {
       if (item.hitObj(snake.snakePieces[0]) && item.type == 0) {
         itemArray.splice(i, 1);
         snakeArray[0].addNewPiece();
-        console.log('De item type')
+        snake.score += addPoints;
+        displayScore(snake.score);
+        console.log('De item type');
         console.log(item.type);
         console.log(itemArray);
 
-      // als het slecht eten is
+        // als het slecht eten is
       } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
         itemArray.splice(i, 1);
-        console.log('De item type')
+        snake.score -= subtractPoints;
+        displayScore(snake.score);
+        console.log('De item type');
         console.log(item.type);
         console.log(itemArray);
         // steekt een nieuwe text in textArray
@@ -48,7 +55,7 @@ function updateGameArea() {
           new showText(
             snake.snakePieces[0].x,
             snake.snakePieces[0].y - 30,
-            '-100pt',
+            `-${subtractPoints}pt`,
             frames + 120,
             '30px Arial',
             'red'

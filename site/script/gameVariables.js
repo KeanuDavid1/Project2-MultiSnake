@@ -16,4 +16,6 @@ const movementSpeed = 3;
 const canvasWidth = 1366;
 const canvasHeight = 960;
 const snakePieceDistance = snakeBlockSize + 0;
-const itemSize = snakeBlockSize+10;
+const itemSize = snakeBlockSize + 10;
+const subtractPoints = 50;
+const addPoints = 10;
