@@ -44,6 +44,8 @@ All the font-families used in the website
   --global-color-gamma: #b32e2b;
   --global-color-gamma-5-light: #b34a48;
 
+  --global-gradiant-green-yellow: linear-gradient(180deg, rgba(205,255,36,1) 0%, rgba(34,158,0,1) 100%);
+
   --global-baseline: 8px;
 }
 
@@ -65,7 +67,8 @@ body {
   margin: auto;
   /* background-color: var(--global-color-alpha);
   background-color: #0B8F4B; */
-  background-image: url(../assets/images/homescreenbackground02.png);
+  background-image: url(../assets/images/title_screen_background.png);
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -193,7 +196,7 @@ a:focus {
 */
 
 .o-row {
-  overflow: auto;
+  /* overflow: auto; */
   position: relative;
   padding: 24px 24px 0;
 }
@@ -223,7 +226,7 @@ a:focus {
   */
 
 .o-section {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .o-section + .o-section {
@@ -368,7 +371,7 @@ a:focus {
   height: 1px;
   padding: 0;
   margin: -1px;
-  overflow: hidden;
+  /* overflow: hidden; */
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
@@ -385,15 +388,22 @@ These components contain styling on main page elements
 
 */
 
+.c-logo{
+  height: calc(var(--global-baseline) * 45);
+  margin-bottom: 24px;
+}
+
 .c-menu-container {
   display: flex;
-  align-items: center;
+  padding-top: -100px;
+  /* align-items: center; */
+  /* justify-content: space-between; */
   height: 100vmin;
 }
 
 .c-menu {
-  width: calc(var(--global-baseline) * 45);
-  height: auto;
+  width: calc(var(--global-baseline) * 60);
+  height: fit-content;
   margin: 0 auto;
   background-color: none;
   display: flex;
@@ -418,6 +428,7 @@ These components contain styling on main page elements
 .c-menu__caption {
   font-size: 1rem;
   width: 100%;
+  margin-bottom: 24px;
   text-align: center;
 }
 
@@ -432,7 +443,7 @@ A reusable button
 .c-button {
   width: calc(var(--global-baseline) * 32.5);
   height: calc(var(--global-baseline) * 8.75);
-  background-color: var(--global-color-beta);
+  background: var(--global-gradiant-green-yellow);
   margin-bottom: inherit;
   border: none;
   font-family: 'Roboto Slab';
@@ -442,8 +453,8 @@ A reusable button
 }
 
 .c-button__text {
-  font-size: 1.5rem;
-  color: inherit;
+  font-size: 1.7rem;
+  color: #000;
 }
 
 .c-button:hover {
@@ -455,6 +466,24 @@ A reusable button
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
 }
+
+.c-sponsors{
+  background-color: #fff;
+  /* width: calc(var(--global-baseline) * 50); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  margin-bottom: 62px;
+  /* width: 100%; */
+}
+
+.c-sponsors img{
+  width: 30%;
+  /* transform: scale(0.3); */
+  /* display: block; */
+}
+
 
 /*------------------------------------*\
   #UTILITIES
