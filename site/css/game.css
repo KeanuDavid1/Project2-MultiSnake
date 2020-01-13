@@ -5,6 +5,11 @@ html {
   margin: 0;
 }
 
+body{
+  background-image: url(../assets/images/homescreenbackground02.png);
+  background-size: cover;
+}
+
 /*---------------------/
   COMPONENTS
   /---------------------*/
