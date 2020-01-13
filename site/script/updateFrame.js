@@ -26,13 +26,23 @@ function updateGameArea() {
 
     // bekijkt de food array en checked of de slang het eten aanraakt
     let i = 0;
-    for (food of foodArray) {
-      food.update(i);
-      if (food.eatFood(snake.snakePieces[0]) && food.healthy == true) {
-        foodArray.splice(i, 1);
+    for (item of itemArray) {
+      item.update(i);
+
+      // als het goed eten is
+      if (item.hitObj(snake.snakePieces[0]) && item.type == 0) {
+        itemArray.splice(i, 1);
         snakeArray[0].addNewPiece();
-      } else if (food.eatFood(snake.snakePieces[0]) && food.healthy == false) {
-        foodArray.splice(i, 1);
+        console.log('De item type')
+        console.log(item.type);
+        console.log(itemArray);
+
+      // als het slecht eten is
+      } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
+        itemArray.splice(i, 1);
+        console.log('De item type')
+        console.log(item.type);
+        console.log(itemArray);
         // steekt een nieuwe text in textArray
         textArray.push(
           new showText(
@@ -44,7 +54,15 @@ function updateGameArea() {
             'red'
           )
         );
-      }
+
+        // voor obstakels
+      } else if (item.hitObj(snake.snakePieces[0]) && item.type == 2){
+        itemArray.splice(i, 1)
+        console.log('De item type')
+        console.log(item.type);
+        console.log(itemArray);
+        // - hp awu
+      };
       i++;
     }
 
@@ -60,10 +78,3 @@ function updateGameArea() {
     }
   }
 }
-
-// for(i=0; i<foodArray.length; i++){
-//   foodArray[i].update();
-//   if (foodArray[i].eatFood(snake.snakePieces[0])) {
-//     foodArray.pop(i)
-//     snakeArray[0].addNewPiece();
-// }}

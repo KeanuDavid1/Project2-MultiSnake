@@ -1,8 +1,8 @@
 //Deze functie maakt een food object aan met extra property "healthy" om een verschillende actie te kunnen uitvoeren wanneer de slang bv. een appel of een hamburger eet.
 //Deze functie heeft ook de methode eatFood om te detecteren wanneer het hoofd van de slang het voedsel raakt.
-function component(width, height, color, x, y, type, healthy) {
-  this.type = type;
-  if (type == 'image') {
+function component(width, height, color, x, y, ImageType, type) {
+  this.image = ImageType;
+  if (this.image == 'image') {
     this.image = new Image();
     this.image.src = color;
   }
@@ -12,23 +12,23 @@ function component(width, height, color, x, y, type, healthy) {
   this.speedY = 0;
   this.x = x;
   this.y = y;
-  this.healthy = healthy;
+  this.type = type;
   this.startFrames = frames;
   this.update = function(i) {
     ctx = gameArea.context;
-    if (type == 'image') {
+    if (ImageType == 'image') {
       ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     } else {
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
     }
-    if (!this.healthy) {
+    if (this.type != 0) {
       if (frames == this.startFrames + 1000) {
-        foodArray.splice(i, 1);
+        itemArray.splice(i, 1);
       }
     }
   };
-  this.eatFood = function(otherobj) {
+  this.hitObj = function(otherobj) {
     var myleft = this.x;
     var myright = this.x + this.width;
     var mytop = this.y;

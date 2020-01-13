@@ -9,12 +9,12 @@ const simpleGameMode = function() {
   //Voegt 2 body parts toe
   snakeArray[0].addNewPiece();
   snakeArray[0].addNewPiece();
-  //Spawnt 1 voedsel stukje
-  generateFood();
+  //Spawnt 1 voedsel stukjes
+  generateItem();
   //Bepaalt de start direction
   // snakeArray[0].snakePieces[0].direction = "up";
   snakeArray[0].snakePieces[0].movedown();
   //Luistert naar de key presses
   document.addEventListener('keydown', keypressed);
-  setInterval(generateFood, 5000);
+  setInterval(generateItem, 5000);
 };

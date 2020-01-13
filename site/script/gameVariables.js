@@ -6,7 +6,8 @@ let snakeArray = [];
 let randomInterval = Math.random() * 20000;
 let frames = 0;
 console.log(randomInterval);
-let foodArray = [];
+let firstItem = true;
+let itemArray = [];
 let textArray = [];
 
 // SETTINGS
@@ -15,4 +16,4 @@ const movementSpeed = 3;
 const canvasWidth = 1366;
 const canvasHeight = 960;
 const snakePieceDistance = snakeBlockSize + 0;
-const foodSize = snakeBlockSize+10;
+const itemSize = snakeBlockSize+10;
