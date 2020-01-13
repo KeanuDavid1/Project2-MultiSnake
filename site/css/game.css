@@ -32,7 +32,8 @@ html {
   top: 0;
   z-index: -1;
 }
-.c-playercard h3{
+
+.c-playercard h3 {
   margin: 16px;
   margin-top: 32px;
   color: #fff;
@@ -50,4 +51,16 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.c-score {
+  margin: 16px;
+  margin-top: 32px;
+  color: #fff;
+}
+
+.c-lives {
+  margin: 16px;
+  margin-top: 32px;
+  color: #fff;
 }
