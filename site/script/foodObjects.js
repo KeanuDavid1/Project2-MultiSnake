@@ -22,8 +22,8 @@ function component(width, height, color, x, y, ImageType, type) {
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
     }
-    if (this.type != 0) {
-      if (frames == this.startFrames + 1000) {
+    if (this.type == 1) {
+      if (frames == this.startFrames + 500) {
         itemArray.splice(i, 1);
       }
     }

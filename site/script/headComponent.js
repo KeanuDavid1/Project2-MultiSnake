@@ -1,6 +1,6 @@
 //Snake-head, De eerste component in de snakeObject, er wordt onderscheid gemaakt tussen dit en de body elementen.
 
-function headComponent(x, y, playerNumber) {
+function headComponent(x, y, playerNumber, color) {
     this.width = snakeBlockSize;
     this.height = snakeBlockSize;
     this.speedX = 0;
@@ -9,12 +9,15 @@ function headComponent(x, y, playerNumber) {
     this.y = y;
     this.player = playerNumber
     this.direction = "down";
+    this.color = color;
+    // this.health = health;
 
     //Tekent het component op de canvas
     this.update = function () {
         ctx = gameArea.context;
-        ctx.fillStyle = "lightgreen";
+        ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
+
     }
 
     //Verandert de x en y positie met de speed waarde

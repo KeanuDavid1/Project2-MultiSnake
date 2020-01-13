@@ -3,7 +3,7 @@ let newdirection;
 
 //Het snake body object, er wordt een onderscheid gemaakt met head en body component
 
-function bodyComponent(x, y, orderNumber, playerNumber) {
+function bodyComponent(x, y, orderNumber, playerNumber, color) {
     this.width = snakeBlockSize;
     this.height = snakeBlockSize;
     this.speedX = 0;
@@ -12,7 +12,7 @@ function bodyComponent(x, y, orderNumber, playerNumber) {
     this.y = y;
     this.player = playerNumber
     this.direction;
-
+    this.color = color;
     //Hier worden de coordinaten opgeslagen waar het component moet veranderen van richting.
     this.arrayPositions = [];
 
@@ -20,9 +20,9 @@ function bodyComponent(x, y, orderNumber, playerNumber) {
     this.order = orderNumber;
 
     //Tekent het body component op canvas
-    this.update = function () {
+    this.update = function (statusColor) {
         ctx = gameArea.context;
-        ctx.fillStyle = "green";
+        ctx.fillStyle = statusColor;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 

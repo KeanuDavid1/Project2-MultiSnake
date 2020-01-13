@@ -3,7 +3,7 @@ const pushItemToArray = function(item, type) {
     new component(
       itemSize,
       itemSize,
-      `img/${item}.svg`,
+      `assets/img/${item}.svg`,
       Math.random() * (canvasWidth - itemSize + 1) + itemSize,
       Math.random() * (canvasHeight - itemSize + 1) + itemSize,
       'image',
