@@ -5,12 +5,8 @@ const simpleGameMode = function () {
   const timer = document.getElementById('js-timer__container');
   timer.style.display = 'none';
   //Spawn snake head
-<<<<<<< Updated upstream
   snakeArray.push(new snakeObject(100, 100, 0, "lightgreen", "green", 3, 0));
-=======
-  snakeArray.push(new snakeObject(100, 100, 0, 'lightgreen', 'green', 3, 20));
   snakeArray.push(new snakeObject(300, 300, 1, 'red', 'orange', 3, 20));
->>>>>>> Stashed changes
   //Voegt 2 body parts toe
   snakeArray[0].addNewPiece();
   snakeArray[0].addNewPiece();
