@@ -1,19 +1,61 @@
 body {
-  background-image: url(../assets/images/homescreenbackground.svg);
-  background-size: contain;
   background-color: var(--global-color-alpha);
   width: 100vw;
   height: 100vmin;
   background-repeat: no-repeat;
 }
 
-.c-sponsors {
-  background-color: #fff;
-  /* width: calc(var(--global-baseline) * 50); */
+.c-island {
   display: flex;
-  justify-content: flex-end;
+  width: 100%;
+  height: 70vh;
+  justify-content: center;
   align-items: flex-end;
-  width: 25%;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.c-island img {
+  width: 60%;
+}
+
+.c-clouds-container {
+  position: absolute;
+  width: 100%;
+  animation: movingclouds 30s infinite;
+}
+
+@keyframes movingclouds {
+  0% {
+    left: 0;
+  }
+  45% {
+    left: 100vw;
+    opacity: 1;
+  }
+  46% {
+    left: 100vw;
+    opacity: 0;
+  }
+  47% {
+    left: -100vw;
+    opacity: 0;
+  }
+  48% {
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.c-clouds {
+  margin-left: 10%;
+}
+
+.c-clouds + .c-clouds {
+  margin-left: 40%;
+  margin-top: 5%;
 }
 
 .c-menu-container {
@@ -22,6 +64,8 @@ body {
   justify-content: center;
   width: 50%;
   flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .c-menu {
@@ -66,17 +110,19 @@ These components contain styling on main page elements
 
 .c-sponsors{
   background-color: #fff;
-  /* width: calc(var(--global-baseline) * 50); */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: fit-content;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-  margin-bottom: 62px;
-  /* width: 100%; */
+  border-radius: 0px 10px 0px 0px;
+  padding-right: 12px;
 }
 
-.c-sponsors img{
-  width: 30%;
+.c-sponsors img {
+  width: 90px;
+  margin-left: 12px;
   /* transform: scale(0.3); */
   /* display: block; */
 }

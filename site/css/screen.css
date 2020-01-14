@@ -213,8 +213,6 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
   max-width: 102.5rem;
-  display: flex;
-  justify-content: center;
   height: 100vh;
 }
 
