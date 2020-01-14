@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="css/screen.css" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/game.css" />
+  <link rel="stylesheet" href="css/settings.css">
 
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -44,24 +45,34 @@
 
   <div class="o-container">
     <div class="c-body">
-      <div class="c-title"></div>
+      <div class="c-title">Spel Instellingen</div>
       <div class="c-settings">
         <!-- selects the game mode -->
         <div class="js-mode c-settings__item">
           <div class="c-settings__title">Modus</div>
           <div class="c-options">
-            <!-- <input type="button" name="left-mode" id="left-mode">
-            <div class="c-options__selected"></div>
-            <input type="button" name="right-mode" id="right-mode"> -->
+            <input type="button" name="left-mode" id="left-mode">
+            <div class="c-options__selected">(mode)</div>
+            <input type="button" name="right-mode" id="right-mode">
           </div>
         </div>
         <!-- selects the difficulty-->
         <div class="js-difficulty c-settings__item">
           <div class="c-settings__title">Moeilijkheid</div>
+          <div class="c-options">
+            <input type="button" name="left-diff" id="left-diff">
+            <div class="c-options__selected">(diff)</div>
+            <input type="button" name="right-diff" id="right-diff">
+          </div>
         </div>
         <!-- selects the number of players -->
         <div class="js-players c-settings__item">
           <div class="c-settings__title">Aantal spelers</div>
+          <div class="c-options">
+            <input type="button" name="left-player" id="left-player">
+            <div class="c-options__selected">(0)</div>
+            <input type="button" name="right-player" id="right-player">
+          </div>
         </div>
       </div>
     </div>

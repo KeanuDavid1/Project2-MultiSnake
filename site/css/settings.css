@@ -1,0 +1,37 @@
+.c-body{
+    width: 536px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-title{
+    font-size: 36px;
+    margin-bottom: 80px;
+    font-weight: 500;
+}
+
+.c-settings{
+    font-size: 24px;
+    width: 100%;
+}
+
+.c-settings__item{
+    margin-bottom: 48px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.c-options{
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+}
+
+.c-options__selected{
+    font-weight: 400;
+}
