@@ -8,13 +8,15 @@ function updateGameArea() {
   for (snake of snakeArray) {
     //Tekent de snake onderdelen opnieuw
     //Functie zit in snakeObject.js
-    snake.update();
+
     //toon score & levens wanneer het spel start
     displayScore(snake.score);
     displayLives(snake.health);
     //Checkt of de snake-head out of bounds is.
     //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
     //isOutOfBounds functie zit in headComponent.js
+
+
 
     if ((snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) && !snake.isImmune) {
       snake.setImmunity();
@@ -32,9 +34,11 @@ function updateGameArea() {
           'red'
         )
       );
-
       //Stopt de refresh functie en dus heel het spel.
       //Zie gameArea.js
+    }
+    else if (snake.snakePieces[0].isOutOfBounds()) {
+      snake.changeDirectionOnOutOfBounds();
     }
 
 
@@ -71,7 +75,7 @@ function updateGameArea() {
           )
         );
       } // voor obstakels
-      else if (item.hitObj(snake.snakePieces[0]) && item.type == 2) {
+      else if ((item.hitObj(snake.snakePieces[0]) && item.type == 2) && !snake.isImmune) {
         itemArray.splice(i, 1);
         snake.health -= 1;
         displayLives(snake.health);
@@ -88,18 +92,7 @@ function updateGameArea() {
 
         // veranderd de kleur bij het aanraken van een rots
         let counter = 0;
-        var stun = setInterval(function () {
-          if (snake.bodyColor != snake.stunColor) {
-            snake.bodyColor = snake.stunColor;
-          } else {
-            snake.bodyColor = 'green';
-          }
-          snake.updateColor();
-          counter++;
-          if (counter == 6) {
-            clearInterval(stun);
-          }
-        }, 200);
+        snake.setImmunity();
       }
 
       // counter van snake array
@@ -116,5 +109,6 @@ function updateGameArea() {
       }
       x++;
     }
+    snake.update();
   }
 }

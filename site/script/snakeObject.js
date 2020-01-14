@@ -9,7 +9,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   this.snakePieces = [];
   this.headColor = headColor;
   this.bodyColor = bodyColor;
-  this.stunColor = 'red';
+  this.stunColor = "white";
   this.health = health;
   this.score = score;
   this.isImmune = false;
@@ -102,7 +102,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
     for (let snakePiece of this.snakePieces) {
       if (collideCounter != 0 && collideCounter != 1) {
         if (this.snakePieces[0].collidesWith(snakePiece)) {
-          
+
           return true;
         }
       }
@@ -203,7 +203,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
 
   this.switchColor = function () {
     if (this.snakePieces[0].color == this.headColor) {
-      this.snakePieces[0].color = "white"
+      this.snakePieces[0].color = this.stunColor;
     }
     else {
       this.snakePieces[0].color = this.headColor
@@ -211,7 +211,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
 
     for (let piece of this.snakePieces.slice(1)) {
       if (piece.color == this.bodyColor) {
-        piece.color = "white";
+        piece.color = this.stunColor;
       }
       else {
         piece.color = this.bodyColor;
