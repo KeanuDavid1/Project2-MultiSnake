@@ -13,6 +13,7 @@ function bodyComponent(x, y, orderNumber, playerNumber, color) {
     this.player = playerNumber
     this.direction;
     this.color = color;
+    this.originalColor = color;
     //Hier worden de coordinaten opgeslagen waar het component moet veranderen van richting.
     this.arrayPositions = [];
 
@@ -22,7 +23,7 @@ function bodyComponent(x, y, orderNumber, playerNumber, color) {
     //Tekent het body component op canvas
     this.update = function (statusColor) {
         ctx = gameArea.context;
-        ctx.fillStyle = statusColor;
+        ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
@@ -31,7 +32,7 @@ function bodyComponent(x, y, orderNumber, playerNumber, color) {
 
         //Zorgt dat de body componenten altijd de component die voor hen is volgen.
         this.movementControl()
-        
+
         //Verandert de positie met de speed waarde.
         this.x += this.speedX;
         this.y += this.speedY;
@@ -66,7 +67,7 @@ function bodyComponent(x, y, orderNumber, playerNumber, color) {
 
             //Verstuur de coordinaten die bereikt zijn naar de volgende blokje, als die bestaat.
             else {
-                console.log(snakeArray[playerNumber].snakePieces.length)
+                // console.log(snakeArray[playerNumber].snakePieces.length)
                 if (snakeArray[playerNumber].snakePieces.length - 1 > this.order) {
                     snakeArray[playerNumber].snakePieces[this.order + 1].arrayPositions.push(this.arrayPositions[0]);
                 }
