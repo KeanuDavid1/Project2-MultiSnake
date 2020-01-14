@@ -10,6 +10,7 @@ function headComponent(x, y, playerNumber, color) {
     this.player = playerNumber
     this.direction = "down";
     this.color = color;
+    this.originalColor = color;
     // this.health = health;
 
     //Tekent het component op de canvas
