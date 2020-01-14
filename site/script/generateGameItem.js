@@ -4,8 +4,8 @@ const pushItemToArray = function(item, type) {
       itemSize,
       itemSize,
       `assets/img/${item}.svg`,
-      Math.random() * (canvasWidth - itemSize + 1) + itemSize,
-      Math.random() * (canvasHeight - itemSize + 1) + itemSize,
+      getRndInteger(itemSize + 20, canvasWidth - itemSize - 20),
+      getRndInteger(itemSize + 20, canvasHeight - itemSize - 20),
       'image',
       type
     )
@@ -17,12 +17,11 @@ let healthyFood;
 let obstacleType;
 let itemPicker;
 
-
 // Deze functie kiest welk soort voedsel er zal spawnen en voegt deze toe aan de voedsel arrey in gameVariables.js
 const generateItem = function() {
   itemPicker = Math.round(Math.random() * 3);
   generateUnhealthyFood();
-  generateHealthyFood()
+  generateHealthyFood();
 };
 
 // genereert gezond eten
@@ -41,7 +40,7 @@ const generateHealthyFood = function() {
 // genereert ongezond eten
 const generateUnhealthyFood = function() {
   console.log('Spawning unhealthy food...');
-    if (itemPicker <= 1) {
+  if (itemPicker <= 1) {
     unhealthyFood = 'Burger';
   } else if (itemPicker > 1) {
     unhealthyFood = 'Pizza';

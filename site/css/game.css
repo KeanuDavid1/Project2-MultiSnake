@@ -31,14 +31,12 @@ body {
 }
 
 .c-game-area__background {
-  height: 100vh;
+  height: 100vmin;
   width: 1366px;
   position: absolute;
   left: 0;
   top: 0;
   z-index: -1;
-  background-image: url(../assets/images/forestgameboard-base02.svg);
-  background-size: cover;
 }
 
 .c-playercard h3 {
@@ -71,4 +69,7 @@ body {
   margin: 16px;
   margin-top: 32px;
   color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: 10px;
 }
