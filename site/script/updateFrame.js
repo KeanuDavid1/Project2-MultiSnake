@@ -77,6 +77,7 @@ function updateGameArea() {
       else if ((item.hitObj(snake.snakePieces[0]) && item.type == 2) && !snake.isImmune) {
         itemArray.splice(i, 1);
         snake.health -= 1;
+        rockCounter--;
         displayLives(snake.health);
         textArray.push(
           new showText(

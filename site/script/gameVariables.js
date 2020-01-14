@@ -6,6 +6,7 @@ let snakeArray = [];
 let randomInterval = Math.random() * 20000;
 let frames = 0;
 let firstItem = true;
+let rockCounter = 0;
 let itemArray = [];
 let textArray = [];
 
