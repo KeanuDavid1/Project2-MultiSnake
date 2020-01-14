@@ -21,4 +21,4 @@ const startGame = function() {
 
     //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   }, 3000);
-});
+};
