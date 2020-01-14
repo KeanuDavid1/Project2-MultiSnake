@@ -67,8 +67,6 @@ body {
   margin: auto;
   /* background-color: var(--global-color-alpha);
   background-color: #0B8F4B; */
-  background-image: url(../assets/images/title_screen_background.png);
-  background-size: cover;
   overflow: hidden;
 }
 
