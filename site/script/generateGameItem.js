@@ -4,8 +4,8 @@ const pushItemToArray = function(item, type) {
       itemSize,
       itemSize,
       `assets/img/${item}.svg`,
-      getRndInteger(itemSize + 20, canvasWidth - itemSize - 20),
-      getRndInteger(itemSize + 20, canvasHeight - itemSize - 20),
+      getRndInteger(itemSize + 20, canvasWidth - itemSize * 2 - 20),
+      getRndInteger(itemSize + 20, canvasHeight - itemSize * 2 - 20),
       'image',
       type
     )
