@@ -71,4 +71,7 @@ body {
   margin: 16px;
   margin-top: 32px;
   color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: 10px;
 }

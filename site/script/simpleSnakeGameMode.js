@@ -18,4 +18,8 @@ const simpleGameMode = function() {
   document.addEventListener('keydown', keypressed);
   setInterval(generateItem, 5000);
   setInterval(generateRock, 10000);
+
+  for (snake of snakeArray) {
+    displayLives(snake.health);
+  }
 };

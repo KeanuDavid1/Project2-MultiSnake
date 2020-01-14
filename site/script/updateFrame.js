@@ -11,7 +11,6 @@ function updateGameArea() {
     snake.update();
     //toon score & levens wanneer het spel start
     displayScore(snake.score);
-    displayLives(snake.health);
     //Checkt of de snake-head out of bounds is.
     //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
     //isOutOfBounds functie zit in headComponent.js
