@@ -1,10 +1,12 @@
-const displayScore = function(scoreAmount) {
-  const score = document.querySelector('.js-score');
+const displayScore = function (scoreAmount, player) {
+  console.log(player)
+  let score = document.querySelector(`.js-player${player} .js-score`);
   score.innerHTML = scoreAmount;
 };
 
-const displayLives = function(livesAmount) {
-  const lives = document.querySelector('.js-lives');
+const displayLives = function (livesAmount, player) {
+  console.log(player)
+  const lives = document.querySelector(`.js-player${player} .js-lives`);
   if (livesAmount == 3) {
     lives.innerHTML = `<img src="assets/img/favorite-24px.png"> <img src="assets/img/favorite-24px.png"> <img src="assets/img/favorite-24px.png">`;
   }
