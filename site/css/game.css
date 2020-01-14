@@ -1,3 +1,28 @@
+:root {
+  /* Colors */
+
+  /* Alpha Colors */
+
+  --global-color-alpha: #84c2d8;
+  --global-color-alpha-5-dark: #6268b3;
+  --global-color-alpha-10-dark: #515cb3;
+
+  --global-color-beta: #74af78;
+
+  --global-color-omega: #ff8333;
+
+  --global-color-gamma: #b32e2b;
+  --global-color-gamma-5-light: #b34a48;
+
+  --global-gradiant-green-yellow: linear-gradient(
+    180deg,
+    rgba(205, 255, 36, 1) 0%,
+    rgba(34, 158, 0, 1) 100%
+  );
+
+  --global-baseline: 8px;
+}
+
 body,
 html {
   overflow: hidden;
@@ -6,8 +31,7 @@ html {
 }
 
 body {
-  background-image: url(../assets/images/homescreenbackground02.png);
-  background-size: cover;
+  background-color: var(--global-color-alpha);
 }
 
 /*---------------------/
@@ -41,10 +65,26 @@ body {
   background-repeat: no-repeat;
 }
 
+.c-playerinfo {
+  width: 100%;
+}
+
+.c-playercard {
+  background-color: var(--global-color-beta);
+  width: auto;
+  height: 120px;
+}
+
 .c-playercard h3 {
   margin: 16px;
-  margin-top: 32px;
   color: #fff;
+}
+
+.c-playercard__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
 }
 
 .c-timer {
@@ -62,14 +102,13 @@ body {
 }
 
 .c-score {
-  margin: 16px;
-  margin-top: 32px;
+  margin-left: 16px;
   color: #fff;
+  font-size: 40px;
 }
 
 .c-lives {
-  margin: 16px;
-  margin-top: 32px;
+  margin-left: 16px;
   color: #fff;
   display: flex;
   flex-wrap: nowrap;

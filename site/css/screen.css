@@ -33,11 +33,11 @@ All the font-families used in the website
 
   /* Alpha Colors */
 
-  --global-color-alpha: #6b70b3;
+  --global-color-alpha: #84c2d8;
   --global-color-alpha-5-dark: #6268b3;
   --global-color-alpha-10-dark: #515cb3;
 
-  --global-color-beta: #70bd51;
+  --global-color-beta: #74AF78;
 
   --global-color-omega: #ff8333;
 
@@ -65,7 +65,8 @@ body {
   margin: auto;
   /* background-color: var(--global-color-alpha);
   background-color: #0B8F4B; */
-  background-image: url(../assets/images/homescreenbackground02.png);
+  background-image: url(../assets/images/title_screen_background.png);
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -385,6 +386,11 @@ These components contain styling on main page elements
 
 */
 
+.c-logo{
+  height: calc(var(--global-baseline) * 45);
+  margin-bottom: 24px;
+}
+
 .c-menu-container {
   display: flex;
   align-items: center;
@@ -403,7 +409,6 @@ These components contain styling on main page elements
   /* background-color: brown;
   width: 420px;
   height: 640px; */
-
 }
 
 .c-menu__title {
@@ -455,6 +460,24 @@ A reusable button
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
 }
+
+.c-sponsors{
+  background-color: #fff;
+  /* width: calc(var(--global-baseline) * 50); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  margin-bottom: 62px;
+  /* width: 100%; */
+}
+
+.c-sponsors img{
+  width: 30%;
+  /* transform: scale(0.3); */
+  /* display: block; */
+}
+
 
 /*------------------------------------*\
   #UTILITIES
