@@ -1,28 +1,3 @@
-:root {
-  /* Colors */
-
-  /* Alpha Colors */
-
-  --global-color-alpha: #84c2d8;
-  --global-color-alpha-5-dark: #6268b3;
-  --global-color-alpha-10-dark: #515cb3;
-
-  --global-color-beta: #74af78;
-
-  --global-color-omega: #ff8333;
-
-  --global-color-gamma: #b32e2b;
-  --global-color-gamma-5-light: #b34a48;
-
-  --global-gradiant-green-yellow: linear-gradient(
-    180deg,
-    rgba(205, 255, 36, 1) 0%,
-    rgba(34, 158, 0, 1) 100%
-  );
-
-  --global-baseline: 8px;
-}
-
 body,
 html {
   overflow: hidden;
