@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-  console.info('DOM geladen');
-
+const startGame = function() {
   //canvas DOM element
   DOMCanvas = document.querySelector('.js-game-canvas');
 
