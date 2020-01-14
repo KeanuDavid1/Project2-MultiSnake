@@ -3,6 +3,12 @@ COMPONENTS:
 Alle components om de settings page te stylen
 ---------------*/
 
+.o-container{
+    display: flex;
+    justify-content: center;
+}
+
+
 /* 
 De body dat de title en de settings bevat,
 het bevindt zich in een o-container
