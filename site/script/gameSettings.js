@@ -1,5 +1,5 @@
 // dit houd de settings bij
-let settings = {};
+let gameSettings = {};
 
 const settings = function(){
 
