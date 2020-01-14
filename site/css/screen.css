@@ -377,14 +377,6 @@ a:focus {
   #COMPONENTS
 \*------------------------------------*/
 
-/* 
-
-Components: Menu
----
-These components contain styling on main page elements
-
-*/
-
 /*
 
 Component: Button
@@ -392,6 +384,34 @@ Component: Button
 A reusable button
 
 */
+
+.c-button {
+  width: calc(var(--global-baseline) * 32.5);
+  height: calc(var(--global-baseline) * 8.75);
+  background: var(--global-color-beta);
+  margin-bottom: 60px;
+  border: none;
+  font-family: 'Roboto Slab';
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+.c-button__text {
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.c-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
+  border: solid 2px;
+}
+
+.c-button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
+  border: solid 2px;
+}
 
 /*------------------------------------*\
   #UTILITIES

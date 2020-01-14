@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pulse Snake - Game</title>
+    <!-- all the js game files -->
+    <script src="script/utilityFunctions.js"></script>
+    <script src="script/gameVariables.js"></script>
+    <script src="script/bodyComponent.js"></script>
+    <script src="script/updateFrame.js"></script>
+    <script src="script/gameArea.js"></script>
+    <script src="script/generateGameItem.js"></script>
+    <script src="script/headComponent.js"></script>
+    <script src="script/movement.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Pulse Snake - Game</title>
-  <script src="script/utilityFunctions.js"></script>
-  <script src="script/gameVariables.js"></script>
-  <script src="script/bodyComponent.js"></script>
-  <script src="script/updateFrame.js"></script>
-  <script src="script/gameArea.js"></script>
-  <script src="script/generateGameItem.js"></script>
-  <script src="script/headComponent.js"></script>
-  <script src="script/movement.js"></script>
+    <script src="script/snakeObject.js"></script>
+    <script src="script/gameStart.js"></script>
+    <script src="script/simpleSnakeGameMode.js"></script>
+    <script src="script/foodObjects.js"></script>
+    <script src="script/gameStartTimer.js"></script>
+    <script src="script/textObject.js"></script>
+    <script src="script/displayPlayerInfo.js"></script>
 
-  <script src="script/snakeObject.js"></script>
-  <script src="script/gameStart.js"></script>
-  <script src="script/simpleSnakeGameMode.js"></script>
-  <script src="script/foodObjects.js"></script>
-  <script src="script/gameStartTimer.js"></script>
-  <script src="script/textObject.js"></script>
-  <script src="script/displayPlayerInfo.js"></script>
-  <link rel="stylesheet" href="css/screen.css" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/game.css" />
+    <script src="script/gameContent.js"></script>
+    <script src="script/gameSettings.js"></script>
 
-  <!-- favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#ffffff" />
-</head>
+    <link rel="stylesheet" href="css/screen.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/game.css" />
+    <link rel="stylesheet" href="css/settings.css" />
 
-<!-- favicons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-<meta name="msapplication-TileColor" content="#da532c" />
-<meta name="theme-color" content="#ffffff" />
-</head>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-<body>
-  <div class="c-game-area">
-    <canvas class="js-game-canvas c-canvas"></canvas>
-    <div class="c-game-area__background"></div>
-    <div class="c-playerinfo">
-      <div class="c-playerframe">
-        <div class="c-playercard">
-          <div class="c-playercard__flair"></div>
-          <h3>Speler 1</h3>
-          <div class="c-playercard__info js-player0">
-            <div class="c-lives js-lives"></div>
-            <p class="c-score js-score"></p>
+  <body>
+    <div class="o-container">
+      <div class="c-body">
+        <div class="c-body__item c-body__item--main-content">
+          <div class="c-title">Spel Instellingen</div>
+          <div class="c-settings">
+            <!-- selects the game mode -->
+            <div class="js-mode c-settings__item">
+              <div class="c-settings__title">Modus</div>
+              <div class="c-options">
+                <input type="button" name="left-mode" id="left-mode" />
+                <div class="c-options__selected">(mode)</div>
+                <input type="button" name="right-mode" id="right-mode" />
+              </div>
+            </div>
+            <!-- selects the difficulty-->
+            <div class="js-difficulty c-settings__item">
+              <div class="c-settings__title">Moeilijkheid</div>
+              <div class="c-options">
+                <input type="button" name="left-diff" id="left-diff" />
+                <div class="c-options__selected">(diff)</div>
+                <input type="button" name="right-diff" id="right-diff" />
+              </div>
+            </div>
+            <!-- selects the number of players -->
+            <div class="js-players c-settings__item">
+              <div class="c-settings__title">Aantal spelers</div>
+              <div class="c-options">
+                <input type="button" name="left-player" id="left-player" />
+                <div class="c-options__selected">(0)</div>
+                <input type="button" name="right-player" id="right-player" />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="c-playercard">
-          <div class="c-playercard__flair"></div>
-          <h3>Speler 2</h3>
-          <div class="c-playercard__info js-player1">
-            <div class="c-lives js-lives"></div>
-            <p class="c-score js-score"></p>
+        <div class="c-body__item">
+          <div class="c-button-container">
+            <input
+              type="button"
+              value="Terug"
+              class="c-button c-button__text"
+              id="settings-backbutton"
+              name="settings-backbutton"
+            />
+            <input
+              type="button"
+              value="Start!"
+              class="c-button c-button__text"
+              id="settings-startbutton"
+              name="settings-startbutton"
+            />
           </div>
-        </div>
-        <div class="c-playercard">
-          <div class="c-playercard__flair"></div>
-          <h3>Speler 3</h3>
-          <div class="c-playercard__info js-player2">
-            <div class="c-lives js-lives"></div>
-            <p class="c-score js-score"></p>
-          </div>
-        </div>
-        <div class="c-playercard">
-          <div class="c-playercard__flair"></div>
-          <h3>Speler 4</h3>
-          <div class="c-playercard__info js-player3">
-            <div class="c-lives js-lives"></div>
-            <p class="c-score js-score"></p>
-          </div>
-
         </div>
       </div>
     </div>
-
-    <div class="c-timer" id="js-timer__container">
-      <div class="js-timer"></div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

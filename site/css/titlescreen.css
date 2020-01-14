@@ -63,10 +63,15 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   color: white;
-  /* background-color: brown;
-  width: 420px;
-  height: 640px; */
 }
+
+/* 
+
+Components: Menu
+---
+These components contain styling on main page elements
+
+*/
 
 .c-menu__title {
   font-size: 3rem;
@@ -85,39 +90,11 @@ body {
   text-align: center;
 }
 
-.c-button {
-  width: calc(var(--global-baseline) * 32.5);
-  height: calc(var(--global-baseline) * 8.75);
-  background: var(--global-color-beta);
-  margin-bottom: 60px;
-  border: none;
-  font-family: 'Roboto Slab';
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  border-radius: 10px;
-}
-
-.c-button + .c-button {
+.c-button + .c-button{
   margin-left: 100px;
 }
 
-.c-button__text {
-  font-size: 1.7rem;
-  color: #fff;
-}
-
-.c-button:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
-  border: solid 2px;
-}
-
-.c-button:focus {
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
-  border: solid 2px;
-}
-
-.c-sponsors {
+.c-sponsors{
   background-color: #fff;
   position: fixed;
   bottom: 0;

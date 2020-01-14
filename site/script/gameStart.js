@@ -1,8 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-  console.info('DOM geladen');
-
+const startGame = function() {
   //canvas DOM element
   DOMCanvas = document.querySelector('.js-game-canvas');
+
+ // verander de variables hiet met de gegeven settings van de game settings pagina
+
 
   //De init voor de canvas object, start het drawing process van canvas.
   //Functie zit in gameArea.js
@@ -20,4 +21,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   }, 3000);
-});
+};
