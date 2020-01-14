@@ -14,6 +14,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   this.score = score;
   this.isImmune = false;
   this.startImmunityFrame;
+  this.player = playerNumber;
   //Snake heeft altijd een hoofd dus voegen wij dit direct toe aan de snakePieces
   this.snakePieces.push(new headComponent(x, y, playerNumber, this.headColor));
   //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
