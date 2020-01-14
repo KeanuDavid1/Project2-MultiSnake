@@ -53,7 +53,7 @@ function updateGameArea() {
       // als het goed eten is
       if (item.hitObj(snake.snakePieces[0]) && item.type == 0) {
         itemArray.splice(i, 1);
-        snakeArray[0].addNewPiece();
+        snake.addNewPiece();
         snake.score += addPoints;
         displayScore(snake.score);
 
