@@ -37,14 +37,12 @@ All the font-families used in the website
   --global-color-alpha-5-dark: #6268b3;
   --global-color-alpha-10-dark: #515cb3;
 
-  --global-color-beta: #74AF78;
+  --global-color-beta: #74af78;
 
   --global-color-omega: #ff8333;
 
   --global-color-gamma: #b32e2b;
   --global-color-gamma-5-light: #b34a48;
-
-  --global-gradiant-green-yellow: linear-gradient(180deg, rgba(205,255,36,1) 0%, rgba(34,158,0,1) 100%);
 
   --global-baseline: 8px;
 }
@@ -215,6 +213,9 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
   max-width: 102.5rem;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
 /*
@@ -386,49 +387,6 @@ These components contain styling on main page elements
 
 */
 
-.c-logo{
-  height: calc(var(--global-baseline) * 45);
-  margin-bottom: 24px;
-}
-
-.c-menu-container {
-  display: flex;
-  padding-top: -100px;
-  /* align-items: center; */
-  /* justify-content: space-between; */
-  height: 100vmin;
-}
-
-.c-menu {
-  width: calc(var(--global-baseline) * 60);
-  height: fit-content;
-  margin: 0 auto;
-  background-color: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: white;
-  /* background-color: brown;
-  width: 420px;
-  height: 640px; */
-}
-
-.c-menu__title {
-  font-size: 3rem;
-  margin-bottom: calc(var(--global-baseline) * 9);
-}
-
-.c-menu__button {
-  margin-bottom: calc(var(--global-baseline) * 2);
-}
-
-.c-menu__caption {
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
 /*
 
 Component: Button
@@ -437,57 +395,16 @@ A reusable button
 
 */
 
-.c-button {
-  width: calc(var(--global-baseline) * 32.5);
-  height: calc(var(--global-baseline) * 8.75);
-  background: var(--global-gradiant-green-yellow);
-  margin-bottom: inherit;
-  border: none;
-  font-family: 'Roboto Slab';
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.c-button__text {
-  font-size: 1.7rem;
-  color: #000;
-}
-
-.c-button:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
-  border: solid 2px;
-}
-
-.c-button:focus {
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
-  border: solid 2px;
-}
-
-.c-sponsors{
-  background-color: #fff;
-  /* width: calc(var(--global-baseline) * 50); */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-  margin-bottom: 62px;
-  /* width: 100%; */
-}
-
-.c-sponsors img{
-  width: 30%;
-  /* transform: scale(0.3); */
-  /* display: block; */
-}
-
-
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
 
 .u-margin-bottom-md {
   margin-bottom: calc(var(--global-baseline) * 2);
+}
+
+.u-align-flex-end {
+  align-items: flex-end;
 }
 
 /*
