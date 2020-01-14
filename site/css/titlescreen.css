@@ -1,0 +1,15 @@
+body {
+  background-image: url(../assets/images/homescreenbackground.svg);
+  background-size: contain;
+}
+
+.c-sponsors {
+  background-color: #fff;
+  /* width: calc(var(--global-baseline) * 50); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  margin-bottom: 62px;
+  /* width: 100%; */
+}
