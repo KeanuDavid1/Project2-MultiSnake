@@ -22,35 +22,21 @@ body {
 .c-clouds-container {
   position: absolute;
   width: 100%;
-  animation: movingclouds 30s infinite;
+}
+
+.c-clouds {
+  position: relative;
+  animation: movingclouds 20s infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes movingclouds {
   0% {
-    left: 0;
-  }
-  45% {
-    left: 100vw;
-    opacity: 1;
-  }
-  46% {
-    left: 100vw;
-    opacity: 0;
-  }
-  47% {
-    left: -100vw;
-    opacity: 0;
-  }
-  48% {
-    opacity: 1;
+    left: -110%;
   }
   100% {
-    left: 0;
+    left: 110%;
   }
-}
-
-.c-clouds {
-  margin-left: 10%;
 }
 
 .c-clouds + .c-clouds {
