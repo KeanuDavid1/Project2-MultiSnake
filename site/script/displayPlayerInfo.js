@@ -1,6 +1,6 @@
 const displayScore = function(scoreAmount) {
   const score = document.querySelector('.js-score');
-  score.innerHTML = 'Score: ' + scoreAmount;
+  score.innerHTML = scoreAmount;
 };
 
 const displayLives = function(livesAmount) {

@@ -33,11 +33,11 @@ All the font-families used in the website
 
   /* Alpha Colors */
 
-  --global-color-alpha: #6b70b3;
+  --global-color-alpha: #84c2d8;
   --global-color-alpha-5-dark: #6268b3;
   --global-color-alpha-10-dark: #515cb3;
 
-  --global-color-beta: #70bd51;
+  --global-color-beta: #74AF78;
 
   --global-color-omega: #ff8333;
 
@@ -413,7 +413,6 @@ These components contain styling on main page elements
   /* background-color: brown;
   width: 420px;
   height: 640px; */
-
 }
 
 .c-menu__title {
