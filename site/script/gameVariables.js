@@ -11,6 +11,11 @@ let itemArray = [];
 let textArray = [];
 
 // SETTINGS
+
+// dit houd de game settings bij
+// die meegegeven worden vanuit de settings page
+let gameSettings = {};
+
 const snakeBlockSize = 36;
 const movementSpeed = 3;
 const canvasWidth = 1366;
