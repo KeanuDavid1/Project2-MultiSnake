@@ -5,6 +5,8 @@ const displayScore = function (scoreAmount, player) {
 
 const displayLives = function (livesAmount, player) {
   const lives = document.querySelector(`.js-player${player} .js-lives`);
+  const flair = document.getElementById(`js-flair__${player}`)
+  const card = document.getElementById(`js-card__${player}`)
   if (livesAmount == 3) {
     lives.innerHTML = `<img src="assets/img/favorite-24px.png"> <img src="assets/img/favorite-24px.png"> <img src="assets/img/favorite-24px.png">`;
   }
@@ -16,5 +18,7 @@ const displayLives = function (livesAmount, player) {
   }
   else if (livesAmount == 0) {
     lives.innerHTML = ``;
+    flair.style.backgroundColor = "grey"
+    card.style.backgroundColor = "darkgrey"
   }
 };
