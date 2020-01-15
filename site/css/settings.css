@@ -98,14 +98,23 @@ Options bevat de twee buttons en de waarde tussenin
   margin-top: 3px;
 }
 
-.c-options__button:focus{
-  outline: 2px #fff solid;
+/* 
+Dit werkt niet omdat illustrator een goed programma is
+*/
+.c-options__button:focus + .c-options__icon{
+  fill: var(--global-color-beta);
 }
 
-.c-options__icon:active{
-  /*
-  on button press
-  */
+.c-options__icon--left:active{
+  width: 28px;
+  height: 24px;
+  padding: 1px;
+}
+
+.c-options__icon--right:active{
+  width: 28px;
+  height: 24px;
+  padding: 1px;
 }
 
 /*
