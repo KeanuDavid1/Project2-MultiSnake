@@ -12,78 +12,23 @@ function updateGameArea() {
 
   //Overloopt alle snakes
   for (snake of snakeArray) {
-    //Tekent de snake onderdelen opnieuw
-    //Functie zit in snakeObject.js
+    if (!snake.isDead) {
+      //Tekent de snake onderdelen opnieuw
+      //Functie zit in snakeObject.js
 
-    //toon score & levens wanneer het spel start
-    displayScore(snake.score, snake.player);
-    //Checkt of de snake-head out of bounds is.
-    //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
-    //isOutOfBounds functie zit in headComponent.js
-
-
-
-    if ((snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) && !snake.isImmune) {
-      snake.setImmunity();
-      //Om de tekst te maken als je het spel verliest.
-      snake.health -= 1;
-      snake.changeDirectionOnOutOfBounds();
-      displayLives(snake.health, snake.player);
-      textArray.push(
-        new showText(
-          snake.snakePieces[0].x,
-          snake.snakePieces[0].y - 30,
-          '-1hp',
-          frames + 120,
-          '30px Arial',
-          'red'
-        )
-      );
-      //Stopt de refresh functie en dus heel het spel.
-      //Zie gameArea.js
-    }
-    else if (snake.snakePieces[0].isOutOfBounds()) {
-      snake.changeDirectionOnOutOfBounds();
-    }
+      //toon score & levens wanneer het spel start
+      displayScore(snake.score, snake.player);
+      //Checkt of de snake-head out of bounds is.
+      //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
+      //isOutOfBounds functie zit in headComponent.js
 
 
 
-
-    // bekijkt de food array en checked of de slang het eten aanraakt
-    let i = 0;
-    // overloop de itemArray voor food
-    for (item of itemArray) {
-      item.update(i);
-
-      // als het goed eten is
-      if (item.hitObj(snake.snakePieces[0]) && item.type == 0) {
-        itemArray.splice(i, 1);
-        snake.addNewPiece();
-        snake.score += addPoints;
-        displayScore(snake.score, snake.player);
-
-        // als het slecht eten is
-      } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
-        itemArray.splice(i, 1);
-        snake.score -= subtractPoints;
-        displayScore(snake.score, snake.player);
-
-        // steekt een nieuwe text in textArray
-        textArray.push(
-          new showText(
-            snake.snakePieces[0].x,
-            snake.snakePieces[0].y - 30,
-            `-${subtractPoints}pt`,
-            frames + 120,
-            '30px Arial',
-            'red'
-          )
-        );
-      } // voor obstakels
-      else if ((item.hitObj(snake.snakePieces[0]) && item.type == 2) && !snake.isImmune) {
-        itemArray.splice(i, 1);
+      if ((snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) && !snake.isImmune) {
+        snake.setImmunity();
+        //Om de tekst te maken als je het spel verliest.
         snake.health -= 1;
-        rockCounter--;
+        snake.changeDirectionOnOutOfBounds();
         displayLives(snake.health, snake.player);
         textArray.push(
           new showText(
@@ -95,29 +40,86 @@ function updateGameArea() {
             'red'
           )
         );
-
-        // veranderd de kleur bij het aanraken van een rots
-        let counter = 0;
-        snake.setImmunity();
+        //Stopt de refresh functie en dus heel het spel.
+        //Zie gameArea.js
+      }
+      else if (snake.snakePieces[0].isOutOfBounds()) {
+        snake.changeDirectionOnOutOfBounds();
       }
 
-      // counter van snake array
-      i++;
-    }
 
-    // dit overloopt textarray en houd bij wat er moet getoond worden
-    // moet het niet meer getoond worden wordt het verwijdered
-    let x = 0;
-    for (text of textArray) {
-      textArray[x].update();
-      if (!textArray[x].update()) {
-        textArray.splice(x, 1);
+
+
+      // bekijkt de food array en checked of de slang het eten aanraakt
+      let i = 0;
+      // overloop de itemArray voor food
+      for (item of itemArray) {
+        item.update(i);
+
+        // als het goed eten is
+        if (item.hitObj(snake.snakePieces[0]) && item.type == 0) {
+          itemArray.splice(i, 1);
+          snake.addNewPiece();
+          snake.score += addPoints;
+          displayScore(snake.score, snake.player);
+
+          // als het slecht eten is
+        } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
+          itemArray.splice(i, 1);
+          snake.score -= subtractPoints;
+          displayScore(snake.score, snake.player);
+
+          // steekt een nieuwe text in textArray
+          textArray.push(
+            new showText(
+              snake.snakePieces[0].x,
+              snake.snakePieces[0].y - 30,
+              `-${subtractPoints}pt`,
+              frames + 120,
+              '30px Arial',
+              'red'
+            )
+          );
+        } // voor obstakels
+        else if ((item.hitObj(snake.snakePieces[0]) && item.type == 2) && !snake.isImmune) {
+          itemArray.splice(i, 1);
+          snake.health -= 1;
+          rockCounter--;
+          displayLives(snake.health, snake.player);
+          textArray.push(
+            new showText(
+              snake.snakePieces[0].x,
+              snake.snakePieces[0].y - 30,
+              '-1hp',
+              frames + 120,
+              '30px Arial',
+              'red'
+            )
+          );
+
+          // veranderd de kleur bij het aanraken van een rots
+          let counter = 0;
+          snake.setImmunity();
+        }
+
+        // counter van snake array
+        i++;
       }
-      x++;
-    }
-    snake.update();
-    if (snake.isDead == false) {
-      gameOver = false;
+
+      // dit overloopt textarray en houd bij wat er moet getoond worden
+      // moet het niet meer getoond worden wordt het verwijdered
+      let x = 0;
+      for (text of textArray) {
+        textArray[x].update();
+        if (!textArray[x].update()) {
+          textArray.splice(x, 1);
+        }
+        x++;
+      }
+      snake.update();
+      if (snake.isDead == false) {
+        gameOver = false;
+      }
     }
   }
 
