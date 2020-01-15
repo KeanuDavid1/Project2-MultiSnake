@@ -16,6 +16,9 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   this.startImmunityFrame;
   this.player = playerNumber;
   this.isDead = false;
+  this.deathTime;
+  this.healthyFoodCount = 0;
+  this.unhealthyFoodCount = 0;
   //Snake heeft altijd een hoofd dus voegen wij dit direct toe aan de snakePieces
   this.snakePieces.push(new headComponent(x, y, playerNumber, this.headColor));
   //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
@@ -28,7 +31,13 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
       this.checkImmunity();
     }
     else {
+      if (!this.isDead)
+        for (let piece of snakeArray) {
+          piece.x = null;
+          piece.y = null;
+        }
       this.isDead = true;
+      this.deathTime = Date.now();
     }
   };
 
