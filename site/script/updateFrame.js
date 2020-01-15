@@ -9,7 +9,6 @@ function updateGameArea() {
     gameOver = true;
   }
 
-
   //Overloopt alle snakes
   for (snake of snakeArray) {
     if (!snake.isDead) {
@@ -22,9 +21,10 @@ function updateGameArea() {
       //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
       //isOutOfBounds functie zit in headComponent.js
 
-
-
-      if ((snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) && !snake.isImmune) {
+      if (
+        (snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) &&
+        !snake.isImmune
+      ) {
         snake.setImmunity();
         //Om de tekst te maken als je het spel verliest.
         snake.health -= 1;
@@ -42,13 +42,9 @@ function updateGameArea() {
         );
         //Stopt de refresh functie en dus heel het spel.
         //Zie gameArea.js
-      }
-      else if (snake.snakePieces[0].isOutOfBounds()) {
+      } else if (snake.snakePieces[0].isOutOfBounds()) {
         snake.changeDirectionOnOutOfBounds();
       }
-
-
-
 
       // bekijkt de food array en checked of de slang het eten aanraakt
       let i = 0;
@@ -69,7 +65,7 @@ function updateGameArea() {
           itemArray.splice(i, 1);
           snake.score -= subtractPoints;
           snake.unhealthyFoodCount++;
-          console.log(snake.unhealthyFoodCount)
+          console.log(snake.unhealthyFoodCount);
           displayScore(snake.score, snake.player);
 
           // steekt een nieuwe text in textArray
@@ -84,7 +80,11 @@ function updateGameArea() {
             )
           );
         } // voor obstakels
-        else if ((item.hitObj(snake.snakePieces[0]) && item.type == 2) && !snake.isImmune) {
+        else if (
+          item.hitObj(snake.snakePieces[0]) &&
+          item.type == 2 &&
+          !snake.isImmune
+        ) {
           itemArray.splice(i, 1);
           snake.health -= 1;
           rockCounter--;
@@ -127,7 +127,7 @@ function updateGameArea() {
   }
 
   if (gameOver == true) {
-    console.log("Game over")
+    console.log('Game over');
     gameArea.clear();
     let gameOverText = new showText(
       canvasWidth / 3,
@@ -136,9 +136,10 @@ function updateGameArea() {
       frames + 120,
       'bold 90px Arial',
       'red'
-    )
+    );
     gameOverText.update();
     gameEndTime = Date.now();
     gameArea.stop();
+    setTimeout(function(){window.location.href = 'scoreboard.html';}, 3000)
   }
 }

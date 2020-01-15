@@ -2,7 +2,6 @@ body {
   background-color: var(--global-color-alpha);
   width: 100vw;
   height: 100vmin;
-  background-repeat: no-repeat;
 }
 
 .c-island {
@@ -17,31 +16,6 @@ body {
 
 .c-island img {
   width: 60%;
-}
-
-.c-clouds-container {
-  position: absolute;
-  width: 100%;
-}
-
-.c-clouds {
-  position: relative;
-  animation: movingclouds 20s infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes movingclouds {
-  0% {
-    left: -110%;
-  }
-  100% {
-    left: 110%;
-  }
-}
-
-.c-clouds + .c-clouds {
-  margin-left: 40%;
-  margin-top: 5%;
 }
 
 .c-menu-container {
