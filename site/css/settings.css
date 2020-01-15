@@ -71,6 +71,27 @@ Options bevat de twee buttons en de waarde tussenin
   font-weight: 400;
 }
 
+.c-options__icon{
+  width: 30px;
+  height: 26px;
+}
+
+.c-options__icon--right{
+  transform: rotate(180deg);
+  /* margin-top because of a bad svg */
+  margin-top: 3px;
+}
+
+.c-options__button:focus{
+  outline: 2px #fff solid;
+}
+
+.c-options__icon:active{
+  /*
+  on button press
+  */
+}
+
 /*
 Een container rond de buttons om ze goed te plaatsen
 */
