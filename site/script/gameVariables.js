@@ -14,7 +14,11 @@ let textArray = [];
 
 // dit houd de game settings bij
 // die meegegeven worden vanuit de settings page
-let gameSettings = {};
+let gameSettings = {mode: 0, difficulty: 0, players: 1};
+let players = 0;
+let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
+let modes = ['Klassiek', 'Special'];
+
 
 const snakeBlockSize = 36;
 const movementSpeed = 3;

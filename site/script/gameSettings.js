@@ -1,53 +1,59 @@
-let modes = ['Klassiek', 'Special'];
 let modesIndexTracker;
-let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
 let diffIndexTracker;
-let players;
-let indexTracker = {players: 1, modesIndexTracker: 0, diffIndexTracker: 0}
 let modeValue;
 let diffValue;
 let playerValue;
 
+
 const buttons = function() {
-  document.querySelector(
-    '.js-mode .c-options #left-mode'
-  ).addEventListener('click', function() {
-    changeIndex(Object.keys(indexTracker)[1], false, modes);
-  });
-  document.querySelector(
-    '.js-mode .c-options #right-mode'
-  ).addEventListener('click', function(){
-    changeIndex(Object.keys(indexTracker)[1], true, modes);
-  });
+  // om de mode aan te passen
+  document
+    .querySelector('.js-mode .c-options #left-mode')
+    .addEventListener('click', function() {
+      changeIndex(Object.keys(gameSettings)[0], false, modes);
+    });
+  document
+    .querySelector('.js-mode .c-options #right-mode')
+    .addEventListener('click', function() {
+      changeIndex(Object.keys(gameSettings)[0], true, modes);
+    });
 
   // om de moeilijkheid aan te passen
-  document.querySelector(
-    '.js-difficulty .c-options #left-diff'
-  ).addEventListener('click', function(){
-    changeIndex(Object.keys(indexTracker)[2], false, difficulties)
-  });
-  document.querySelector(
-    '.js-difficulty .c-options #right-diff'
-  ).addEventListener('click', function(){
-    changeIndex(Object.keys(indexTracker)[2], true, difficulties)
-  });
+  document
+    .querySelector('.js-difficulty .c-options #left-diff')
+    .addEventListener('click', function() {
+      changeIndex(Object.keys(gameSettings)[1], false, difficulties);
+    });
+  document
+    .querySelector('.js-difficulty .c-options #right-diff')
+    .addEventListener('click', function() {
+      changeIndex(Object.keys(gameSettings)[1], true, difficulties);
+    });
+
   // voor de spelers aan te passen
-  document.querySelector(
-    '.js-difficulty .c-options #right-diff'
-  ).addEventListener('click', function(){
-    changeIndex(Object.keys(indexTracker)[2], true, difficulties)
-  });
+  document
+    .querySelector('.js-players .c-options #left-player')
+    .addEventListener('click', function() {
+      changeIndex(Object.keys(gameSettings)[2], false, players);
+    });
+  document
+    .querySelector('.js-players .c-options #right-player')
+    .addEventListener('click', function() {
+      changeIndex(Object.keys(gameSettings)[2], true, players);
+    });
 };
 
-const changeIndex = function(settingName, change, array){
-  console.log('Changing index...')
-  if (!change && indexTracker[settingName] > 0){
-    indexTracker[settingName]--;
-  } else if (change && indexTracker[settingName] < array.length - 1){
-    indexTracker[settingName]++;
+const changeIndex = function(settingName, change, array) {
+  if (!change && gameSettings[settingName] > 0) {
+    gameSettings[settingName]--;
+  } else if (change && gameSettings[settingName] < array.length - 1) {
+    gameSettings[settingName]++;
+    // extra voor spelers omdat het geen array is
+  } else if (change && array == players && gameSettings[settingName] < 4) {
+    gameSettings[settingName]++;
   }
   setValues();
-}
+};
 
 // get the inner HTML of the settings
 const getDOMContent = function() {
@@ -64,12 +70,10 @@ const getDOMContent = function() {
 
 // set the values of the settings
 const setValues = function() {
-  console.log('Setting Values...');
-  modeValue.innerHTML = modes[indexTracker["modesIndexTracker"]];
-  diffValue.innerHTML = difficulties[indexTracker["diffIndexTracker"]];
-  playerValue.innerHTML = indexTracker["players"];
+  modeValue.innerHTML = modes[gameSettings['mode']];
+  diffValue.innerHTML = difficulties[gameSettings['difficulty']];
+  playerValue.innerHTML = gameSettings['players'];
 };
-
 
 const settings = function() {
   bodyContent = document.querySelector('body');
