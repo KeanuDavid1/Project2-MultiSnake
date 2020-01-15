@@ -1,8 +1,14 @@
 function updateGameArea() {
+  let gameOver;
   frames++;
   //Verwijdert alles dat op canvas getekend is.
   //Zit in gameArea.js
   gameArea.clear();
+
+  if (snakeArray.length > 0) {
+    gameOver = true;
+  }
+
 
   //Overloopt alle snakes
   for (snake of snakeArray) {
@@ -110,5 +116,23 @@ function updateGameArea() {
       x++;
     }
     snake.update();
+    if (snake.isDead == false) {
+      gameOver = false;
+    }
+  }
+
+  if (gameOver == true) {
+    console.log("Game over")
+    gameArea.clear();
+    let gameOverText = new showText(
+      canvasWidth / 3,
+      canvasHeight / 2,
+      'Game Over',
+      frames + 120,
+      'bold 90px Arial',
+      'red'
+    )
+    gameOverText.update();
+    gameArea.stop();
   }
 }
