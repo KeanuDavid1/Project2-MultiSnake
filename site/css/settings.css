@@ -98,14 +98,20 @@ Options bevat de twee buttons en de waarde tussenin
   margin-top: 3px;
 }
 
-.c-options__button:focus{
-  outline: 2px #fff solid;
+.c-options__icon > .c-options__button:focus{
+  outline: 2px #000 solid;
 }
 
-.c-options__icon:active{
-  /*
-  on button press
-  */
+.c-options__icon--left:active{
+  width: 28px;
+  height: 24px;
+  padding: 1px;
+}
+
+.c-options__icon--right:active{
+  width: 28px;
+  height: 24px;
+  padding: 1px;
 }
 
 /*
