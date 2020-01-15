@@ -41,17 +41,53 @@ body {
 
 .c-playerinfo {
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.c-playerframe {
+  width: 100%;
 }
 
 .c-playercard {
   background-color: var(--global-color-beta);
-  width: auto;
+  width: 100%;
   height: 120px;
+  margin-bottom: 16px;
+  display: flex;
 }
 
 .c-playercard h3 {
   margin: 16px;
   color: #fff;
+  width: 100%;
+  height: fit-content;
+}
+
+.c-playercard__flair {
+  height: 100%;
+  width: 10px;
+}
+
+.c-flair__0 {
+  background-color: #ff8333;
+}
+
+.c-flair__1 {
+  background-color: #b32e2b;
+}
+
+.c-flair__2 {
+  background-color: #c8a51a;
+}
+
+.c-flair__3 {
+  background-color: #3e4cb3;
+}
+
+.c-container__info {
+  width: 100%;
 }
 
 .c-playercard__info {
@@ -59,6 +95,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 24px;
+  height: fit-content;
+  width: 100%;
 }
 
 .c-timer {
@@ -79,6 +117,7 @@ body {
   margin-left: 16px;
   color: #fff;
   font-size: 40px;
+  margin-right: 16px;
 }
 
 .c-lives {
@@ -86,5 +125,4 @@ body {
   color: #fff;
   display: flex;
   flex-wrap: nowrap;
-  margin-right: 10px;
 }
