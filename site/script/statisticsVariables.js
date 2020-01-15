@@ -1,1 +1,2 @@
 let gameStartTime;
+let gameEndTime;

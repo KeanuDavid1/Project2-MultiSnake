@@ -135,6 +135,7 @@ function updateGameArea() {
       'red'
     )
     gameOverText.update();
+    gameEndTime = Date.now();
     gameArea.stop();
   }
 }
