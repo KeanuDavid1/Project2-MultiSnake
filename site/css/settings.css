@@ -3,6 +3,17 @@ COMPONENTS:
 Alle components om de settings page te stylen
 ---------------*/
 
+
+.c-platform{
+  position: absolute;
+  z-index: -1;
+  margin: 0 auto;
+  bottom: 18%;
+  width: 60rem;
+  height: auto;
+}
+
+
 /* 
 De body dat de title en de settings bevat,
 het bevindt zich in een o-container
@@ -13,7 +24,6 @@ het bevindt zich in een o-container
   color: #000;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .c-body__item{
