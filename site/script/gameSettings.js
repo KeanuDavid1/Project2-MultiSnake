@@ -94,7 +94,6 @@ const settings = function() {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM Content Loaded!');
   document
     .querySelector('#settings-backbutton')
     .addEventListener('click', function() {

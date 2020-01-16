@@ -142,9 +142,12 @@ on the game screen
 .c-gameinfo__container{
   flex-grow: 1;
   display: flex;
+  justify-content: flex-start;
   align-items: flex-end;
-  padding-bottom: 48px;
-  font-size: 36px;
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  font-size: 30px;
 }
 
 .c-gameinfo{
@@ -152,6 +155,16 @@ on the game screen
   width: 100%;
 }
 
+.c-gameinfo p + p{
+  margin-bottom: 32px;
+}
+
+.c-button--game{
+  margin-bottom: 4px;
+  background-color: crimson;
+}
+
 .c-gameinfo__level{
+  margin-bottom: 8px;
   font-weight: 500;
 }

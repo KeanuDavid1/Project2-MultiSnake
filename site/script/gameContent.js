@@ -12,7 +12,8 @@ let bodyContentGameArea = ` <div class="c-game-area">
       <div class="c-gameinfo">
       <p class="c-gameinfo__level"><span class="js-level">(0)</span></p>
       <p><span class="js-diff">(diff)</span></p>
-</div>
+      <input type="button" name="stop-button" id="stop-button" class="c-button c-button__text c-button--game" value="Stop spel">
+      </div>
 </div>
 </div>
 <div class="c-timer" id="js-timer__container">
