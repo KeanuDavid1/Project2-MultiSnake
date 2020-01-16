@@ -18,14 +18,12 @@ body {
   width: auto;
   padding: 0;
   display: flex;
-  /* border: cyan 1px solid; */
 }
 
 .c-canvas {
   background-color: none;
   height: 100vmin;
   width: 1366px;
-  /* border: darkblue 1px solid; */
 }
 
 .c-game-area__background {
@@ -42,11 +40,19 @@ body {
 .c-playerinfo {
   width: 100%;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .c-playerframe {
+  width: 100%;
+  flex-grow: 2;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 48px;
+}
+
+.c-playerframe__cards{
   width: 100%;
 }
 
@@ -125,4 +131,27 @@ body {
   color: #fff;
   display: flex;
   flex-wrap: nowrap;
+}
+
+
+/*
+Displays the game info below the players card
+on the game screen
+*/
+
+.c-gameinfo__container{
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 48px;
+  font-size: 36px;
+}
+
+.c-gameinfo{
+  color: #fff;
+  width: 100%;
+}
+
+.c-gameinfo__level{
+  font-weight: 500;
 }
