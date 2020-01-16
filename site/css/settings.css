@@ -96,7 +96,6 @@ Options bevat de twee buttons en de waarde tussenin
 
 .c-options__icon--right{
   transform: rotate(180deg);
-  /* margin-top because of a bad svg */
   margin-top: 3px;
 }
 
