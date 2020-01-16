@@ -50,7 +50,7 @@ const generateUnhealthyFood = function() {
 
 // genereert stenen
 const generateRock = function() {
-  if (rockCounter <= 10){
+  if (rockCounter <= maxAmountRocks){
     console.log('Spawning rock...');
     if (itemPicker <= 1) {
       obstacleType = 'Stone1';
