@@ -6,26 +6,28 @@ let snakeArray = [];
 let randomInterval = Math.random() * 20000;
 let frames = 0;
 let firstItem = true;
+let maxAmountRocks = 10;
 let rockCounter = 0;
 let itemArray = [];
 let textArray = [];
+let headColors = ['lightgreen', 'orange', 'yellow', 'lightblue'];
+let bodyColors = ['green', 'red', 'yellow', 'blue'];
 
 // SETTINGS
 
 // dit houd de game settings bij
 // die meegegeven worden vanuit de settings page
-let gameSettings = {mode: 0, difficulty: 0, players: 1};
+let gameSettings = { mode: 0, difficulty: 0, players: 1 };
 let players = 0;
 let maxPlayers = 4;
 let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
 let modes = ['Classic', 'Attack', 'Bonus'];
 
-
-const snakeBlockSize = 36;
-const movementSpeed = 3;
+let snakeBlockSize = 36;
+let movementSpeed = 3;
 const canvasWidth = 1366;
 const canvasHeight = 960;
-const snakePieceDistance = snakeBlockSize + 0;
-const itemSize = snakeBlockSize + 10;
-const subtractPoints = 50;
-const addPoints = 10;
+let snakePieceDistance = snakeBlockSize + 0;
+let itemSize = snakeBlockSize + 10;
+let subtractPoints = 50;
+let addPoints = 10;

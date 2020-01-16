@@ -7,9 +7,9 @@ function sleep(ms) {
 // copy pasta, een async funtion om de 'sleep' functie aan te spreken
 // deze functie zorgt voor de timer voordat het spel start
 async function setTimer() {
-  for (i = 4; i > 1; i--) {
+  for (f = 4; f > 1; f--) {
     timer = document.querySelector('.js-timer');
-    timer.innerHTML = i - 1;
+    timer.innerHTML = f - 1;
     await sleep(1000);
   }
 }

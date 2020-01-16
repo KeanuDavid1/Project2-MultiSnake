@@ -140,6 +140,8 @@ function updateGameArea() {
     gameOverText.update();
     gameEndTime = Date.now();
     gameArea.stop();
-    // setTimeout(function(){window.location.href = 'scoreboard.html';}, 3000)
+    setTimeout(function() {
+      window.location.href = 'scoreboard.html';
+    }, 3000);
   }
 }
