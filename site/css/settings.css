@@ -8,11 +8,13 @@ Alle components om de settings page te stylen
     justify-content: center;
 }
 
-
+.c-clouds-container{
+  top: 20%;
+}
 
 .c-platform{
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   margin: 0 auto;
   bottom: 18%;
   width: 60rem;

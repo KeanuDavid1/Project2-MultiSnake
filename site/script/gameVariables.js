@@ -16,8 +16,9 @@ let textArray = [];
 // die meegegeven worden vanuit de settings page
 let gameSettings = {mode: 0, difficulty: 0, players: 1};
 let players = 0;
+let maxPlayers = 4;
 let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
-let modes = ['Klassiek', 'Special'];
+let modes = ['Classic', 'Attack', 'Bonus'];
 
 
 const snakeBlockSize = 36;

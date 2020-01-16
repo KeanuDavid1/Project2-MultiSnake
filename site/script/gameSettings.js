@@ -49,7 +49,7 @@ const changeIndex = function(settingName, change, array) {
   } else if (change && gameSettings[settingName] < array.length - 1) {
     gameSettings[settingName]++;
     // extra voor spelers omdat het geen array is
-  } else if (change && array == players && gameSettings[settingName] < 4) {
+  } else if (change && array == players && gameSettings[settingName] < maxPlayers) {
     gameSettings[settingName]++;
   }
   setValues();
