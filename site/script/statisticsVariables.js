@@ -1,2 +1,0 @@
-let gameStartTime;
-let gameEndTime;

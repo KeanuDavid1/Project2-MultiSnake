@@ -10,6 +10,8 @@ let maxAmountRocks = 10;
 let rockCounter = 0;
 let itemArray = [];
 let textArray = [];
+let gameStartTime;
+let gameEndTime;
 let headColors = ['lightgreen', 'orange', 'yellow', 'lightblue'];
 let bodyColors = ['green', 'red', 'yellow', 'blue'];
 
