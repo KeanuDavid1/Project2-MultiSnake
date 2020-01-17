@@ -13,7 +13,7 @@ let textArray = [];
 let gameStartTime;
 let gameEndTime;
 let headColors = ['lightgreen', 'orange', 'yellow', 'lightblue'];
-let bodyColors = ['green', 'red', 'yellow', 'blue'];
+let bodyColors = ['green', 'red', '#C8A51A', 'blue'];
 
 // SETTINGS
 
