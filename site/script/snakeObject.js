@@ -116,7 +116,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   this.collidesWithOwnTail = function () {
     collideCounter = 0;
     for (let snakePiece of this.snakePieces) {
-      if (collideCounter != 0 && collideCounter != 1) {
+      if (collideCounter != 0 && collideCounter != 1 && collideCounter != 2) {
         if (this.snakePieces[0].collidesWith(snakePiece)) {
 
           return true;
