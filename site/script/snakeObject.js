@@ -9,7 +9,7 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   this.snakePieces = [];
   this.headColor = headColor;
   this.bodyColor = bodyColor;
-  this.stunColor = "white";
+  this.stunColor = 'white';
   this.health = health;
   this.score = score;
   this.isImmune = false;
@@ -22,15 +22,14 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   //Snake heeft altijd een hoofd dus voegen wij dit direct toe aan de snakePieces
   this.snakePieces.push(new headComponent(x, y, playerNumber, this.headColor));
   //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
-  this.update = function () {
+  this.update = function() {
     if (this.health != 0) {
       for (piece of this.snakePieces) {
         piece.newPos();
         piece.update(this.bodyColor);
       }
       this.checkImmunity();
-    }
-    else {
+    } else {
       if (!this.isDead)
         for (let piece of snakeArray) {
           piece.x = null;
@@ -41,15 +40,14 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
     }
   };
 
-  this.updateColor = function () {
+  this.updateColor = function() {
     for (piece of this.snakePieces) {
       piece.update(this.bodyColor);
     }
-
   };
 
   //Spawnt een nieuwe snake body part in het tegengestelde beweeg richting van de laatste snake piece.
-  this.addNewPiece = function () {
+  this.addNewPiece = function() {
     let posLast = this.snakePieces.length - 1;
     lastDirection = this.snakePieces[posLast].direction;
     lastPositionX = this.snakePieces[posLast].x;
@@ -113,12 +111,11 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
     }
   };
 
-  this.collidesWithOwnTail = function () {
+  this.collidesWithOwnTail = function() {
     collideCounter = 0;
     for (let snakePiece of this.snakePieces) {
       if (collideCounter != 0 && collideCounter != 1 && collideCounter != 2) {
         if (this.snakePieces[0].collidesWith(snakePiece)) {
-
           return true;
         }
       }
@@ -127,8 +124,23 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
     return false;
   };
 
-  this.changeDirectionOnOutOfBounds = function () {
+  this.collidesWithOtherSnake = function(currentSnake) {
+    // checked iedere snake
+    for (let snakes of snakeArray) {
+      // checked ieder stukje van een slang behalve de huidige slang
+      if (snakes.player != currentSnake.player) {
+        for (let snakePiece of snakes.snakePieces) {
+          if (currentSnake.snakePieces[0].collidesWith(snakePiece)) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+    }
+  };
 
+  this.changeDirectionOnOutOfBounds = function() {
     if (this.snakePieces[0].y <= 0) {
       for (let piece of this.snakePieces) {
         piece.y += movementSpeed * 2;
@@ -140,13 +152,10 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
 
       if (this.snakePieces[0].x >= canvasWidth / 2) {
         this.snakePieces[0].moveleft();
-      }
-      else {
+      } else {
         this.snakePieces[0].moveright();
       }
-    }
-
-    else if (this.snakePieces[0].y + snakeBlockSize >= canvasHeight) {
+    } else if (this.snakePieces[0].y + snakeBlockSize >= canvasHeight) {
       for (let piece of this.snakePieces) {
         piece.y -= movementSpeed * 2;
       }
@@ -156,13 +165,10 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
         }
       if (this.snakePieces[0].x >= canvasWidth / 2) {
         this.snakePieces[0].moveleft();
-      }
-      else {
+      } else {
         this.snakePieces[0].moveright();
       }
-    }
-
-    else if (this.snakePieces[0].x <= 0) {
+    } else if (this.snakePieces[0].x <= 0) {
       for (let piece of this.snakePieces) {
         piece.x += movementSpeed * 2;
       }
@@ -172,13 +178,10 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
         }
       if (this.snakePieces[0].y >= canvasHeight / 2) {
         this.snakePieces[0].moveup();
-      }
-      else {
+      } else {
         this.snakePieces[0].movedown();
       }
-    }
-
-    else if (this.snakePieces[0].x + snakeBlockSize >= canvasWidth) {
+    } else if (this.snakePieces[0].x + snakeBlockSize >= canvasWidth) {
       for (let piece of this.snakePieces) {
         piece.x -= movementSpeed * 2;
       }
@@ -188,59 +191,51 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
         }
       if (this.snakePieces[0].y >= canvasHeight / 2) {
         this.snakePieces[0].moveup();
-      }
-      else {
+      } else {
         this.snakePieces[0].movedown();
       }
     }
-  }
+  };
 
-  this.setImmunity = function () {
+  this.setImmunity = function() {
     this.switchColor();
     this.isImmune = true;
     this.startImmunityFrame = frames;
+  };
 
-  }
-
-  this.checkImmunity = function () {
+  this.checkImmunity = function() {
     // console.log(this.isImmune)
     if (this.isImmune) {
-
-      if (((frames - this.startImmunityFrame) % 10) == 0) {
+      if ((frames - this.startImmunityFrame) % 10 == 0) {
         this.switchColor();
       }
       if (frames == this.startImmunityFrame + 100) {
         this.isImmune = false;
         this.revertColor();
-
       }
     }
-  }
+  };
 
-  this.switchColor = function () {
+  this.switchColor = function() {
     if (this.snakePieces[0].color == this.headColor) {
       this.snakePieces[0].color = this.stunColor;
-    }
-    else {
-      this.snakePieces[0].color = this.headColor
+    } else {
+      this.snakePieces[0].color = this.headColor;
     }
 
     for (let piece of this.snakePieces.slice(1)) {
       if (piece.color == this.bodyColor) {
         piece.color = this.stunColor;
-      }
-      else {
+      } else {
         piece.color = this.bodyColor;
       }
     }
-  }
+  };
 
-  this.revertColor = function () {
+  this.revertColor = function() {
     this.snakePieces[0].color = this.headColor;
     for (let piece of this.snakePieces.slice(1)) {
       piece.color = this.bodyColor;
     }
-  }
-
-
+  };
 }

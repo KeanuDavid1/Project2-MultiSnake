@@ -21,7 +21,7 @@ function bodyComponent(x, y, orderNumber, playerNumber, color) {
     this.order = orderNumber;
 
     //Tekent het body component op canvas
-    this.update = function (statusColor) {
+    this.update = function () {
         ctx = gameArea.context;
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);

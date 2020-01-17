@@ -21,6 +21,11 @@ function updateGameArea() {
       //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
       //isOutOfBounds functie zit in headComponent.js
 
+      if (snake.collidesWithOtherSnake(snake) && !snake.isImmune){
+        snake.health -= 1;
+        snake.setImmunity();
+        displayLives(snake.health, snake.player);
+      }
       if (
         (snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) &&
         !snake.isImmune
