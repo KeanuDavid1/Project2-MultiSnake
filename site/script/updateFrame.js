@@ -17,15 +17,18 @@ function updateGameArea() {
 
       //toon score & levens wanneer het spel start
       displayScore(snake.score, snake.player);
-      //Checkt of de snake-head out of bounds is.
-      //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
-      //isOutOfBounds functie zit in headComponent.js
-
+      
+      // kijkt of de slang een andere slang aanraakt
+      // WIP
       if (snake.collidesWithOtherSnake(snake) && !snake.isImmune){
         snake.health -= 1;
         snake.setImmunity();
         displayLives(snake.health, snake.player);
       }
+
+      //Checkt of de snake-head out of bounds is.
+      //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
+      //isOutOfBounds functie zit in headComponent.js
       if (
         (snake.snakePieces[0].isOutOfBounds() || snake.collidesWithOwnTail()) &&
         !snake.isImmune

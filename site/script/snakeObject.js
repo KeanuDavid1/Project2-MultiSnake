@@ -124,16 +124,17 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
     return false;
   };
 
+  
   this.collidesWithOtherSnake = function(currentSnake) {
     // checked iedere snake
     for (let snakes of snakeArray) {
+      let SnakePieceCounter = 0;
       // checked ieder stukje van een slang behalve de huidige slang
       if (snakes.player != currentSnake.player) {
         for (let snakePiece of snakes.snakePieces) {
-          if (currentSnake.snakePieces[0].collidesWith(snakePiece)) {
+          SnakePieceCounter++;
+          if (currentSnake.snakePieces[0].collidesWith(snakePiece) && SnakePieceCounter < 3) {
             return true;
-          } else {
-            return false;
           }
         }
       }
