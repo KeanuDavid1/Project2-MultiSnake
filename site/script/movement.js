@@ -46,3 +46,28 @@ const keypressed = function () {
         snakeArray[0].addNewPiece();
     }
 }
+
+const socketInput = function (data) {
+    if (snakeArray.length >= data["player"] + 1) {
+        if (data["direction"] == "up") {
+            if (snakeArray[data["player"]].snakePieces[0].direction != "down") {
+                snakeArray[data["player"]].snakePieces[0].moveup();
+            }
+        }
+        else if (data["direction"] == "down") {
+            if (snakeArray[data["player"]].snakePieces[0].direction != "up") {
+                snakeArray[data["player"]].snakePieces[0].movedown();
+            }
+        }
+        else if (data["direction"] == "left") {
+            if (snakeArray[data["player"]].snakePieces[0].direction != "right") {
+                snakeArray[data["player"]].snakePieces[0].moveleft();
+            }
+        }
+        else if (data["direction"] == "right") {
+            if (snakeArray[data["player"]].snakePieces[0].direction != "left") {
+                snakeArray[data["player"]].snakePieces[0].moveright();
+            }
+        }
+    }
+}

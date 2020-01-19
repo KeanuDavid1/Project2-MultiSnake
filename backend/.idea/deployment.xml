@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake">
+  <component name="PublishConfigData" autoUpload="Always" serverName="RPi-APIPA">
     <serverData>
-      <paths name="RPI-Snake">
+      <paths name="RPi-APIPA">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/pycharm_project_603" local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="keanu@169.254.10.1:22">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="project_smartbike">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="rpi_keanu">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="rpi_smartbike_thuis">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/Snake" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
