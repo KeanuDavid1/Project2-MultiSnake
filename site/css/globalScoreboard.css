@@ -7,6 +7,10 @@ body {
   html{
       padding: 0px;
   }
+  a, a:visited,a:hover,a:focus{
+    color: #000;
+    /* margin-left: 8px; */
+  }
 
   .c-scoreboard-container{
     width: 700px;
@@ -51,7 +55,4 @@ grid-gap: 24px 48px;
   .c-score-container h4{
       display: flex;
       justify-content: center;
-  }
-
-  .c-scoreboard__datacontainer{
   }
