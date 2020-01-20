@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< Updated upstream
   <component name="PublishConfigData" autoUpload="Always" serverName="RPi-APIPA">
+=======
+<<<<<<< Updated upstream
+  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake">
+=======
+  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake" showAutoUploadSettingsWarning="false">
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     <serverData>
       <paths name="RPi-APIPA">
         <serverdata>
           <mappings>
+<<<<<<< Updated upstream
             <mapping deploy="/Snake" local="$PROJECT_DIR$" web="/" />
+=======
+<<<<<<< Updated upstream
+            <mapping deploy="/tmp/pycharm_project_603" local="$PROJECT_DIR$" />
+=======
+            <mapping deploy="/tmp/pycharm_project_939" local="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="keanu@169.254.10.1:22">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="project_smartbike">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="rpi_keanu">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="rpi_smartbike_thuis">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+>>>>>>> Stashed changes
           </mappings>
         </serverdata>
       </paths>

@@ -20,7 +20,7 @@ function updateGameArea() {
       
       // kijkt of de slang een andere slang aanraakt
       // WIP
-      if (snake.collidesWithOtherSnake(snake) && !snake.isImmune){
+      if (snake.collidesWithOtherSnake() && !snake.isImmune){
         snake.health -= 1;
         snake.setImmunity();
         displayLives(snake.health, snake.player);
@@ -148,6 +148,20 @@ function updateGameArea() {
     gameOverText.update();
     gameEndTime = Date.now();
     gameArea.stop();
+
+    // posts data to the database
+
+    let body = {Tijd: (gameEndTime - gameStartTime), Hartslag: "180", 
+    Mode: modes[gameSettings['mode']], AantalSpelers: gameSettings['players'], 
+    Moeilijkheid: difficulties[gameSettings['difficulty']]}
+
+    handleData(
+      `http://${socketIP}/api/snakedata/save/game`,
+      null,
+      'POST',
+      JSON.stringify(body)
+    );
+
     setTimeout(function() {
       window.location.href = 'scoreboard.html';
     }, 3000);

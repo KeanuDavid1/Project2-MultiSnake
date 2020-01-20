@@ -18,35 +18,45 @@ CORS(app)
 socketio = SocketIO(app)
 
 
+app = Flask(__name__)
+CORS(app)
+socketio = SocketIO(app)
+endpoint = '/api/snakedata'
+conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
+
+
 def input_trigger(pin):
     print("sending")
     if pin == 20:
-        socketio.emit('gameInput',{'direction': 'up','player': 0})
+        socketio.emit('gameInput', {'direction': 'up', 'player': 0})
     elif pin == 21:
-        socketio.emit('gameInput', {'direction': 'left','player': 0})
+        socketio.emit('gameInput', {'direction': 'left', 'player': 0})
     elif pin == 1:
-        socketio.emit('gameInput', {'direction': 'right','player': 0})
+        socketio.emit('gameInput', {'direction': 'right', 'player': 0})
     elif pin == 26:
-        socketio.emit('gameInput', {'direction': 'down','player': 0})
+        socketio.emit('gameInput', {'direction': 'down', 'player': 0})
     elif pin == 19:
-        socketio.emit('gameInput', {'direction': 'down','player': 1})
+        socketio.emit('gameInput', {'direction': 'down', 'player': 1})
     elif pin == 13:
-        socketio.emit('gameInput', {'direction': 'up','player': 1})
+        socketio.emit('gameInput', {'direction': 'up', 'player': 1})
     elif pin == 25:
-        socketio.emit('gameInput', {'direction': 'right','player': 1})
+        socketio.emit('gameInput', {'direction': 'right', 'player': 1})
     elif pin == 24:
-        socketio.emit('gameInput', {'direction': 'left','player': 1})
+        socketio.emit('gameInput', {'direction': 'left', 'player': 1})
 
 
+# database endpoint
+# logs game & player scores
+@app.route(endpoint + '/save/game')
+def save_game_score():
+    data = conn.get_data('Select * from Game')
+    return jsonify(data)
 
-# @socketio.on("connect")
-# def connecting():
-#     socketio.emit("connect")
-#     print("Connection with client established")
 
-# @app.route('/')
-# def test():
-#     return jsonify('api')
+@app.route(endpoint + '/save/player')
+def save_player_score():
+    data = conn.get_data('Select * from Score')
+    return jsonify(data)
 
 
 for pin in Input_pins:

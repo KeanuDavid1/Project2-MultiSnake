@@ -11,6 +11,7 @@ class Database:
         app.config['MYSQL_DATABASE_PORT'] = port
         app.config['MYSQL_DATABASE_DB'] = db
         app.config['MYSQL_DATABASE_HOST'] = host
+        app.config['MYSQL_DATABASE_SOCKET'] = None
 
         mysql = MySQL(cursorclass=DictCursor)  # cursor is dict ipv tuple
         mysql.init_app(app)

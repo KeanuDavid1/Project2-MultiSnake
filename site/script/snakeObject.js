@@ -125,15 +125,15 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   };
 
   
-  this.collidesWithOtherSnake = function(currentSnake) {
+  this.collidesWithOtherSnake = function() {
     // checked iedere snake
     for (let snakes of snakeArray) {
       let SnakePieceCounter = 0;
       // checked ieder stukje van een slang behalve de huidige slang
-      if (snakes.player != currentSnake.player) {
+      if (snakes.player != this.player) {
         for (let snakePiece of snakes.snakePieces) {
-          SnakePieceCounter++;
-          if (currentSnake.snakePieces[0].collidesWith(snakePiece) && SnakePieceCounter < 3) {
+          // SnakePieceCounter++;
+          if (this.snakePieces[0].collidesWith(snakePiece)) {
             return true;
           }
         }
