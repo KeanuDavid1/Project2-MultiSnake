@@ -8,7 +8,9 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_socketio import SocketIO
 from RPi import GPIO
-Input_pins = [21,20,1,26,19,13,25,24]
+from db_file.Database import Database
+
+Input_pins = [21, 20, 1, 26, 19, 13, 25, 24]
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Input_pins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -16,6 +18,8 @@ GPIO.setup(Input_pins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app)
+endpoint = '/api/snakedata'
+conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
 
 
 app = Flask(__name__)

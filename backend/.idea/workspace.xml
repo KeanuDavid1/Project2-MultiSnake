@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a31c720-2ffb-4c32-bd1e-dcfc11018ecc" name="Default Changelist" comment="">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
 =======
 <<<<<<< Updated upstream
@@ -16,6 +17,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/058680fe-7797-4142-a63c-d43e1b21017c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/058680fe-7797-4142-a63c-d43e1b21017c.xml" afterDir="false" />
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/remote-mappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/058680fe-7797-4142-a63c-d43e1b21017c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/058680fe-7797-4142-a63c-d43e1b21017c.xml" afterDir="false" />
 >>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -33,6 +41,7 @@
   </component>
   <component name="CoverageDataManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1579437768499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
 =======
 <<<<<<< Updated upstream
@@ -40,6 +49,9 @@
 =======
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1579522840922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
+    <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1579522840922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
 >>>>>>> Stashed changes
   </component>
   <component name="DatabaseView">
@@ -57,17 +69,27 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="SnakeData@172.30.248.121" type="feb32156:DbDataSourceImpl" />
+<<<<<<< Updated upstream
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="SnakeData@172.30.248.121" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+=======
+>>>>>>> Stashed changes
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="SnakeData@172.30.248.121" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="SnakeData: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SnakeData@172.30.248.121" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="SnakeData: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="Game: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -85,6 +107,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <state relative-caret-position="401">
               <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
 =======
@@ -95,6 +118,10 @@
             <state relative-caret-position="350">
               <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
+            <state relative-caret-position="350">
+              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
 >>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
@@ -138,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="130" />
     <option name="y" value="13" />
     <option name="width" value="1400" />
@@ -173,6 +200,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="true" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="D:/OneDrive - Hogeschool West-Vlaanderen/Semester2/Device Programming/BackendFlask/BACKPACK" />
 =======
 <<<<<<< Updated upstream
@@ -180,6 +208,9 @@
 =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
 >>>>>>> Stashed changes
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -263,21 +294,28 @@
       <workItem from="1579267665699" duration="106000" />
 <<<<<<< Updated upstream
       <workItem from="1579432678581" duration="4445000" />
+<<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
 =======
       <workItem from="1579432678581" duration="4445000" />
+=======
+>>>>>>> Stashed changes
       <workItem from="1579513106563" duration="2404000" />
       <workItem from="1579515730835" duration="411000" />
       <workItem from="1579516202672" duration="2101000" />
       <workItem from="1579520350746" duration="1376000" />
       <workItem from="1579522468568" duration="363000" />
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="11339000" />
 =======
@@ -287,11 +325,15 @@
     <option name="totallyTimeSpent" value="17994000" />
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+    <option name="totallyTimeSpent" value="17994000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
 =======
@@ -301,10 +343,14 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32936078" />
 =======
@@ -314,6 +360,9 @@
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4968017" visible="true" weight="0.32936078" />
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4968017" visible="true" weight="0.32936078" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -321,10 +370,14 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49946696" weight="0.32936078" />
+=======
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49840087" weight="0.32936078" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50319827" side_tool="true" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49946696" weight="0.32936078" />
 =======
 <<<<<<< Updated upstream
@@ -374,6 +427,7 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <state relative-caret-position="401">
           <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
 =======
@@ -384,6 +438,10 @@
         <state relative-caret-position="350">
           <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
+        <state relative-caret-position="350">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
 >>>>>>> Stashed changes
           <folding>
             <element signature="e#0#16#0" expanded="true" />

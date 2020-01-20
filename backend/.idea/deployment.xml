@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <component name="PublishConfigData" autoUpload="Always" serverName="RPi-APIPA">
 =======
 <<<<<<< Updated upstream
@@ -9,15 +10,22 @@
   <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake" showAutoUploadSettingsWarning="false">
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake" showAutoUploadSettingsWarning="false">
+>>>>>>> Stashed changes
     <serverData>
-      <paths name="RPi-APIPA">
+      <paths name="RPI-Snake">
         <serverdata>
           <mappings>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             <mapping deploy="/Snake" local="$PROJECT_DIR$" web="/" />
 =======
 <<<<<<< Updated upstream
             <mapping deploy="/tmp/pycharm_project_603" local="$PROJECT_DIR$" />
+=======
+            <mapping deploy="/tmp/pycharm_project_939" local="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
 =======
             <mapping deploy="/tmp/pycharm_project_939" local="$PROJECT_DIR$" />
 >>>>>>> Stashed changes
@@ -49,6 +57,9 @@
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           </mappings>
         </serverdata>
