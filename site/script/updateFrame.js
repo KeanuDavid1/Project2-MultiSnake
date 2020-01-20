@@ -147,32 +147,49 @@ function updateGameArea() {
     );
 
     const redirectToScoreboard = function() {
+      console.log('Yeet');
       setTimeout(function() {
         window.location.href = 'scoreboard.html';
       }, 3000);
     };
 
-      // posts data to the database
+    gameOverText.update();
+    gameEndTime = Date.now();
 
-      let body = {
-        'Tijd': gameEndTime - gameStartTime,
-        'Hartslag': 180,
-        'Mode': modes[gameSettings['mode']],
-        'AantalSpelers': gameSettings['players'],
-        'Moeilijkheid': difficulties[gameSettings['difficulty']]
+    for (let i = 0; i < snakeArray.length; i++) {
+      let PlayerBody = {
+        Naam: 'Peepo',
+        Hartslag: 180,
+        Score: snakeArray[i].score,
+        Tijd: snakeArray[i].deathTime
       };
+      playerDataArray.push(PlayerBody);
+    }
 
-      console.log(body);
-      handleData(
-        `http://${socketIP}/api/snakedata/save/game`,
-        redirectToScoreboard,
-        'POST',
-        JSON.stringify(body)
-      );
+    console.log(`Posting data...`);
+    // hand data to database
+    handleData(
+      `http://172.30.248.121:5000/api/snakedata/save/player`,
+      null,
+      'POST',
+      JSON.stringify(playerDataArray)
+    );
 
-      gameOverText.update();
-      gameEndTime = Date.now();
-      gameArea.stop();
-    
+    let GameBody = {
+      Tijd: gameEndTime - gameStartTime,
+      Hartslag: 180,
+      Mode: modes[gameSettings['mode']],
+      AantalSpelers: gameSettings['players'],
+      Moeilijkheid: difficulties[gameSettings['difficulty']]
+    };
+
+    handleData(
+      `http://172.30.248.121:5000/api/snakedata/save/game`,
+      redirectToScoreboard,
+      'POST',
+      JSON.stringify(GameBody)
+    );
+
+    gameArea.stop();
   }
 }

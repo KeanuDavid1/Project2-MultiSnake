@@ -1,3 +1,6 @@
+// const socketIP = 'http://172.30.248.121' + ':5000';
+// const socket = io.connect(socketIP);
+
 //Necessary variables
 let DOMCanvas;
 let gameArea;
@@ -14,6 +17,7 @@ let gameStartTime;
 let gameEndTime;
 let headColors = ['lightgreen', 'orange', 'yellow', 'lightblue'];
 let bodyColors = ['green', 'red', '#C8A51A', 'blue'];
+let playerDataArray = []
 
 // SETTINGS
 
@@ -33,6 +37,3 @@ let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
 let subtractPoints = 50;
 let addPoints = 10;
-
-const socketIP = 'http://172.30.248.121' + ':5000';
-const socket = io.connect(socketIP);

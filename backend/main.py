@@ -3,7 +3,7 @@ import time
 from subprocess import check_output
 
 import serial
-import socketio
+# import socketio
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_socketio import SocketIO
@@ -14,11 +14,11 @@ Input_pins = [21, 20, 1, 26, 19, 13, 25, 24]
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Input_pins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+endpoint = '/api/snakedata'
 
 app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app)
-endpoint = '/api/snakedata'
 conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
 
 
@@ -47,6 +47,7 @@ def input_trigger(pin):
 @app.route(endpoint + '/save/game', methods=["POST"])
 def save_game_score():
     body = request.get_json()
+    print(body)
     data = conn.set_data('insert into Game (tijd, hartslag, mode, aantalspelers, moeilijkheid, timestamp) '
                          'values (%s, %s, %s, %s, %s, current_timestamp)',
                          [body['Tijd'], body['Hartslag'],
@@ -55,10 +56,16 @@ def save_game_score():
     return jsonify(id=data), 200
 
 
-@app.route(endpoint + '/save/player')
+@app.route(endpoint + '/save/player', methods=["POST"])
 def save_player_score():
-    data = conn.get_data('Select * from Score')
-    return jsonify(data)
+    body = request.get_json()
+    print(body)
+    for item in body:
+        data = conn.set_data('insert into Score (SpelerNaam, hartslag, Score, Tijd, GameId) '
+                             'values (%s, %s, %s, %s, (select GameId from Game limit 1))',
+                             [item['Naam'], item['Hartslag'],
+                              item['Score'], item['Tijd']])
+    return jsonify(message="ok"), 200
 
 
 for pin in Input_pins:
