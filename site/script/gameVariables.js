@@ -33,9 +33,6 @@ let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
 let subtractPoints = 50;
 let addPoints = 10;
-<<<<<<< Updated upstream
-=======
 
 const socketIP = 'http://172.30.248.121' + ':5000';
 const socket = io.connect(socketIP);
->>>>>>> Stashed changes

@@ -22,13 +22,6 @@ endpoint = '/api/snakedata'
 conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
 
 
-app = Flask(__name__)
-CORS(app)
-socketio = SocketIO(app)
-endpoint = '/api/snakedata'
-conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
-
-
 def input_trigger(pin):
     print("sending")
     if pin == 20:

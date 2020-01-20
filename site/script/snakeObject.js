@@ -132,7 +132,6 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
       // checked ieder stukje van een slang behalve de huidige slang
       if (snakes.player != this.player) {
         for (let snakePiece of snakes.snakePieces) {
-          // SnakePieceCounter++;
           if (this.snakePieces[0].collidesWith(snakePiece)) {
             return true;
           }
