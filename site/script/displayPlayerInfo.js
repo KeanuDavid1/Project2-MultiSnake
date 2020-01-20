@@ -33,7 +33,6 @@ const displayGameInfo = function(){
 
 const generatePlayerCard = function(){
   for(i=0;i<gameSettings['players'];i++){
-    console.log(document.querySelector('.c-player-cards'));
     document.querySelector('.c-playerframe__cards').innerHTML += `
     <div class="c-playercard"  id="js-card__${i}">
     <div class="c-playercard__flair c-flair__${i}" id="js-flair__${i}"></div>

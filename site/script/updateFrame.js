@@ -17,10 +17,10 @@ function updateGameArea() {
 
       //toon score & levens wanneer het spel start
       displayScore(snake.score, snake.player);
-      
+
       // kijkt of de slang een andere slang aanraakt
       // WIP
-      if (snake.collidesWithOtherSnake() && !snake.isImmune){
+      if (snake.collidesWithOtherSnake() && !snake.isImmune) {
         snake.health -= 1;
         snake.setImmunity();
         displayLives(snake.health, snake.player);
@@ -145,25 +145,51 @@ function updateGameArea() {
       'bold 90px Arial',
       'red'
     );
+
+    const redirectToScoreboard = function() {
+      console.log('Yeet');
+      setTimeout(function() {
+        window.location.href = 'scoreboard.html';
+      }, 3000);
+    };
+
     gameOverText.update();
     gameEndTime = Date.now();
-    gameArea.stop();
 
-    // posts data to the database
+    for (let i = 0; i < snakeArray.length; i++) {
+      let PlayerBody = {
+        Naam: 'Peepo',
+        Hartslag: 180,
+        Score: snakeArray[i].score,
+        Tijd: snakeArray[i].deathTime
+      };
+      playerDataArray.push(PlayerBody);
+    }
 
-    let body = {Tijd: (gameEndTime - gameStartTime), Hartslag: "180", 
-    Mode: modes[gameSettings['mode']], AantalSpelers: gameSettings['players'], 
-    Moeilijkheid: difficulties[gameSettings['difficulty']]}
-
+    console.log(`Posting data...`);
+    // hand data to database
     handleData(
-      `http://${socketIP}/api/snakedata/save/game`,
+      `http://172.30.248.121:5000/api/snakedata/save/player`,
       null,
       'POST',
-      JSON.stringify(body)
+      JSON.stringify(playerDataArray)
     );
 
-    setTimeout(function() {
-      window.location.href = 'scoreboard.html';
-    }, 3000);
+    let GameBody = {
+      Tijd: gameEndTime - gameStartTime,
+      Hartslag: 180,
+      Mode: modes[gameSettings['mode']],
+      AantalSpelers: gameSettings['players'],
+      Moeilijkheid: difficulties[gameSettings['difficulty']]
+    };
+
+    handleData(
+      `http://172.30.248.121:5000/api/snakedata/save/game`,
+      redirectToScoreboard,
+      'POST',
+      JSON.stringify(GameBody)
+    );
+
+    gameArea.stop();
   }
 }
