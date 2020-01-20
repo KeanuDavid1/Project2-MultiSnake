@@ -22,13 +22,13 @@ body {
 
 .c-canvas {
   background-color: none;
-  height: 100vmin;
-  width: 1366px;
+  width: 70%;
+  height: auto;
 }
 
 .c-game-area__background {
   height: 100vmin;
-  width: 1366px;
+  width: 70%;
   position: absolute;
   left: 0;
   top: 0;
