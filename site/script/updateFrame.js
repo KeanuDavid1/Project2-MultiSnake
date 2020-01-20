@@ -17,10 +17,10 @@ function updateGameArea() {
 
       //toon score & levens wanneer het spel start
       displayScore(snake.score, snake.player);
-      
+
       // kijkt of de slang een andere slang aanraakt
       // WIP
-      if (snake.collidesWithOtherSnake() && !snake.isImmune){
+      if (snake.collidesWithOtherSnake() && !snake.isImmune) {
         snake.health -= 1;
         snake.setImmunity();
         displayLives(snake.health, snake.player);
@@ -145,25 +145,34 @@ function updateGameArea() {
       'bold 90px Arial',
       'red'
     );
-    gameOverText.update();
-    gameEndTime = Date.now();
-    gameArea.stop();
 
-    // posts data to the database
+    const redirectToScoreboard = function() {
+      setTimeout(function() {
+        window.location.href = 'scoreboard.html';
+      }, 3000);
+    };
 
-    let body = {Tijd: (gameEndTime - gameStartTime), Hartslag: "180", 
-    Mode: modes[gameSettings['mode']], AantalSpelers: gameSettings['players'], 
-    Moeilijkheid: difficulties[gameSettings['difficulty']]}
+      // posts data to the database
 
-    handleData(
-      `http://${socketIP}/api/snakedata/save/game`,
-      null,
-      'POST',
-      JSON.stringify(body)
-    );
+      let body = {
+        'Tijd': gameEndTime - gameStartTime,
+        'Hartslag': 180,
+        'Mode': modes[gameSettings['mode']],
+        'AantalSpelers': gameSettings['players'],
+        'Moeilijkheid': difficulties[gameSettings['difficulty']]
+      };
 
-    setTimeout(function() {
-      window.location.href = 'scoreboard.html';
-    }, 3000);
+      console.log(body);
+      handleData(
+        `http://${socketIP}/api/snakedata/save/game`,
+        redirectToScoreboard,
+        'POST',
+        JSON.stringify(body)
+      );
+
+      gameOverText.update();
+      gameEndTime = Date.now();
+      gameArea.stop();
+    
   }
 }

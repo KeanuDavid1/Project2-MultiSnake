@@ -44,10 +44,15 @@ def input_trigger(pin):
 
 # database endpoint
 # logs game & player scores
-@app.route(endpoint + '/save/game')
+@app.route(endpoint + '/save/game', methods=["POST"])
 def save_game_score():
-    data = conn.get_data('Select * from Game')
-    return jsonify(data)
+    body = request.get_json()
+    data = conn.set_data('insert into Game (tijd, hartslag, mode, aantalspelers, moeilijkheid, timestamp) '
+                         'values (%s, %s, %s, %s, %s, current_timestamp)',
+                         [body['Tijd'], body['Hartslag'],
+                          body['Mode'], body['AantalSpelers'],
+                          body['Moeilijkheid']])
+    return jsonify(id=data), 200
 
 
 @app.route(endpoint + '/save/player')

@@ -23,22 +23,22 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
   this.snakePieces.push(new headComponent(x, y, playerNumber, this.headColor));
   //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
   this.update = function() {
-    if (this.health != 0) {
+    if (this.health > 0) {
       for (piece of this.snakePieces) {
         piece.newPos();
         piece.update(this.bodyColor);
       }
       this.checkImmunity();
     } else {
-      if (!this.isDead)
-        for (let piece of snakeArray) {
-          piece.x = null;
-          piece.y = null;
+          for (let piece of this.snakePieces){
+            piece.x = -100;
+            piece.y = -100;
         }
       this.isDead = true;
       this.deathTime = Date.now();
-    }
-  };
+      }
+    };
+
 
   this.updateColor = function() {
     for (piece of this.snakePieces) {
