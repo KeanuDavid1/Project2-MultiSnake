@@ -2,6 +2,7 @@ body {
   background-color: var(--global-color-alpha);
   width: 100vw;
   height: 100vmin;
+  font-size: 100%;
 }
 
 .c-scoreboard__container {
@@ -22,8 +23,8 @@ body {
 }
 
 .c-scoreboard__board {
-  width: 20vw;
-  height: 20vw;
+  width: 400px;
+  height: 400px;
   background-color: var(--global-color-beta);
   border: 2px white solid;
   display: flex;
