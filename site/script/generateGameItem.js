@@ -1,9 +1,9 @@
-const pushItemToArray = function(item, type) {
+const pushItemToArray = function(obstacleType, type) {
   itemArray.push(
     new component(
       itemSize,
       itemSize,
-      `assets/img/${item}.svg`,
+      `assets/img/${obstacleType}.svg`,
       getRndInteger(itemSize + 20, canvasWidth - itemSize * 2 - 20),
       getRndInteger(itemSize + 20, canvasHeight - itemSize * 2 - 20),
       'image',
@@ -26,7 +26,6 @@ const generateItem = function() {
 
 // genereert gezond eten
 const generateHealthyFood = function() {
-  console.log('Spawning healthy food...');
   if (itemPicker == 0) {
     healthyFood = 'Apple';
   } else if (itemPicker == 1) {
@@ -39,7 +38,6 @@ const generateHealthyFood = function() {
 
 // genereert ongezond eten
 const generateUnhealthyFood = function() {
-  console.log('Spawning unhealthy food...');
   if (itemPicker <= 1) {
     unhealthyFood = 'Burger';
   } else if (itemPicker > 1) {
@@ -50,16 +48,14 @@ const generateUnhealthyFood = function() {
 
 // genereert stenen
 const generateRock = function() {
-  if (rockCounter <= maxAmountRocks){
-    console.log('Spawning rock...');
+  if (rockCounter <= maxAmountRocks) {
     if (itemPicker <= 1) {
       obstacleType = 'Stone1';
     } else if (itemPicker > 1) {
       obstacleType = 'Stone2';
     }
-    rockCounter++
+    rockCounter++;
     pushItemToArray(obstacleType, 2);
-  } else{
-    console.log("Too many rocks!")
+  } else {
   }
-  };
+};

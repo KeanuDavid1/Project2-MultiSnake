@@ -7,7 +7,6 @@ const startGame = function() {
   //De init voor de canvas object, start het drawing process van canvas.
   //Functie zit in gameArea.js
   initGameArea(DOMCanvas);
-  console.log("stuff");
   // timer voor het spel start
   setTimer();
   generatePlayerCard();
@@ -29,7 +28,7 @@ const startGame = function() {
       snakeBlockSize = 32;
       maxAmountRocks = maxAmountRocks * 2.5;
       subtractPoints = 50;
-      itemSize = snakeBlockSize;
+      itemSize = 48;
       movementSpeed = 4;
       snakePieceDistance = snakeBlockSize + 0;
     }
