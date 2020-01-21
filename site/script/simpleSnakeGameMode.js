@@ -10,7 +10,7 @@ const simpleGameMode = function () {
   generateItem();
   //Luistert naar de key presses
   document.addEventListener('keydown', keypressed);
-  socket.addEventListener('gameInput', socketInput);
+  // socket.addEventListener('gameInput', socketInput);
   setInterval(generateItem, 7000);
   setInterval(generateRock, 10000);
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake">
+  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-Snake" autoUploadExternalChanges="true">
     <serverData>
       <paths name="RPI-Snake">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/pycharm_project_643" local="$PROJECT_DIR$" />
+            <mapping deploy="/tmp/pycharm_project_24" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

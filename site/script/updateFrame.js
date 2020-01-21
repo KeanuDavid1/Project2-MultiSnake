@@ -17,10 +17,10 @@ function updateGameArea() {
 
       //toon score & levens wanneer het spel start
       displayScore(snake.score, snake.player);
-      
+
       // kijkt of de slang een andere slang aanraakt
       // WIP
-      if (snake.collidesWithOtherSnake(snake) && !snake.isImmune){
+      if (snake.collidesWithOtherSnake() && !snake.isImmune) {
         snake.health -= 1;
         snake.setImmunity();
         displayLives(snake.health, snake.player);
@@ -145,11 +145,49 @@ function updateGameArea() {
       'bold 90px Arial',
       'red'
     );
+
+    const redirectToScoreboard = function() {
+      console.log('Yeet');
+      setTimeout(function() {
+        window.location.href = 'scoreboard.html';
+      }, 3000);
+    };
+
     gameOverText.update();
     gameEndTime = Date.now();
+
+    for (let i = 0; i < snakeArray.length; i++) {
+      let PlayerBody = {
+        Naam: 'Peepo',
+        Hartslag: 180,
+        Score: snakeArray[i].score,
+        Tijd: snakeArray[i].deathTime
+      };
+      playerDataArray.push(PlayerBody);
+    }
+
+    let GameBody = {
+      Tijd: gameEndTime - gameStartTime,
+      Hartslag: 180,
+      Mode: modes[gameSettings['mode']],
+      AantalSpelers: gameSettings['players'],
+      Moeilijkheid: difficulties[gameSettings['difficulty']]
+    };
+    handleData(
+      `${socketIP}/api/snakedata/save/game`,
+      redirectToScoreboard,
+      'POST',
+      JSON.stringify(GameBody)
+    );
+
+    // hand data to database
+    handleData(
+      `${socketIP}/api/snakedata/save/player`,
+      null,
+      'POST',
+      JSON.stringify(playerDataArray)
+    );
+
     gameArea.stop();
-    setTimeout(function() {
-      window.location.href = 'scoreboard.html';
-    }, 3000);
   }
 }
