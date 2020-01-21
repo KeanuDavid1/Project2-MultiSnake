@@ -17,19 +17,18 @@ let bodyColors = ['green', 'red', '#C8A51A', 'blue'];
 let playerDataArray = []
 
 // SETTINGS
-
-// dit houd de game settings bij
-// die meegegeven worden vanuit de settings page
+// die meegegeven worden vanuit de settings
 let gameSettings = { mode: 0, difficulty: 1, players: 1 };
 let players = 0;
 let maxPlayers = 4;
 let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
 let modes = ['Classic', 'Attack', 'Bonus'];
 
+// canvas & snake variables
 let snakeBlockSize = 36;
 let movementSpeed = 3;
 const canvasWidth = 1366;
-const canvasHeight = 960;
+const canvasHeight = 1024;
 let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
 let subtractPoints = 50;
