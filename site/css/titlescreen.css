@@ -18,6 +18,46 @@ body {
   width: 60%;
 }
 
+/*
+Tutorial button on the top right
+*/
+
+.c-info {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 176px;
+  height: 60px;
+  background-color: #fff;
+  z-index: 3;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: var(--global-color-delta);
+  border: solid 1px var(--global-color-delta);
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.c-info__text{
+  padding-left: 30px;
+}
+
+.c-info__icon{
+  height: 100%;
+  position: relative;
+  right: 1px;
+}
+
+/* 
+
+Components: Menu
+---
+These components contain styling on main page elements
+
+*/
+
 .c-menu-container {
   display: flex;
   align-items: flex-end;
@@ -38,14 +78,6 @@ body {
   justify-content: center;
   color: white;
 }
-
-/* 
-
-Components: Menu
----
-These components contain styling on main page elements
-
-*/
 
 .c-menu__title {
   font-size: 3rem;
@@ -83,6 +115,4 @@ These components contain styling on main page elements
 .c-sponsors img {
   width: 90px;
   margin-left: 12px;
-  /* transform: scale(0.3); */
-  /* display: block; */
 }
