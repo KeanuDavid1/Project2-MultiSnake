@@ -3,6 +3,7 @@ import time
 from subprocess import check_output
 
 import serial
+import pip
 # import socketio
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -19,8 +20,16 @@ endpoint = '/api/snakedata'
 app = Flask(__name__)
 CORS(app)
 # test
+# app.config['SECRET_KEY'] = 'Secret!'
 socketio = SocketIO(app)
+
 conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
+
+
+@socketio.on('connect')
+def on_connect():
+    socketio.emit('connected')
+
 
 
 def input_trigger(pin):
@@ -80,4 +89,4 @@ for pin in Input_pins:
     GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
 
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", port="5000")
+    socketio.run(app, host="0.0.0.0", port=5000, debug=0)
