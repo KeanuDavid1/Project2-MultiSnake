@@ -19,7 +19,7 @@ function updateGameArea() {
       displayScore(snake.score, snake.player);
 
       // kijkt of de slang een andere slang aanraakt
-      // WIP
+      // en of de slang niet immuum is
       if (snake.collidesWithOtherSnake() && !snake.isImmune) {
         snake.health -= 1;
         snake.setImmunity();
@@ -96,7 +96,7 @@ function updateGameArea() {
       }
 
       // dit overloopt textarray en houd bij wat er moet getoond worden
-      // moet het niet meer getoond worden wordt het verwijdered
+      // moet het niet meer getoond worden dan wordt het verwijdered
       let x = 0;
       for (text of textArray) {
         textArray[x].update();
@@ -126,7 +126,6 @@ function updateGameArea() {
 
     gameOverText.update();
     gameEndTime = Date.now();
-    // WIP - testing
     gatherPlayerData();
     sendData();
     gameArea.stop();

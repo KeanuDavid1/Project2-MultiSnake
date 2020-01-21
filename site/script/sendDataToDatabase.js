@@ -15,6 +15,9 @@ const gatherPlayerData = function() {
       }
 };
 
+
+// redirect to the scoreboard after
+// the handledata sends data to the database
 const redirectToScoreboard = function() {
     setTimeout(function() {
       window.location.href = 'scoreboard.html';

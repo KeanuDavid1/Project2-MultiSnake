@@ -17,7 +17,8 @@ let healthyFood;
 let obstacleType;
 let itemPicker;
 
-// Deze functie kiest welk soort voedsel er zal spawnen en voegt deze toe aan de voedsel arrey in gameVariables.js
+// Deze functie kiest welk soort voedsel er zal spawnen 
+// en voegt deze toe aan de voedsel arrey in gameVariables.js
 const generateItem = function() {
   itemPicker = Math.round(Math.random() * 3);
   generateUnhealthyFood();
