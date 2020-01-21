@@ -3,7 +3,7 @@ const islandAnimation = function() {
   container.style.display = "none";
   setTimeout(function(){
       container.style.display = "block"
-  },3000)
+  },1000)
 };
 
 document.addEventListener('DOMContentLoaded', function() {

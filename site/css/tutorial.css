@@ -4,12 +4,16 @@ body {
   height: 100vmin;
 }
 
+video{
+    height: 300px;
+}
+
 .c-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
-  animation: move-island 3s ease-out forwards;
+  animation: move-island 1s ease-out forwards;
 }
 
 @keyframes move-island {
@@ -33,4 +37,10 @@ body {
   height: 80%;
   width: 50%;
   border: 2px white solid;
+}
+
+.c-vid-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
