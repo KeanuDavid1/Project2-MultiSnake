@@ -7,7 +7,7 @@ const startGame = function() {
   //De init voor de canvas object, start het drawing process van canvas.
   //Functie zit in gameArea.js
   initGameArea(DOMCanvas);
-  
+
   // timer voor het spel start
   setTimer();
   generatePlayerCard();
@@ -19,12 +19,16 @@ const startGame = function() {
     //Functie zit in simpleSnakeGameMode.js
     timer.innerHTML = 'Start';
     //verandert de variabelen voor verschillend moeilijkheidsgraden binnen simpleGameMode
+
+    // easy difficulty
     if (gameSettings['difficulty'] == 0) {
       snakeBlockSize = 40;
       maxAmountRocks = maxAmountRocks * 0.5;
       movementSpeed = 2;
       subtractPoints = 25;
       snakePieceDistance = snakeBlockSize + 0;
+    
+    // hard difficulty
     } else if (gameSettings['difficulty'] == 2) {
       snakeBlockSize = 32;
       maxAmountRocks = maxAmountRocks * 2.5;

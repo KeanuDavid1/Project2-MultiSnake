@@ -24,7 +24,6 @@ let maxPlayers = 4;
 let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
 let modes = ['Classic', 'Attack', 'Bonus'];
 
-
 // canvas & snake variables
 let snakeBlockSize = 36;
 let movementSpeed = 3;
