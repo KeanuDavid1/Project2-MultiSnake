@@ -166,15 +166,6 @@ function updateGameArea() {
       playerDataArray.push(PlayerBody);
     }
 
-    console.log(`Posting data...`);
-    // hand data to database
-    handleData(
-      `http://172.30.248.121:5000/api/snakedata/save/player`,
-      null,
-      'POST',
-      JSON.stringify(playerDataArray)
-    );
-
     let GameBody = {
       Tijd: gameEndTime - gameStartTime,
       Hartslag: 180,
@@ -182,12 +173,19 @@ function updateGameArea() {
       AantalSpelers: gameSettings['players'],
       Moeilijkheid: difficulties[gameSettings['difficulty']]
     };
-
     handleData(
-      `http://172.30.248.121:5000/api/snakedata/save/game`,
+      `${socketIP}/api/snakedata/save/game`,
       redirectToScoreboard,
       'POST',
       JSON.stringify(GameBody)
+    );
+
+    // hand data to database
+    handleData(
+      `${socketIP}/api/snakedata/save/player`,
+      null,
+      'POST',
+      JSON.stringify(playerDataArray)
     );
 
     gameArea.stop();
