@@ -37,6 +37,8 @@ All the font-families used in the website
   --global-color-alpha-5-dark: #6268b3;
   --global-color-alpha-10-dark: #515cb3;
 
+  --global-color-delta:#718FCC;
+
   --global-color-beta: #74af78;
 
   --global-color-omega: #ff8333;
@@ -172,13 +174,14 @@ a {
 
 a:visited,
 a:active {
-  color: white;
   text-decoration: none;
+  color: var(--global-color-delta);
 }
 
 a:hover,
 a:focus {
-  color: var(--global-color-alpha-10-dark);
+  text-decoration: none;
+  color: var(--global-color-delta);
 }
 
 /*------------------------------------*\
