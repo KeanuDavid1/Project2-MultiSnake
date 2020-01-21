@@ -29,7 +29,7 @@ const startGame = function() {
       snakeBlockSize = 32;
       maxAmountRocks = maxAmountRocks * 2.5;
       subtractPoints = 50;
-      itemSize = snakeBlockSize;
+      itemSize = 48;
       movementSpeed = 4;
       snakePieceDistance = snakeBlockSize + 0;
     }

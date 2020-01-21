@@ -1,9 +1,9 @@
-const pushItemToArray = function(item, type) {
+const pushItemToArray = function(obstacleType, type) {
   itemArray.push(
     new component(
       itemSize,
       itemSize,
-      `assets/img/${item}.svg`,
+      `assets/img/${obstacleType}.svg`,
       getRndInteger(itemSize + 20, canvasWidth - itemSize * 2 - 20),
       getRndInteger(itemSize + 20, canvasHeight - itemSize * 2 - 20),
       'image',

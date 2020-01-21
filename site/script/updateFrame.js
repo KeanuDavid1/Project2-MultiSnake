@@ -38,16 +38,6 @@ function updateGameArea() {
         snake.health -= 1;
         snake.changeDirectionOnOutOfBounds();
         displayLives(snake.health, snake.player);
-        textArray.push(
-          new showText(
-            snake.snakePieces[0].x,
-            snake.snakePieces[0].y - 30,
-            '-1hp',
-            frames + 120,
-            '30px Arial',
-            'red'
-          )
-        );
         //Stopt de refresh functie en dus heel het spel.
         //Zie gameArea.js
       } else if (snake.snakePieces[0].isOutOfBounds()) {
@@ -87,7 +77,8 @@ function updateGameArea() {
               'red'
             )
           );
-        } // voor obstakels
+        } 
+        // voor obstakels
         else if (
           item.hitObj(snake.snakePieces[0]) &&
           item.type == 2 &&
@@ -97,19 +88,7 @@ function updateGameArea() {
           snake.health -= 1;
           rockCounter--;
           displayLives(snake.health, snake.player);
-          textArray.push(
-            new showText(
-              snake.snakePieces[0].x,
-              snake.snakePieces[0].y - 30,
-              '-1hp',
-              frames + 120,
-              '30px Arial',
-              'red'
-            )
-          );
-
           // veranderd de kleur bij het aanraken van een rots
-          let counter = 0;
           snake.setImmunity();
         }
 
@@ -146,48 +125,11 @@ function updateGameArea() {
       'red'
     );
 
-    const redirectToScoreboard = function() {
-      console.log('Yeet');
-      setTimeout(function() {
-        window.location.href = 'scoreboard.html';
-      }, 3000);
-    };
-
     gameOverText.update();
     gameEndTime = Date.now();
-
-    for (let i = 0; i < snakeArray.length; i++) {
-      let PlayerBody = {
-        Naam: 'Peepo',
-        Hartslag: 180,
-        Score: snakeArray[i].score,
-        Tijd: snakeArray[i].deathTime
-      };
-      playerDataArray.push(PlayerBody);
-    }
-
-    let GameBody = {
-      Tijd: gameEndTime - gameStartTime,
-      Hartslag: 180,
-      Mode: modes[gameSettings['mode']],
-      AantalSpelers: gameSettings['players'],
-      Moeilijkheid: difficulties[gameSettings['difficulty']]
-    };
-    handleData(
-      `${socketIP}/api/snakedata/save/game`,
-      redirectToScoreboard,
-      'POST',
-      JSON.stringify(GameBody)
-    );
-
-    // hand data to database
-    handleData(
-      `${socketIP}/api/snakedata/save/player`,
-      null,
-      'POST',
-      JSON.stringify(playerDataArray)
-    );
-
+    // WIP - testing
+    gatherPlayerData();
+    sendData();
     gameArea.stop();
   }
 }
