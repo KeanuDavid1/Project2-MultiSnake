@@ -63,7 +63,6 @@ function updateGameArea() {
           itemArray.splice(i, 1);
           snake.score -= subtractPoints;
           snake.unhealthyFoodCount++;
-          console.log(snake.unhealthyFoodCount);
           displayScore(snake.score, snake.player);
 
           // steekt een nieuwe text in textArray

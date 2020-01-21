@@ -16,7 +16,6 @@ const gatherPlayerData = function() {
 };
 
 const redirectToScoreboard = function() {
-    console.log('Yeet');
     setTimeout(function() {
       window.location.href = 'scoreboard.html';
     }, 3000);
