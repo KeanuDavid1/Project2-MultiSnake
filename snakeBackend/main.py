@@ -44,6 +44,13 @@ def input_trigger(pin):
 
 
 # database endpoint
+
+@app.route(endpoint + "/data/game", methods=["GET"])
+def get_game_data():
+    data = conn.get_data('Select * from Game order by GameId desc limit 1')
+    return jsonify(data), 200
+
+
 # logs game & player scores
 @app.route(endpoint + '/save/game', methods=["POST"])
 def save_game_score():
@@ -56,7 +63,7 @@ def save_game_score():
                           body['Moeilijkheid']])
     return jsonify(id=data), 200
 
-    
+
 @app.route(endpoint + '/save/player', methods=["POST"])
 def save_player_score():
     body = request.get_json()
@@ -73,4 +80,4 @@ for pin in Input_pins:
     GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
 
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", port="5000", debug=1)
+    socketio.run(app, host="0.0.0.0", port="5000")
