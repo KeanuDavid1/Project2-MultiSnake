@@ -24,7 +24,7 @@ app.config['SECRET_KEY'] = 'Secret!'
 socketio = SocketIO(app,cors_allowed_origins="*")
 CORS(app)
 
-conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
+conn = Database(app=app, user='mct', password='mct', db='SnakeData')
 
 
 def input_trigger(pin):

@@ -9,7 +9,7 @@ const gatherPlayerData = function() {
           Naam: 'Peepo',
           Hartslag: 180,
           Score: snakeArray[i].score,
-          Tijd: snakeArray[i].deathTime
+          Tijd: (snakeArray[i].deathTime - gameStartTime)
         };
         playerDataArray.push(body);
       }
@@ -42,7 +42,7 @@ const sendData = function(){
     // make the body with the game data
     // contains most of the game info
     let GameBody = {
-        Tijd: gameEndTime - gameStartTime,
+        Tijd: (gameEndTime - gameStartTime),
         Hartslag: 180,
         Mode: modes[gameSettings['mode']],
         AantalSpelers: gameSettings['players'],

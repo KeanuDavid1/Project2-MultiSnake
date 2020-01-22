@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="pulsesnake">
+  <component name="PublishConfigData" autoUpload="Always" serverName="RPI-PulseSnake">
     <serverData>
-      <paths name="Copy of project-level server 'brendrpi'">
+      <paths name="RPI-PulseSnake">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/nmct/pulsesnake_backend" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="RPI-Snake">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="RPi-APIPA">
+      <paths name="keanu@169.254.10.1:22">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="brendrpi">
+      <paths name="project_smartbike">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="pulsesnake">
+      <paths name="rpi_keanu">
         <serverdata>
           <mappings>
-            <mapping deploy="/pulsesnake_backend" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="rpi_smartbike_thuis">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
