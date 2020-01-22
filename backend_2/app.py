@@ -11,7 +11,6 @@ from flask_socketio import SocketIO
 from RPi import GPIO
 from db_file.Database import Database
 
-
 endpoint = '/api/snakedata'
 Input_pins = [21, 20, 1, 26, 19, 13, 25, 24]
 
@@ -21,7 +20,7 @@ GPIO.setup(Input_pins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'Secret!'
-socketio = SocketIO(app,cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*")
 CORS(app)
 
 conn = Database(app=app, user='mct', password='mct', db='SnakeData')
@@ -45,7 +44,6 @@ def input_trigger(pin):
         socketio.emit('gameInput', {'direction': 'right', 'player': 1})
     elif pin == 24:
         socketio.emit('gameInput', {'direction': 'left', 'player': 1})
-
 
 
 # database endpoint
@@ -79,7 +77,6 @@ def save_player_score():
                              [item['Naam'], item['Hartslag'],
                               item['Score'], item['Tijd']])
     return jsonify(message="ok"), 200
-
 
 
 for pin in Input_pins:

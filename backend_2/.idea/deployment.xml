@@ -5,39 +5,11 @@
       <paths name="RPI-PulseSnake">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/nmct/pulsesnake_backend" local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="RPI-Snake">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="keanu@169.254.10.1:22">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/pulsesnake_backend" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="project_smartbike">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="rpi_keanu">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="rpi_smartbike_thuis">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
