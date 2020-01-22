@@ -34,6 +34,9 @@ het bevindt zich in een o-container
   flex-direction: column;
 }
 
+/* @keyframes{
+} */
+
 .c-body__item{
     width: 100%;
 }
