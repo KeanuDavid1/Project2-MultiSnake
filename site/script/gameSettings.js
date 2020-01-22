@@ -54,7 +54,6 @@ const changeIndex = function(settingName, change, array) {
       gameSettings[settingName]++;
     } else if (!change && gameSettings[settingName] > minPlayers) {
       gameSettings[settingName]--;
-      console.log('Lowering player count');
     }
   }
   setValues();
