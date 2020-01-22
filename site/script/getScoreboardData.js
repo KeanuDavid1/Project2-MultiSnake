@@ -1,12 +1,36 @@
-const init = function(){
-    handleData(socketIP+"api/v1/data/game", showData)
-}
+const init = function() {
+  handleData(socketIP + '/api/snakedata/data/scorebord', showScoreData);
+  handleData(socketIP + '/api/snakedata/data/max_heartrate', showHeartData);
+  handleData(socketIP + '/api/snakedata/data/game_length', showLengthData);
+};
 
-const showData = function(data){
-    console.log(data)
-}
+const showScoreData = function(data) {
+  const scorebord = document.querySelector('.js-scorebord');
+  let i = 1;
+  let n = 0;
+  scorebord.innerHTML = '<h4></h4><h4>Naam</h4><h4>Score</h4>';
+  for (let player in data) {
+    scorebord.innerHTML += `<h4>${i}</h4>
+  <h4>${data[n].SpelerNaam}</h4>
+  <h4>${data[n].Score}</h4>`;
+    i++;
+    n++;
+  }
+};
+
+const showHeartData = function(maxHeartrate) {
+  const heart = document.querySelector('.js-heartbeat');
+  heart.innerHTML = maxHeartrate[0]['MAX(Hartslag)'];
+};
+
+const showLengthData = function(gameLength) {
+  const length = document.querySelector('.js-length');
+  const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
+  const lengthInMinutes = intLength / 1000;
+  length.innerHTML = lengthInMinutes.toFixed(1);
+};
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.info('DOM geladen');
-    init();
+  console.info('DOM geladen');
+  init();
 });
