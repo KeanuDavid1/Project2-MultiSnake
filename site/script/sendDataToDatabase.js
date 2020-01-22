@@ -25,7 +25,6 @@ const redirectToScoreboard = function() {
   };
 
 const logger = function(jsonData){
-    console.log(`Server Response: ${jsonData}`)
       // sends the player data from the PlayerDataArray
       // it sends a list to the API
       handleData(
