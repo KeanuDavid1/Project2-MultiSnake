@@ -1,5 +1,5 @@
-body {
-  background-color: var(--global-color-alpha);
+html{
+  padding: 0;
 }
 
 .o-container{
@@ -10,15 +10,14 @@ body {
 .c-island {
   display: flex;
   width: 100%;
-  height: 70vh;
+  height: 80%;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 48px;
   flex-wrap: wrap;
 }
 
 .c-island img {
-  width: 60%;
+  width: 55%;
 }
 
 /*
@@ -65,6 +64,8 @@ These components contain styling on main page elements
   display: flex;
   justify-content: center;
   flex-grow: 1;
+  align-items: flex-end;
+  margin-bottom: 60px;
 }
 
 .c-menu {
@@ -72,7 +73,6 @@ These components contain styling on main page elements
   flex-wrap: wrap;
   justify-content: center;
   color: white;
-  margin-top: 24px;
 }
 
 .c-menu__button {
@@ -89,8 +89,12 @@ These components contain styling on main page elements
 } */
 
 .c-button + .c-button{
-  margin-left: 16px;
+  margin-left: calc(var(--global-baseline) * 2);
 }
+
+/*
+De sponsor labels vanonder op het scherm
+*/
 
 .c-sponsors{
   background-color: #fff;

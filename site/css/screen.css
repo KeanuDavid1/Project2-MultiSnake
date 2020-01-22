@@ -55,19 +55,16 @@ All the font-families used in the website
     Default markup for page level elements
 */
 
-html {
+html, body {
   font-size: 1em;
   line-height: 1.5;
   font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
   color: #111;
+  overflow-x: hidden;
 }
 
-body {
-  max-width: 100%;
-  margin: auto;
-  /* background-color: var(--global-color-alpha);
-  background-color: #0B8F4B; */
-  overflow: hidden;
+body{
+  background-color: var(--global-color-alpha);
 }
 
 /*
@@ -195,7 +192,6 @@ a:focus {
 */
 
 .o-row {
-  /* overflow: auto; */
   position: relative;
   padding: 24px 24px 0;
 }
