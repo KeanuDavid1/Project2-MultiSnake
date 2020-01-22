@@ -43,9 +43,9 @@ const sendData = function(){
     let GameBody = {
         Tijd: (gameEndTime - gameStartTime),
         Hartslag: 180,
-        Mode: modes[gameSettings['mode']],
+        Mode: gameSettings['mode'],
         AantalSpelers: gameSettings['players'],
-        Moeilijkheid: difficulties[gameSettings['difficulty']]
+        Moeilijkheid: gameSettings['difficulty']
       };
 
       // send the game data to the API
