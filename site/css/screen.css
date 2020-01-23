@@ -60,7 +60,7 @@ html, body {
   line-height: 1.5;
   font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
   color: #111;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body{
@@ -213,6 +213,7 @@ a:focus {
   margin-right: auto;
   max-width: 102.5rem;
   height: 100vh;
+  overflow: hidden;
 }
 
 /*
