@@ -61,8 +61,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="457">
               <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+=======
+            <state relative-caret-position="-145">
+              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -101,7 +106,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,6 +117,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,18 +196,33 @@
       <updated>1579625817533</updated>
       <workItem from="1579625819330" duration="1067000" />
       <workItem from="1579628010038" duration="2986000" />
+<<<<<<< Updated upstream
       <workItem from="1579697576528" duration="1154000" />
+=======
+      <workItem from="1579697576528" duration="1512000" />
+      <workItem from="1579707100631" duration="1978000" />
+      <workItem from="1579709993832" duration="686000" />
+      <workItem from="1579723519855" duration="386000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="5475000" />
+=======
+    <option name="totallyTimeSpent" value="8615000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1122" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< Updated upstream
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2683706" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -259,8 +279,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="457">
           <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+=======
+        <state relative-caret-position="-145">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
