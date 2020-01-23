@@ -15,6 +15,7 @@ const simpleGameMode = function () {
   setInterval(generateItem, (10-gameSettings["players"])*700);
   for (r=0; r<5; r++){
     generateRock();
+    rockCounter++;
   }
   setInterval(generateRock, 10000);
 
