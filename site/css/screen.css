@@ -385,21 +385,41 @@ A reusable button
 */
 
 .c-button {
-  width: calc(var(--global-baseline) * 32.5);
-  height: calc(var(--global-baseline) * 8.75);
+  width: calc(var(--global-baseline) * 25);
+  height: calc(var(--global-baseline) * 6.25);
   background: var(--global-color-beta);
-  margin-bottom: 60px;
   border: none;
   font-family: 'Roboto Slab';
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 10px;
+  margin-bottom: 48px;
 }
 
 .c-button__text {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: #fff;
+}
+
+@media (min-width: 1368px){
+  .c-button {
+    width: calc(var(--global-baseline) * 32.5);
+    height: calc(var(--global-baseline) * 8.75);
+    background: var(--global-color-beta);
+    margin-bottom: 60px;
+    border: none;
+    font-family: 'Roboto Slab';
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+  }
+  
+  .c-button__text {
+    font-size: 1.7rem;
+    color: #fff;
+  }
 }
 
 .c-button:hover {

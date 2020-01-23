@@ -5,6 +5,7 @@ html{
 .o-container{
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c-island {
@@ -65,7 +66,16 @@ These components contain styling on main page elements
   justify-content: center;
   flex-grow: 1;
   align-items: flex-end;
-  margin-bottom: 60px;
+}
+
+@media (min-width: 1368px){
+  .c-menu-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: flex-end;
+    margin-bottom: 60px;
+  }
 }
 
 .c-menu {
