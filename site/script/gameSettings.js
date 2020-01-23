@@ -91,8 +91,6 @@ const settings = function() {
       bodyContent.innerHTML = '';
       // bodyContentGameArea variabele zit in de gameContent.js file
       bodyContent.innerHTML = bodyContentGameArea;
-      console.log(gameSettings);
-      console.log('Starting...');
       startGame();
     });
 };

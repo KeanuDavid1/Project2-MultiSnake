@@ -20,20 +20,8 @@ it's the same as the canvas in size
 
 .c-game-area {
   height: 100vh;
-  width: auto;
-  padding: 0;
   display: flex;
-}
-
-.c-game-area__background {
-  height: 100vmin;
-  width: 70%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background-image: url(../assets/images/gamescreenplatform.svg);
-  background-size: cover;
+  flex-wrap: nowrap;
 }
 
 /*
@@ -41,8 +29,9 @@ The canvas that is drawn in js
 */
 
 .c-canvas {
-  width: 70%;
   height: auto;
+  background-image: url(../assets/images/gamescreenplatform16-9.svg);
+  background-size: cover;
 }
 
 /*

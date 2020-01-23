@@ -27,8 +27,8 @@ let arrModes = ['Classic', 'Attack', 'Bonus'];
 // canvas & snake variables
 let snakeBlockSize = 36;
 let movementSpeed = 3;
-const canvasWidth = 1366;
-const canvasHeight = 1024;
+let canvasWidth = 1366;
+let canvasHeight = 1024;
 let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
 let subtractPoints = 50;
