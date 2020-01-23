@@ -32,6 +32,7 @@ The canvas that is drawn in js
   height: auto;
   background-image: url(../assets/images/gamescreenplatform16-9.svg);
   background-size: cover;
+  width: 70%;
 }
 
 /*
@@ -63,16 +64,25 @@ with their individual info
 .c-playercard {
   background-color: var(--global-color-beta);
   width: 100%;
-  height: 120px;
+  height: 90px;
   margin-bottom: calc(var(--global-baseline) * 2);
   display: flex;
 }
 
 .c-playercard h3 {
-  margin: calc(var(--global-baseline) * 2);
+  margin: 0;
   color: #fff;
   width: 100%;
   height: fit-content;
+}
+
+@media (min-height: 770px){
+  .c-playercard {
+    background-color: var(--global-color-beta);
+    width: 100%;
+    height: 120px;
+    display: flex;
+  }
 }
 
 /*
@@ -102,6 +112,14 @@ The flairs that indicates a players snake color
 
 .c-container__info {
   width: 100%;
+  padding: 8px;
+}
+
+@media (min-width: 1368px){
+  .c-container__info {
+    width: 100%;
+    padding: calc(var(--global-baseline) * 2);
+  }
 }
 
 /*
@@ -112,9 +130,18 @@ The info of a player: score, hp & name
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: calc(var(--global-baseline) * 3);
   height: fit-content;
   width: 100%;
+}
+
+@media (min-width: 1368px){
+  .c-playercard__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: calc(var(--global-baseline) * 2);
+    width: 100%;
+  }
 }
 
 .c-score {
