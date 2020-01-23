@@ -32,7 +32,7 @@ it's the same as the canvas in size
   left: 0;
   top: 0;
   z-index: -1;
-  background-image: url(../assets/images/gamescreenplatform.svg);
+  background-image: url(../assets/images/gamescreenplatform16-9.svg);
   background-size: cover;
 }
 

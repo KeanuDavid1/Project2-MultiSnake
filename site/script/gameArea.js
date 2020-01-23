@@ -1,4 +1,6 @@
 const initGameArea = function (DomCanvas) {
+  // gets the resolution to set the correct ratio for the canvas
+  getScreenResolution();
 
   //Game area object, wordt anders geschreven dan andere objecten, reden: idk werd zo geschreven op de tutorial.
   gameArea = {
