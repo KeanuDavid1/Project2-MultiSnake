@@ -213,6 +213,7 @@ a:focus {
   margin-right: auto;
   max-width: 102.5rem;
   height: 100vh;
+  overflow: hidden;
 }
 
 /*
