@@ -2,7 +2,7 @@ import threading
 import time
 from subprocess import check_output
 
-import serial
+#import serial
 # import socketio
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -73,4 +73,4 @@ for pin in Input_pins:
     GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
 
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", port="5000", debug=1)
+    socketio.run(app, host="0.0.0.0", port=5000, debug=1)

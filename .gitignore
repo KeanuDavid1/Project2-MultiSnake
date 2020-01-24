@@ -70,3 +70,13 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 snakeBackend/
+
+backend/.idea/deployment.xml
+
+backend/.idea/backend.iml
+
+backend/.idea/misc.xml
+
+backend/.idea/workspace.xml
+
+backend_2/.idea/workspace.xml
