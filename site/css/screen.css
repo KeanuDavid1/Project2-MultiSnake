@@ -55,19 +55,16 @@ All the font-families used in the website
     Default markup for page level elements
 */
 
-html {
+html, body {
   font-size: 1em;
   line-height: 1.5;
   font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
   color: #111;
+  overflow: hidden;
 }
 
-body {
-  max-width: 100%;
-  margin: auto;
-  /* background-color: var(--global-color-alpha);
-  background-color: #0B8F4B; */
-  overflow: hidden;
+body{
+  background-color: var(--global-color-alpha);
 }
 
 /*
@@ -195,7 +192,6 @@ a:focus {
 */
 
 .o-row {
-  /* overflow: auto; */
   position: relative;
   padding: 24px 24px 0;
 }
@@ -217,6 +213,7 @@ a:focus {
   margin-right: auto;
   max-width: 102.5rem;
   height: 100vh;
+  overflow: hidden;
 }
 
 /*
@@ -389,21 +386,41 @@ A reusable button
 */
 
 .c-button {
-  width: calc(var(--global-baseline) * 32.5);
-  height: calc(var(--global-baseline) * 8.75);
+  width: calc(var(--global-baseline) * 25);
+  height: calc(var(--global-baseline) * 6.25);
   background: var(--global-color-beta);
-  margin-bottom: 60px;
   border: none;
   font-family: 'Roboto Slab';
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 10px;
+  margin-bottom: 48px;
 }
 
 .c-button__text {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: #fff;
+}
+
+@media (min-width: 1368px){
+  .c-button {
+    width: calc(var(--global-baseline) * 32.5);
+    height: calc(var(--global-baseline) * 8.75);
+    background: var(--global-color-beta);
+    margin-bottom: 60px;
+    border: none;
+    font-family: 'Roboto Slab';
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+  }
+  
+  .c-button__text {
+    font-size: 1.7rem;
+    color: #fff;
+  }
 }
 
 .c-button:hover {

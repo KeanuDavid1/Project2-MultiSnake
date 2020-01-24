@@ -12,7 +12,11 @@ const simpleGameMode = function () {
   document.addEventListener('keydown', keypressed);
   socket = io.connect(socketIP);
   socket.addEventListener('gameInput', socketInput);
-  setInterval(generateItem, 7000);
+  setInterval(generateItem, (10-gameSettings["players"])*700);
+  for (r=0; r<5; r++){
+    generateRock();
+    rockCounter++;
+  }
   setInterval(generateRock, 10000);
 
   for (snake of snakeArray) {

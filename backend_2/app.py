@@ -2,7 +2,7 @@ import threading
 import time
 from subprocess import check_output
 
-import serial
+#import serial
 # import pip
 # import socketio
 from flask import Flask, jsonify, request
@@ -26,7 +26,11 @@ try:
 
     conn = Database(app=app, user='mctsnake02', password='mctsnake0', db='SnakeData')
 
+    app.config['SECRET_KEY'] = 'Secret!'
+    socketio = SocketIO(app,cors_allowed_origins="*")
+    CORS(app)
 
+    conn = Database(app=app, user='mct', password='mct', db='SnakeData')
     def input_trigger(pin):
         print("sending")
         print(pin)
@@ -67,14 +71,34 @@ try:
             socketio.emit('gameInput', {'direction': 'up', 'player': 3})
     for pin in Input_pins:
         GPIO.add_event_detect(pin, GPIO.RISING, callback=input_trigger, bouncetime=500)
+    def get_max_game_id():
+        max_id = conn.get_data('SELECT MAX(GameId) FROM Score')
+        id = max_id[0]["MAX(GameId)"]
+        return id
 
     # database endpoint
-
-    @app.route(endpoint + "/data/game", methods=["GET"])
+    @app.route(endpoint + "/data/scorebord", methods=["GET"])
     def get_game_data():
-        data = conn.get_data('Select * from Game order by GameId desc limit 1')
+        data = conn.get_data('Select * from Score where GameId = %s order by Score desc limit 4', get_max_game_id())
+        return jsonify(data), 200
+    @app.route(endpoint + "/data/max_heartrate", methods=["get"])
+    def get_max_heartrate():
+        data = conn.get_data('Select MAX(Hartslag) from Score WHERE GameId = %s LIMIT 1', get_max_game_id())
+        return jsonify(data), 200
+    @app.route(endpoint + "/data/game_length", methods=["GET"])
+    def get_game_length():
+        data = conn.get_data('Select MAX(Tijd) from Score where GameId = %s limit 1', get_max_game_id())
         return jsonify(data), 200
 
+    @app.route(endpoint + "/data/global/game_length", methods=["GET"])
+    def get_global_game_length():
+        data = conn.get_data('Select MAX(Tijd) from Score limit 1')
+        return jsonify(data), 200
+
+    @app.route(endpoint + "/data/global/max_heartrate", methods=["GET"])
+    def get_global_max_heartrate():
+        data = conn.get_data('Select MAX(Hartslag) from Score limit 1')
+        return jsonify(data), 200
 
     # logs game & player scores
     @app.route(endpoint + '/save/game', methods=["POST"])
@@ -87,7 +111,6 @@ try:
                               body['Mode'], body['AantalSpelers'],
                               body['Moeilijkheid']])
         return jsonify(id=data), 200
-
 
     @app.route(endpoint + '/save/player', methods=["POST"])
     def save_player_score():
@@ -102,8 +125,8 @@ try:
 
 
 
-    # for pin in Input_pins:
-
+    for pin in Input_pins:
+        GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
 
     if __name__ == '__main__':
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)

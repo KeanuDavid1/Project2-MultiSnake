@@ -9,7 +9,7 @@ const gatherPlayerData = function() {
           Naam: 'Peepo',
           Hartslag: 180,
           Score: snakeArray[i].score,
-          Tijd: snakeArray[i].deathTime
+          Tijd: (snakeArray[i].deathTime - gameStartTime)
         };
         playerDataArray.push(body);
       }
@@ -25,7 +25,6 @@ const redirectToScoreboard = function() {
   };
 
 const logger = function(jsonData){
-    console.log(`Server Response: ${jsonData}`)
       // sends the player data from the PlayerDataArray
       // it sends a list to the API
       handleData(
@@ -42,11 +41,11 @@ const sendData = function(){
     // make the body with the game data
     // contains most of the game info
     let GameBody = {
-        Tijd: gameEndTime - gameStartTime,
+        Tijd: (gameEndTime - gameStartTime),
         Hartslag: 180,
-        Mode: modes[gameSettings['mode']],
+        Mode: gameSettings['mode'],
         AantalSpelers: gameSettings['players'],
-        Moeilijkheid: difficulties[gameSettings['difficulty']]
+        Moeilijkheid: gameSettings['difficulty']
       };
 
       // send the game data to the API

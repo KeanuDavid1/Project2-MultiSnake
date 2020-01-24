@@ -19,16 +19,16 @@ let playerDataArray = []
 // SETTINGS
 // die meegegeven worden vanuit de settings
 let gameSettings = { mode: 0, difficulty: 1, players: 1 };
-let players = 0;
+let minPlayers = 1;
 let maxPlayers = 4;
-let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
-let modes = ['Classic', 'Attack', 'Bonus'];
+let arrDiffs = ['Makkelijk', 'Normaal', 'Moeilijk'];
+let arrModes = ['Classic', 'Attack', 'Bonus'];
 
 // canvas & snake variables
 let snakeBlockSize = 36;
 let movementSpeed = 3;
-const canvasWidth = 1366;
-const canvasHeight = 1024;
+let canvasWidth = 1366;
+let canvasHeight = 1024;
 let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
 let subtractPoints = 50;

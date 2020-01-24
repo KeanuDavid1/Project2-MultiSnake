@@ -24,8 +24,8 @@ const displayLives = function (livesAmount, player) {
 };
 
 const displayGameInfo = function(){
-  document.querySelector('.js-level').innerHTML = modes[gameSettings['mode']];
-  document.querySelector('.js-diff').innerHTML = difficulties[gameSettings['difficulty']];
+  document.querySelector('.js-level').innerHTML = arrModes[gameSettings['mode']];
+  document.querySelector('.js-diff').innerHTML = arrDiffs[gameSettings['difficulty']];
   document.querySelector('#stop-button').addEventListener('click', function(){
     window.location.href = "index.html";
   })
