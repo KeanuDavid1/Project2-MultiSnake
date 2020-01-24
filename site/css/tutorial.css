@@ -5,7 +5,9 @@ body {
 }
 
 video{
-    height: 300px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .c-container {
@@ -39,8 +41,22 @@ video{
   border: 2px white solid;
 }
 
-.c-vid-container{
+.c-carousel-container{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.c-button-keanu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-button-keanu svg{
+  height: 100px;
+}
+
+.u-rotate{
+  transform: rotate(180deg);
 }
