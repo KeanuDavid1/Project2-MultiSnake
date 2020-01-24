@@ -26,8 +26,8 @@ const showHeartData = function(maxHeartrate) {
 const showLengthData = function(gameLength) {
   const length = document.querySelector('.js-length');
   const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
-  const lengthInMinutes = intLength / 1000;
-  length.innerHTML = lengthInMinutes.toFixed(1);
+  const lengthInSeconds = intLength / 1000;
+  length.innerHTML = lengthInSeconds.toFixed(1);
 };
 
 document.addEventListener('DOMContentLoaded', function() {

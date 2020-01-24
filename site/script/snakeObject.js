@@ -4,7 +4,7 @@ let lastPositionY;
 let newComponent;
 let collideCounter;
 
-function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score) {
+function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, name) {
   //Hier houden wij bij de snake onderdelen.
   this.snakePieces = [];
   this.headColor = headColor;

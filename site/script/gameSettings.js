@@ -57,6 +57,19 @@ const changeIndex = function(settingName, change, array) {
     }
   }
   setValues();
+  displayNameInput();
+};
+
+const displayNameInput = function() {
+  const inputContainer = document.querySelector('.js-inputs');
+  inputContainer.innerHTML = '';
+  for (let playerCount = 0; playerCount < gameSettings['players']; playerCount++) {
+    inputContainer.innerHTML += `
+    <div class="c-name-container"><div class="c-name-color${playerCount +1}"></div>
+    <label for="speler${playerCount+1}">Naam:
+    <input type="text" name="speler${playerCount+1}" id="speler${playerCount+1}" class="c-names" placeholder="Speler ${playerCount+1}">
+  </label></div>`;
+  }
 };
 
 // get the inner HTML of the settings
@@ -91,6 +104,7 @@ const settings = function() {
       bodyContent.innerHTML = '';
       // bodyContentGameArea variabele zit in de gameContent.js file
       bodyContent.innerHTML = bodyContentGameArea;
+      
       startGame();
     });
 };
