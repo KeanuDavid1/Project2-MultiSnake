@@ -6,7 +6,7 @@ const gatherPlayerData = function() {
     // and pushes it to the playerDataArray
     for (let i = 0; i < snakeArray.length; i++) {
         let body = {
-          Naam: 'Peepo',
+          Naam: playerNames[i],
           Hartslag: 180,
           Score: snakeArray[i].score,
           Tijd: (snakeArray[i].deathTime - gameStartTime)
