@@ -30,13 +30,16 @@ const showGlobalScoreData = function(data) {
   const scorebord = document.querySelector('.js-global-scoreboard');
   let i = 1;
   let n = 0;
-  scorebord.innerHTML = '<h4>No.</h4><h4>Naam</h4><h4>Tijd</h4><h4>Score</h4>';
   for (let player in data) {
-    let tijd = data[n].Tijd /1000
-    scorebord.innerHTML += `<h4>${i}</h4>
-  <h4>${data[n].SpelerNaam}</h4>
-  <h4>${tijd.toFixed(1)}</h4>
-  <h4>${data[n].Score}</h4>`;
+    let tijd = data[n].Tijd / 1000;
+    scorebord.innerHTML += `<div class="c-row">
+  <p class="u-span-column-1">${i}</p>
+  <p class="u-span-column-2">
+  ${data[n].SpelerNaam}
+  </p>
+  <p class="u-span-column-5">${tijd.toFixed(1)}</p>
+  <p class="u-span-column-1">${data[n].Score}</p>
+</div>`;
     i++;
     n++;
   }
