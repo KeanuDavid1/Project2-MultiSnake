@@ -13,12 +13,12 @@ const simpleGameMode = function () {
   socket = io.connect(socketIP);
   socket.addEventListener('gameInput', socketInput);
   setInterval(generateItem, (10-gameSettings["players"])*700);
+  // spawn a set amount before the game starts
   for (r=0; r<5; r++){
     generateRock();
     rockCounter++;
   }
   setInterval(generateRock, 10000);
-
   for (snake of snakeArray) {
     displayLives(snake.health, snake.player);
   }
