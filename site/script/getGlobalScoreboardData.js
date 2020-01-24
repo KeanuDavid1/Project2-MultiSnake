@@ -1,7 +1,7 @@
 const init = function() {
   handleData(
     socketIP + '/api/snakedata/data/global/game_length',
-    showGlobalLengthData
+    showMostPlayedDiffData
   );
   handleData(
     socketIP + '/api/snakedata/data/global/max_heartrate',
@@ -13,11 +13,12 @@ const init = function() {
   );
 };
 
-const showGlobalLengthData = function(gameLength) {
-  const length = document.querySelector('.js-global-length');
-  const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
-  const lengthInMinutes = intLength / 1000;
-  length.innerHTML = lengthInMinutes.toFixed(1);
+const showMostPlayedDiffData = function(mostPlayedDiff) {
+  const diff = document.querySelector('.js-most-played-diff');
+  // const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
+  // const lengthInMinutes = intLength / 1000;
+  // length.innerHTML = lengthInMinutes.toFixed(1);
+  diff.innerHTML = mostPlayedDiff;
 };
 
 const showGlobalHeartrateData = function(maxHeartrate) {

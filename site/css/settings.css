@@ -27,7 +27,7 @@ Alle components om de settings page te stylen
   z-index: -2;
   margin: 0 auto;
   bottom: 15%;
-  width: 50%;
+  width: 40%;
   height: auto;
 }
 
@@ -170,6 +170,11 @@ Een container rond de buttons om ze goed te plaatsen
 .c-button + .c-button {
   margin-left: calc(var(--global-baseline) * 2);
 }
+
+
+/*
+Styling of the input fields
+*/
 
 .c-names-container{
   display: grid;
