@@ -26,7 +26,7 @@ Alle components om de settings page te stylen
   position: absolute;
   z-index: -2;
   margin: 0 auto;
-  bottom: 18%;
+  bottom: 15%;
   width: 50%;
   height: auto;
 }
@@ -169,4 +169,43 @@ Een container rond de buttons om ze goed te plaatsen
 
 .c-button + .c-button {
   margin-left: calc(var(--global-baseline) * 2);
+}
+
+.c-names-container{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.c-name-container{
+  display: flex;
+  align-items: flex-end;
+}
+
+.c-name-color1{
+  width: 20px;
+  height: 31px;
+  background-color: green;
+}
+
+.c-name-color2{
+  width: 20px;
+  height: 31px;
+  background-color: red;
+}
+
+.c-name-color3{
+  width: 20px;
+  height: 31px;
+  background-color: yellow;
+}
+
+.c-name-color4{
+  width: 20px;
+  height: 31px;
+  background-color: blue;
+}
+
+.c-names{
+  width: 90%;
+  font-size: 16pt;
 }
