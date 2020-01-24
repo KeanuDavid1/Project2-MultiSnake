@@ -4,9 +4,16 @@ body, html {
   overflow-y: auto;
 }
 
+/*
+The container that contains all scoreboards
+and the title
+*/
+
 .c-scoreboard-container {
-  width: 700px;
+  width: 59.375rem;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .c-title {
@@ -14,32 +21,134 @@ body, html {
   padding: 1px 0;
 }
 
-.c-scoreboard__boards {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  grid-gap: 24px 48px;
+/*
+Scoreboard contains the scoreboards
+*/
+
+.c-scoreboard{
+  width: 100%;
 }
 
-.c-scoreboard__board {
+/*
+Main contains the big scrollable scoreboard
+*/
+
+.c-scoreboard__main{
+  width: calc(100% - 4px);
+  color: #fff;
   border: 2px solid white;
   background-color: var(--global-color-beta);
-  padding: 0 69px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  height: calc(var(--global-baseline) * 67);
+  margin-bottom: 24px;
+  font-size: 20px;
+  overflow-y: scroll;
 }
 
-.c-scoreboard--main {
-  grid-column: 1 / span 2;
+::-webkit-scrollbar{
+  width: 10px;
 }
 
-.c-score-container {
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.c-board-padding{
+  /* cuz css is good */
+  padding: 36px 60px 36px 36px;
+}
+
+/*
+c-row is needed when you add a new score to the board
+it contains a players info
+*/
+
+.c-row{
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 20fr 7fr 13fr;
+  grid-template-columns: 16px repeat(8, 1fr);
+  grid-template-rows: 24px;
+  grid-gap: 16px;
+  margin-bottom: 16px;
 }
+
+.c-row--info{
+  margin-bottom: 24px;
+}
+
+/*
+The two scoreboards on the bottom
+*/
+
+.c-scoreboard__sub{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 80px;
+}
+
+.c-board__item {
+  color: #fff;
+  border: 2px solid white;
+  background-color: var(--global-color-beta);
+  width: 49%;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-board__item--main{
+  width: 100%;
+}
+
 .c-score-container h4 {
   display: flex;
   justify-content: center;
+}
+
+
+/*
+    Utilities: Grid
+    ---
+    Utility classes to specify grid spans
+*/
+
+
+.u-text-align{
+  text-align: center;
+}
+
+.u-span-column-8 {
+  grid-column: span 8;
+}
+
+.u-span-column-7 {
+  grid-column: span 7;
+}
+
+.u-span-column-6 {
+  grid-column: span 6;
+}
+
+.u-span-column-5 {
+  grid-column: span 5;
+}
+
+.u-span-column-4 {
+  grid-column: span 4;
+}
+
+.u-span-column-3 {
+  grid-column: span 3;
+}
+
+.u-span-column-2 {
+  grid-column: span 2;
+}
+
+.u-span-row-2 {
+  height: 100%;
+  grid-row: span 2;
 }
