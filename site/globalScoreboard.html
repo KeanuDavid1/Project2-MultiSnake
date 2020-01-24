@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Pulse Snake - ScoreBord</title>
+    <title>Pulse Snake - Scorebord</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
     <link rel="stylesheet" href="css/globalScoreboard.css" />
@@ -19,59 +18,60 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="c-scoreboard-container">
-        <div class="c-title">
-            <h3>Scorebord</h3>
-            <a class="c-back-button" href="index.html">Go back</a>
+      <!-- the screen title -->
+      <div class="c-title">
+        <h3>Scorebord</h3>
+        <a class="c-back-button" href="index.html">Go back</a>
+      </div>
+
+      <div class="c-scoreboard">
+        <!-- the main scoreboard -->
+        <div class="c-scoreboard__main">
+          <div class="c-board-padding">
+            <div class="c-row c-row--info">
+              <p class="u-span-column-1"></p>
+              <p class="u-span-column-2">Naam</p>
+              <p class="u-span-column-5">Tijd</p>
+              <p class="u-span-column-1">Score</p>
+            </div>
+            <div class="c-row">
+              <p class="u-span-column-1">1.</p>
+              <p class="u-span-column-2 js-name">
+                Keanu
+              </p>
+              <p class="u-span-column-5 js-time">01:18</p>
+              <p class="u-span-column-1 js-score">97</p>
+            </div>
+            <div class="c-row">
+                <p class="u-span-column-1">1.</p>
+              <p class="u-span-column-2 js-name">
+                Keanu
+              </p>
+              <p class="u-span-column-5 js-time">01:18</p>
+              <p class="u-span-column-1 js-score">97</p>
+            </div>
+          </div>
         </div>
-        <div class="c-scoreboard__boards">
 
-            <div class="c-scoreboard__board c-scoreboard--main">
-                <div class="c-score-container">
-                    <h4>No.</h4>
-                    <h4>Naam</h4>
-                    <h4>Tijd</h4>
-                    <h4>Score</h4>
-                    <h4>1.</h4>
-                    <h4>Berend</h4>
-                    <h4>4:20</h4>
-                    <h4>250</h4>
-                    <h4>2.</h4>
-                    <h4>Szymon</h4>
-                    <h4>4:20</h4>
-                    <h4>230</h4>
-                    <h4>3.</h4>
-                    <h4>Keanu</h4>
-                    <h4>4:20</h4>
-                    <h4>210</h4>
-                    <h4>4.</h4>
-                    <h4>Niels</h4>
-                    <h4>4:20</h4>
-                    <h4>200</h4>
-                </div>
-            </div>
+        <!-- the sub scoreboard for heartrate & length -->
+        <div class="c-scoreboard__sub">
+          <div class="c-board__item">
+            <h4>Lengte spel</h4>
+            <h1 class="js-global-length">01:18</h1>
+            <h4>seconden</h4>
+          </div>
 
-            <div class="c-scoreboard__board">
-                <div class="c-scoreboard__datacontainer">
-                    <h4>Lengte spel</h4>
-                    <h1 class="js-global-length">01:18</h1>
-                    <h4>seconden</h4>
-                </div>
-            </div>
-
-            <div class="c-scoreboard__board">
-                <div class="c-scoreboard__datacontainer">
-                    <h4>Snelste hartslag</h4>
-                    <h1 class="js-global-heartbeat">192</h1>
-                    <h4>slagen per minuut</h4>
-                </div>
-            </div>
+          <div class="c-board__item">
+            <h4>Snelste hartslag</h4>
+            <h1 class="js-global-heartbeat">192</h1>
+            <h4>slagen per minuut</h4>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
