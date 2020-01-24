@@ -67,7 +67,7 @@ const displayNameInput = function() {
     inputContainer.innerHTML += `
     <div class="c-name-container"><div class="c-name-color${playerCount +1}"></div>
     <label for="speler${playerCount+1}">Naam:
-    <input type="text" name="speler${playerCount+1}" id="speler${playerCount+1}" class="c-names" placeholder="Speler ${playerCount+1}">
+    <input type="text" name="speler${playerCount+1}" id="speler${playerCount+1}" class="c-names" value="Speler ${playerCount+1}">
   </label></div>`;
   }
 };
@@ -95,16 +95,20 @@ const setValues = function() {
 const settings = function() {
   bodyContent = document.querySelector('body');
 
+
   // dit start het spel en geeft de settings mee
   // als je op de start knop klikt wordt de body gecleared
   // dan wordt er nieuwe html geinjecteerd
   document
     .querySelector('#settings-startbutton')
     .addEventListener('click', function() {
+      for(let z = 0; z < gameSettings['players']; z++){
+        y = document.getElementById(`speler${z+1}`);
+        playerNames.push(y.value);
+        }
       bodyContent.innerHTML = '';
       // bodyContentGameArea variabele zit in de gameContent.js file
       bodyContent.innerHTML = bodyContentGameArea;
-      
       startGame();
     });
 };
