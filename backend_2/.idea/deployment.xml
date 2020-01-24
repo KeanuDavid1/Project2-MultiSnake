@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="PublishConfigData" autoUpload="Always" serverName="pulsesnake">
     <serverData>
       <paths name="Copy of project-level server 'brendrpi'">
@@ -17,16 +18,25 @@
       </paths>
 <<<<<<< HEAD
       <paths name="RPi-APIPA">
+=======
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="RPI-PulseSnake">
+>>>>>>> develop
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
+<<<<<<< HEAD
       <paths name="brendrpi">
+=======
+      <paths name="project_smartbike">
+>>>>>>> develop
         <serverdata>
           <mappings>
-            <mapping deploy="/pulsesnake_backend" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
