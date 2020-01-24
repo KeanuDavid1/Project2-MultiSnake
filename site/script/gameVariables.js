@@ -22,7 +22,7 @@ let gameSettings = { mode: 0, difficulty: 1, players: 1 };
 let minPlayers = 1;
 let maxPlayers = 4;
 let arrDiffs = ['Makkelijk', 'Normaal', 'Moeilijk'];
-let arrModes = ['Classic', 'Attack', 'Bonus'];
+let arrModes = ['Classic', 'Attack'];
 
 // canvas & snake variables
 let snakeBlockSize = 36;
