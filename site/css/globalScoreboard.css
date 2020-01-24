@@ -14,11 +14,12 @@ and the title
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
 }
 
 .c-title {
   margin: 12px 0;
-  padding: 1px 0;
 }
 
 /*
@@ -38,7 +39,7 @@ Main contains the big scrollable scoreboard
   color: #fff;
   border: 2px solid white;
   background-color: var(--global-color-beta);
-  height: calc(var(--global-baseline) * 67);
+  height: calc(var(--global-baseline) * 80);
   margin-bottom: 24px;
   font-size: 20px;
   overflow-y: scroll;
@@ -105,6 +106,24 @@ The two scoreboards on the bottom
 
 .c-score-container h4 {
   display: flex;
+  justify-content: center;
+}
+
+/*
+The styling of the button
+*/
+
+a:visited{
+  color: #fff;
+  text-decoration: none;
+  padding-top: 1px;
+}
+
+.c-button__container{
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
   justify-content: center;
 }
 

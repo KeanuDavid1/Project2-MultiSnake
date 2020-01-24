@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = 'game.html';
   });
   document.querySelector('#scoreboard').addEventListener('click', function() {
-    window.location.href = 'globalScoreboard.html';
+    window.location.href = 'ranglijst.html';
   });
 });
