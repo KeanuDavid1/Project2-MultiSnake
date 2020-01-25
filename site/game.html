@@ -30,6 +30,7 @@
   <script src="script/textObject.js"></script>
   <script src="script/displayPlayerInfo.js"></script>
 
+  <script src="script/validation.js"></script>
   <script src="script/gameContent.js"></script>
   <script src="script/gameSettings.js"></script>
 
@@ -176,9 +177,14 @@
             <p class="c-settings-names__title">Vul hier je namen in</p>
             
             <div class="c-player-names js-inputs">
-              <label for="speler1" class="c-names">
-              <input type="text" name="speler1" id="speler1" class="c-name__input" value="Speler 1">
-            </label>
+              <!-- a container for the error message and the input field -->
+              <div class="c-player-names__input-field-container">
+                <span class="js-names-error-message1 c-error-message">Vereist</span>
+                <label for="speler1" class="c-names">
+                <input type="text" name="speler1" id="speler1" class="c-name__input js-name-input1" value="Speler 1">
+              </label>
+              </div>
+
             </div>
         </div>
         <!-- the corresponding colors -->
@@ -186,7 +192,7 @@
         <div class="c-name-color color1"></div>
       </div>
 
-
+      <!-- end of c-settings -->
     </div>    
     </div>
 

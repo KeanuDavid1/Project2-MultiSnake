@@ -3,6 +3,7 @@ let diffIndexTracker;
 let modeValue;
 let diffValue;
 let playerValue;
+let invalidSettings = 0;
 
 const buttons = function() {
   // om de mode aan te passen
@@ -62,18 +63,26 @@ const changeIndex = function(settingName, change, array) {
 
 const displayNameInput = function() {
   const inputContainer = document.querySelector('.js-inputs');
-  const colors = document.querySelector('.js-input-colors')
+  const colors = document.querySelector('.js-input-colors');
   inputContainer.innerHTML = '';
-  colors.innerHTML = "";
+  colors.innerHTML = '';
 
-  for (let playerCount = 0; playerCount < gameSettings['players']; playerCount++) {
+  for (
+    let playerCount = 0;
+    playerCount < gameSettings['players'];
+    playerCount++
+  ) {
     inputContainer.innerHTML += `
-    <label for="speler${playerCount+1}" class="c-names">
-    <input type="text" name="speler${playerCount+1}" id="speler${playerCount+1}" class="c-name__input" value="Speler ${playerCount+1}">
-  </label>`;
-  colors.innerHTML += `<div class="c-name-color color${playerCount+1}"></div>`
+    <div class="c-player-names__input-field-container">
+    <span class="js-names-error-message${playerCount + 1} c-error-message">Vereist</span>
+    <label for="speler${playerCount + 1}" class="c-names">
+    <input type="text" name="speler${playerCount + 1}" id="speler${playerCount +
+      1}" class="c-name__input" value="Speler ${playerCount + 1}">
+  </label>
+  </div>`;
+    colors.innerHTML += `<div class="c-name-color color${playerCount +
+      1}"></div>`;
   }
-
 };
 
 // get the inner HTML of the settings
@@ -102,18 +111,26 @@ const settings = function() {
   // dit start het spel en geeft de settings mee
   // als je op de start knop klikt wordt de body gecleared
   // dan wordt er nieuwe html geinjecteerd
-  document.querySelector('#settings-nextbutton').addEventListener('click', function() {
-    for(let z = 0; z < gameSettings['players']; z++){
-      y = document.getElementById(`speler${z+1}`);
-      playerNames.push(y.value);
-    };
-      bodyContent.innerHTML = '';
-      // bodyContentGameArea variabele zit in de gameContent.js file
-      bodyContent.innerHTML = bodyContentGameArea;
-      startGame();
+  document
+    .querySelector('#settings-nextbutton')
+    .addEventListener('click', function() {
+      //checks input fields
+      enableInteraction();
+      if (invalidSettings <= 0) {
+        for (let z = 0; z < gameSettings['players']; z++) {
+          y = document.getElementById(`speler${z + 1}`);
+          playerNames.push(y.value);
+        }
+        bodyContent.innerHTML = '';
+        // bodyContentGameArea variabele zit in de gameContent.js file
+        bodyContent.innerHTML = bodyContentGameArea;
+        startGame();
+      } else {
+        console.log('Incorrect settings.');
+      }
     });
-  };
-    
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   document
     .querySelector('#settings-backbutton')
