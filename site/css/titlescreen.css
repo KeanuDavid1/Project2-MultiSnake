@@ -65,6 +65,7 @@ These components contain styling on main page elements
   justify-content: center;
   flex-grow: 1;
   align-items: flex-end;
+  margin-bottom: 48px;
 }
 
 @media (min-width: 1368px){
