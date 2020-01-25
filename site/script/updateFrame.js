@@ -76,7 +76,7 @@ function updateGameArea() {
               'red'
             )
           );
-        } 
+        }
         // voor obstakels
         else if (
           item.hitObj(snake.snakePieces[0]) &&
@@ -109,7 +109,11 @@ function updateGameArea() {
       if (snake.isDead == false) {
         gameOver = false;
       }
+
+      // end of snake is not dead if statement
     }
+
+    // end of snake loop
   }
 
   if (gameOver == true) {

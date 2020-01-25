@@ -55,9 +55,9 @@ const changeIndex = function(settingName, change, array) {
     } else if (!change && gameSettings[settingName] > minPlayers) {
       gameSettings[settingName]--;
     }
+    displayNameInput();
   }
   setValues();
-  displayNameInput();
 };
 
 const displayNameInput = function() {
