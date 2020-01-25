@@ -10,6 +10,15 @@ from flask_cors import CORS
 from flask_socketio import SocketIO
 from RPi import GPIO
 from db_file.Database import Database
+from models.HRM import HRM
+from bluepy import btle
+from PIL import ImageFont, ImageDraw, Image
+from luma.core.interface.serial import i2c
+from luma.core.render import canvas
+from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
+
+
+
 
 try:
     endpoint = '/api/snakedata'
@@ -123,14 +132,58 @@ try:
                                   item['Score'], item['Tijd']])
         return jsonify(message="ok"), 200
 
+    def HeartRate():
+        dev1 = HRM('A0:9E:1A:34:79:38', 0)
+        arrDev = []
+        arrDev.append(dev1)
 
 
-    for pin in Input_pins:
-        GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
+        while True:
+            for devices in arrDev:
+                try:
+                    if devices.device.waitForNotifications(1.0):
+                        # handleNotification() was called
+                        continue
+                except btle.BTLEDisconnectError:
+                    print('player {0} disconnected \n reconnecting...'.format(devices.playerNumber))
+                    devices.reconnect()
+                except AttributeError:
+                    print('device: {0}, was removed'.format(devices.MAC))
+                    arrDev.remove(devices)
+                    print('remaining devices: {0}',len(arrDev))
+                    if(len(arrDev) == 0):
+                        raise Exception('no devices detected, stopping thread...')
+                    break
+                print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
+                socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
+
+
+    def ip():
+        serial = i2c(port=1, address=0x3C)
+        device = ssd1306(serial, rotate=0)
+        i=0
+        while True:
+            i+=1
+            ips = check_output(['hostname', '--all-ip-addresses'])
+            # print('ips: %s' % ips)
+            ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
+            ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
+            # device.clear()
+            with canvas(device) as draw:
+                draw.text((20, 0), "Surf naar:", fill="white")
+                draw.text((20, 20), ip1, fill="white")
+            time.sleep(5)
+
+
+    HRMThread = threading.Thread(target=HeartRate)
+    ip_thread= threading.Thread(target=ip)
+    HRMThread.start()
+    ip_thread.start()
 
     if __name__ == '__main__':
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)
-except:
-    print("haha")
+except Exception as ex:
+    print(ex)
+    GPIO.cleanup()
 finally:
     GPIO.cleanup()
