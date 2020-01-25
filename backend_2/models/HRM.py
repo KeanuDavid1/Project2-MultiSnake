@@ -28,8 +28,11 @@ class HRM():
         self.device.writeCharacteristic(16, bytes([0xAA]))
 
     def reconnect(self):
-        self.device.disconnect()
-        self.device.connect(self.MAC,iface='0')
-        self.device.setDelegate(self.delegate)
-        self.enable_notify()
-        print('player {0} reonnected!'.format(self.playerNumber))
+        try:
+            self.device.disconnect()
+            self.device.connect(self.MAC,iface='0')
+            self.device.setDelegate(self.delegate)
+            self.enable_notify()
+            print('player {0} reonnected!'.format(self.playerNumber))
+        except btle.BTLEDisconnectError as ex:
+            self.reconnect()
