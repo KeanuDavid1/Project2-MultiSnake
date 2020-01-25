@@ -20,11 +20,15 @@ function updateGameArea() {
 
       // kijkt of de slang een andere slang aanraakt
       // en of de slang niet immuum is
-      if (snake.collidesWithOtherSnake() && !snake.isImmune) {
+      
+      if (snake.collidesWithOtherSnake() && !snake.isImmune && !snake.predator) {
         snake.health -= 1;
         snake.setImmunity();
         displayLives(snake.health, snake.player);
-      }
+      } 
+      // else if(snake.collidesWithOtherSnake() && !snake.isImmune && snake.predator){
+      //   displayLives(snake.health, snake.player);
+      // }
 
       //Checkt of de snake-head out of bounds is.
       //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)

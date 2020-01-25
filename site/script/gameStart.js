@@ -40,6 +40,5 @@ const startGame = function() {
     }
     simpleGameMode();
     gameStartTime = Date.now();
-    //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   }, 3000);
 };
