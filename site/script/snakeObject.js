@@ -19,6 +19,8 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, na
   this.deathTime;
   this.healthyFoodCount = 0;
   this.unhealthyFoodCount = 0;
+  this.heartrate = 0;
+  this.predator = false;
   //Snake heeft altijd een hoofd dus voegen wij dit direct toe aan de snakePieces
   this.snakePieces.push(new headComponent(x, y, playerNumber, this.headColor));
   //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
@@ -128,7 +130,6 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, na
   this.collidesWithOtherSnake = function() {
     // checked iedere snake
     for (let snakes of snakeArray) {
-      let SnakePieceCounter = 0;
       // checked ieder stukje van een slang behalve de huidige slang
       if (snakes.player != this.player) {
         for (let snakePiece of snakes.snakePieces) {

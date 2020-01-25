@@ -13,17 +13,32 @@ const simpleGameMode = function () {
   socket = io.connect(socketIP);
   socket.addEventListener('gameInput', socketInput);
   socket.addEventListener('hr',handleHR)
+
   setInterval(generateItem, (10-gameSettings["players"])*700);
+
   // spawn a set amount before the game starts
   for (r=0; r<5; r++){
     generateRock();
     rockCounter++;
   }
+
+  // geeft alle slangen immunity bij de start
   for (let snake of snakeArray){
     snake.setImmunity();
-    console.log('Setting stuff')
   }
+
+  if (gameSettings['mode'] == 1){
+    console.log('Detected "Attack" game mode')
+    for (let snek of snakeArray){
+      snek.heartrate = Math.round(Math.random() * 100)
+      console.log(snek.heartrate)
+    }
+
+    setAttackGameMode();
+  }
+
   setInterval(generateRock, 10000);
+
   for (snake of snakeArray) {
     displayLives(snake.health, snake.player);
   }
