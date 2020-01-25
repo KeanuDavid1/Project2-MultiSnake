@@ -12,6 +12,11 @@ from RPi import GPIO
 from db_file.Database import Database
 from models.HRM import HRM
 from bluepy import btle
+from PIL import ImageFont, ImageDraw, Image
+from luma.core.interface.serial import i2c
+from luma.core.render import canvas
+from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
+
 
 
 
@@ -153,9 +158,27 @@ try:
                 socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
 
 
+    def ip():
+        serial = i2c(port=1, address=0x3C)
+        device = ssd1306(serial, rotate=0)
+        i=0
+        while True:
+            i+=1
+            ips = check_output(['hostname', '--all-ip-addresses'])
+            # print('ips: %s' % ips)
+            ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
+            ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
+            # device.clear()
+            with canvas(device) as draw:
+                draw.text((20, 0), "Surf naar:", fill="white")
+                draw.text((20, 20), ip1, fill="white")
+            time.sleep(5)
+
 
     HRMThread = threading.Thread(target=HeartRate)
+    ip_thread= threading.Thread(target=ip)
     HRMThread.start()
+    ip_thread.start()
 
     if __name__ == '__main__':
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)
