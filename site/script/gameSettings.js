@@ -114,16 +114,20 @@ const settings = function() {
   document
     .querySelector('#settings-nextbutton')
     .addEventListener('click', function() {
-      //checks input fields
+      // checks input fields
       enableInteraction();
-      console.log("Checking")
+
+      // check the names status object to see if all are valid
+      // if they arent valid the counter goes up
+      // the counter gets reset everytime the user presses start
+      // when the check initiates
       for(let x = 0; x< gameSettings["players"]; x++){
-        console.log(Object.values(namesStatus))
         if(!Object.values(namesStatus)[x]){
           invalidSettings++;
         }
       }
-      console.log(invalidSettings);
+      // als de namen in het names status object allemaal
+      // valid waren dat is dit nul en kan het spel starten
       if (invalidSettings == 0) {
         for (let z = 0; z < gameSettings['players']; z++) {
           y = document.getElementById(`speler${z + 1}`);

@@ -28,6 +28,9 @@ const getDOM = function() {
 const enableInteraction = function() {
   // adds and event listener on the button
   // checked of de velden ingevuld zijn als je op de sign in button klikt
+
+  // invalidsettings word hier weer op nul gezet
+  // want de check begint opnieuw
   invalidSettings = 0;
   for (let z = 0; z < gameSettings['players']; z++) {
     let y = document.getElementById(`speler${z + 1}`);
