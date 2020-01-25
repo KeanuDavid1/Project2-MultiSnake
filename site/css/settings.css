@@ -31,7 +31,7 @@ Alle components om de settings page te stylen
   height: auto;
 }
 
-@media (max-width: 960px){
+@media (max-width: 960px) {
   .c-platform {
     position: absolute;
     z-index: -2;
@@ -41,8 +41,6 @@ Alle components om de settings page te stylen
     height: auto;
   }
 }
-
-
 
 /* 
 De body dat de title en de settings bevat,
@@ -67,7 +65,7 @@ het bevindt zich in een o-container
   text-align: center;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-title {
     font-size: 36px;
     margin-bottom: calc(var(--global-baseline) * 10);
@@ -98,7 +96,7 @@ de buttons om de waarde te veranderen
   width: 100%;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-settings {
     font-size: 24px;
     width: 100%;
@@ -171,46 +169,82 @@ Een container rond de buttons om ze goed te plaatsen
   margin-left: calc(var(--global-baseline) * 2);
 }
 
-
 /*
 Styling of the input fields
 */
 
-.c-names-container{
+.c-settings__item--last{
+  margin-bottom: 72px;
+}
+
+.c-settings-names {
+  width: 100%;
+}
+
+.c-settings-names__title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.c-player-names {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  margin-bottom: var(--global-baseline);
 }
 
-.c-name-container{
+.c-names {
+  width: 100%;
   display: flex;
-  align-items: flex-end;
 }
 
-.c-name-color1{
-  width: 20px;
-  height: 31px;
+/*
+The styling for the square that represent the player
+his color
+*/
+
+.c-player-colors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+}
+
+.c-name-color {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.color1{
   background-color: green;
 }
 
-.c-name-color2{
-  width: 20px;
-  height: 31px;
+.color2 {
   background-color: red;
 }
 
-.c-name-color3{
-  width: 20px;
-  height: 31px;
+.color3 {
   background-color: yellow;
 }
 
-.c-name-color4{
-  width: 20px;
-  height: 31px;
+.color4 {
   background-color: blue;
 }
 
-.c-names{
-  width: 90%;
-  font-size: 16pt;
+.c-name__input {
+  width: 100%;
+  height: 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 12px;
+  border: none;
+  font-family: "Roboto Slab";
+}
+
+.c-name__input:hover{
+  border: 2px var(--global-color-gamma) solid; 
+  padding: 3px;
+  padding-left: 11px;
 }

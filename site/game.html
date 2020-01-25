@@ -53,9 +53,9 @@
       <img class="c-clouds" src="assets/images/Cloud.png">
       <img class="c-clouds" src="assets/images/Cloud.png">
     </div>
-    <div class="c-platform">
+    <!-- <div class="c-platform">
       <img src="assets/img/settingspage-platform.svg" alt="">
-    </div>
+    </div> -->
     <div class="c-body">
       <div class="c-body__item c-body__item--main-content">
         <div class="c-title">Spel Instellingen</div>
@@ -135,7 +135,7 @@
             </div>
           </div>
           <!-- selects the number of players -->
-          <div class="js-players c-settings__item">
+          <div class="js-players c-settings__item c-settings__item--last">
             <div class="c-settings__title">Aantal spelers</div>
             <div class="c-options">
               <input type="button" name="left-player" id="left-player" class="o-hide-accessible c-options__button" />
@@ -171,21 +171,31 @@
               </label>
             </div>
           </div>
+          <!-- the settings where the player have to give their names -->
+          <div class="c-settings-names">
+            <p class="c-settings-names__title">Vul hier je namen in</p>
+            
+            <div class="c-player-names js-inputs">
+              <label for="speler1" class="c-names">
+              <input type="text" name="speler1" id="speler1" class="c-name__input" value="Speler 1">
+            </label>
+            </div>
         </div>
-        <div class="c-names-container js-inputs">
-          <div class="c-name-container">
-            <div class="c-name-color1"></div>
-            <label for="speler1">Naam:
-            <input type="text" name="speler1" id="speler1" class="c-names" value="Speler 1">
-          </label>
-          </div>
+        <!-- the corresponding colors -->
+        <div class="c-player-colors js-input-colors">
+        <div class="c-name-color color1"></div>
       </div>
-      </div>
+
+
+    </div>    
+    </div>
+
+          
       <div class="c-body__item">
         <div class="c-button-container">
           <input type="button" value="Terug" class="c-button c-button__text" id="settings-backbutton"
             name="settings-backbutton" />
-          <input type="button" value="Start!" class="c-button c-button__text" id="settings-startbutton"
+          <input type="button" value="Volgende" class="c-button c-button__text" id="settings-nextbutton"
             name="settings-startbutton" />
         </div>
       </div>
