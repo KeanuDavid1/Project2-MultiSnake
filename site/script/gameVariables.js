@@ -21,8 +21,9 @@ let playerDataArray = []
 let gameSettings = { mode: 0, difficulty: 1, players: 1 };
 let players = 0;
 let maxPlayers = 4;
-let difficulties = ['Makkelijk', 'Normaal', 'Moeilijk'];
-let modes = ['Classic', 'Attack', 'Bonus'];
+let arrDiffs = ['Makkelijk', 'Normaal', 'Moeilijk'];
+let arrModes = ['Classic', 'Attack'];
+let playerNames = [];
 
 // canvas & snake variables
 let snakeBlockSize = 36;
