@@ -12,6 +12,7 @@ const simpleGameMode = function () {
   document.addEventListener('keydown', keypressed);
   socket = io.connect(socketIP);
   socket.addEventListener('gameInput', socketInput);
+  socket.addEventListener('hr',handleHR)
   setInterval(generateItem, (10-gameSettings["players"])*700);
   // spawn a set amount before the game starts
   for (r=0; r<5; r++){

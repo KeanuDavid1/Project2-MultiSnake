@@ -10,6 +10,10 @@ from flask_cors import CORS
 from flask_socketio import SocketIO
 from RPi import GPIO
 from db_file.Database import Database
+from models.HRM import HRM
+from bluepy import btle
+
+
 
 try:
     endpoint = '/api/snakedata'
@@ -123,14 +127,40 @@ try:
                                   item['Score'], item['Tijd']])
         return jsonify(message="ok"), 200
 
+    def HeartRate():
+        dev1 = HRM('A0:9E:1A:34:79:38', 0)
+        arrDev = []
+        arrDev.append(dev1)
 
 
-    for pin in Input_pins:
-        GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
+        while True:
+            for devices in arrDev:
+                try:
+                    if devices.device.waitForNotifications(1.0):
+                        # handleNotification() was called
+                        continue
+                except btle.BTLEDisconnectError:
+                    print('player {0} disconnected \n reconnecting...'.format(devices.playerNumber))
+                    devices.reconnect()
+                except AttributeError:
+                    print('device: {0}, was removed'.format(devices.MAC))
+                    arrDev.remove(devices)
+                    print('remaining devices: {0}',len(arrDev))
+                    if(len(arrDev) == 0):
+                        raise Exception('no devices detected, stopping thread...')
+                    break
+                print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
+                socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
+
+
+
+    HRMThread = threading.Thread(target=HeartRate)
+    HRMThread.start()
 
     if __name__ == '__main__':
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)
-except:
-    print("haha")
+except Exception as ex:
+    print(ex)
+    GPIO.cleanup()
 finally:
     GPIO.cleanup()
