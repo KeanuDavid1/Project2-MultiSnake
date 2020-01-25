@@ -3,6 +3,7 @@
 let typedInput;
 let names = {};
 let startButton;
+let namesStatus = {};
 
 const isEmpty = function(fieldValue) {
   return !fieldValue || !fieldValue.length;
@@ -27,11 +28,14 @@ const getDOM = function() {
 const enableInteraction = function() {
   // adds and event listener on the button
   // checked of de velden ingevuld zijn als je op de sign in button klikt
+  invalidSettings = 0;
   for (let z = 0; z < gameSettings['players']; z++) {
     let y = document.getElementById(`speler${z + 1}`);
     if (isEmpty(y.value)) {
       addErrors(document.querySelector(`.js-names-error-message${z+1}`));
-      invalidSettings++;
+      namesStatus[`player${z+1}`] = false;
+    } else{
+      namesStatus[`player${z+1}`] = true;
     }
   }
 };

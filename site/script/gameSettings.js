@@ -116,7 +116,15 @@ const settings = function() {
     .addEventListener('click', function() {
       //checks input fields
       enableInteraction();
-      if (invalidSettings <= 0) {
+      console.log("Checking")
+      for(let x = 0; x< gameSettings["players"]; x++){
+        console.log(Object.values(namesStatus))
+        if(!Object.values(namesStatus)[x]){
+          invalidSettings++;
+        }
+      }
+      console.log(invalidSettings);
+      if (invalidSettings == 0) {
         for (let z = 0; z < gameSettings['players']; z++) {
           y = document.getElementById(`speler${z + 1}`);
           playerNames.push(y.value);
