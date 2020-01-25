@@ -18,6 +18,10 @@ const simpleGameMode = function () {
     generateRock();
     rockCounter++;
   }
+  for (let snake of snakeArray){
+    snake.setImmunity();
+    console.log('Setting stuff')
+  }
   setInterval(generateRock, 10000);
   for (snake of snakeArray) {
     displayLives(snake.health, snake.player);

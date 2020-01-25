@@ -194,9 +194,26 @@ Styling of the input fields
   margin-bottom: var(--global-baseline);
 }
 
+.c-player-names__input-field-container {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
 .c-names {
   width: 100%;
   display: flex;
+}
+
+.c-error-message{
+font-size: 16px;
+font-weight: 500;
+color: black;
+display: none;
+}
+
+.has-error{
+  display: block;
 }
 
 /*
