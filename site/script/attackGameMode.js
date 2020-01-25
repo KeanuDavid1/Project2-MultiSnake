@@ -11,7 +11,7 @@ const checkHighestHeartRates = function(){
     let highestRate = 0;
     let currentPredatorNumber = -1;
     for(let snake of snakeArray){
-        if (snake.heartrate > highestRate){
+        if (snake.heartrate > highestRate && !snake.isDead){
             highestRate = snake.heartrate;
             currentPredatorNumber = snake.player;
         }
