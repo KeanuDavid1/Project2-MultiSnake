@@ -15,7 +15,7 @@ video{
   justify-content: center;
   align-items: center;
   height: 80vh;
-  animation: move-island 1s ease-out forwards;
+  animation: move-island 0.5s ease-out forwards;
 }
 
 @keyframes move-island {
@@ -36,9 +36,16 @@ video{
 
 .c-instructions {
   background-color: var(--global-color-beta);
-  height: 80%;
+  height: 70%;
   width: 50%;
   border: 2px white solid;
+}
+
+.c-explanation{
+  width: 90%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .c-carousel-container{
@@ -47,16 +54,38 @@ video{
     grid-template-columns: 20% 60% 20%;
 }
 
-.c-button-keanu{
+.c-button-video{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.c-button-keanu svg{
+.c-button-video svg{
+  height: 60px;
+}
+
+.c-explanation__items{
   height: 100px;
+  width: 100%;
+}
+
+.c-item-images{
+  display: flex;
+}
+
+.c-item{
+  height: 50px;
+}
+
+.c-item + .c-item{
+  margin-left: 10px;
 }
 
 .u-rotate{
   transform: rotate(180deg);
+}
+
+.u-margin-top-md{
+  margin-top: 48px;
 }
