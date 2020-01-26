@@ -391,11 +391,14 @@ A reusable button
   background: var(--global-color-beta);
   border: none;
   font-family: 'Roboto Slab';
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   border-radius: 10px;
   margin-bottom: 48px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .c-button__text {
@@ -415,6 +418,7 @@ A reusable button
     justify-content: center;
     flex-wrap: wrap;
     border-radius: 10px;
+    padding: 0;
   }
   
   .c-button__text {
@@ -426,11 +430,13 @@ A reusable button
 .c-button:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
+  outline: none;
 }
 
 .c-button:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
+  outline: none;
 }
 
 /*------------------------------------*\

@@ -4,7 +4,16 @@ let lastPositionY;
 let newComponent;
 let collideCounter;
 
-function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, name) {
+function snakeObject(
+  x,
+  y,
+  playerNumber,
+  headColor,
+  bodyColor,
+  health,
+  score,
+  name
+) {
   //Hier houden wij bij de snake onderdelen.
   this.snakePieces = [];
   this.headColor = headColor;
@@ -19,6 +28,8 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, na
   this.deathTime;
   this.healthyFoodCount = 0;
   this.unhealthyFoodCount = 0;
+  this.heartrate = 0;
+  this.predator = false;
   //Snake heeft altijd een hoofd dus voegen wij dit direct toe aan de snakePieces
   this.snakePieces.push(new headComponent(x, y, playerNumber, this.headColor));
   //Verandert de x en y positie van iedere onderdeel en voert de update uit die het onderdelen tekent op canvas.
@@ -30,15 +41,14 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, na
       }
       this.checkImmunity();
     } else {
-          for (let piece of this.snakePieces){
-            piece.x = -100;
-            piece.y = -100;
-        }
+      for (let piece of this.snakePieces) {
+        piece.x = -100;
+        piece.y = -100;
+      }
       this.isDead = true;
       this.deathTime = Date.now();
-      }
-    };
-
+    }
+  };
 
   this.updateColor = function() {
     for (piece of this.snakePieces) {
@@ -124,22 +134,26 @@ function snakeObject(x, y, playerNumber, headColor, bodyColor, health, score, na
     return false;
   };
 
-  
   this.collidesWithOtherSnake = function() {
     // checked iedere snake
     for (let snakes of snakeArray) {
-      let SnakePieceCounter = 0;
       // checked ieder stukje van een slang behalve de huidige slang
       if (snakes.player != this.player) {
         for (let snakePiece of snakes.snakePieces) {
-          if (this.snakePieces[0].collidesWith(snakePiece)) {
-            return true;
+          if (this.snakePieces[0].collidesWith(snakePiece) && this.predator && !snakes.isImmune) {
+            snakes.health -= 1;
+            snakes.setImmunity();
+            displayLives(snakes.health, snakes.player)
+          } else if (this.snakePieces[0].collidesWith(snakePiece) && !this.predator && !snakes.isImmune && !this.isImmune){
+            this.health -= 1;
+            this.setImmunity();
+            displayLives(this.health, this.player)
+          }
           }
         }
       }
-    }
-  };
-
+    };
+    
   this.changeDirectionOnOutOfBounds = function() {
     if (this.snakePieces[0].y <= 0) {
       for (let piece of this.snakePieces) {

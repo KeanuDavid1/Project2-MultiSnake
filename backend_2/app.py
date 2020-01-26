@@ -10,10 +10,25 @@ from flask_cors import CORS
 from flask_socketio import SocketIO
 from RPi import GPIO
 from db_file.Database import Database
+from models.HRM import HRM
+from bluepy import btle
+from PIL import ImageFont, ImageDraw, Image
+from luma.core.interface.serial import i2c
+from luma.core.render import canvas
+from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
+
+
+
 
 try:
     endpoint = '/api/snakedata'
     Input_pins = [18,23,24,25,1,12,16,20,21,26,6,19,5,13,27,22]
+    dev1 = HRM('A0:9E:1A:34:79:38', 0)
+    dev2 = HRM('A0:9E:1A:34:79:37', 1)
+    dev3 = HRM('A0:9E:1A:34:79:36', 2)
+    dev4 = HRM('A0:9E:1A:34:79:35', 3)
+    arrDev = [dev1,dev2,dev3,dev4]
+    chosenDev = []
     # GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(Input_pins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -123,14 +138,86 @@ try:
                                   item['Score'], item['Tijd']])
         return jsonify(message="ok"), 200
 
+    def HeartRate():
+        while True:
+            global chosenDev
+            # print(arrDev)
+            for devices in chosenDev:
+                try:
+
+                    # devices.reconnect()
+                    if devices.device.waitForNotifications(1.0):
+                        # handleNotification() was called
+                        pass
+                # except btle.BTLEDisconnectError:
+                #     print('player {0} disconnected \n reconnecting...'.format(devices.playerNumber))
+                #     devices.reconnect()
+                except AttributeError as ex:
+                    # print("No answer recived from: {0}".format(devices.MAC))
+                    # print('device: {0}, was removed'.format(devices.MAC))
+                    pass
+                    # arrDev.remove(devices)
+                    # print('remaining devices: {0}',len(arrDev))
+                    # if(len(arrDev) == 0):
+                    #     raise Exception('no devices detected, stopping thread...')
+                    # break
+                except Exception as ex:
+                    print('Exception: {0}'.format(ex))
+                print(devices.playerNumber)
+                print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
+                socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
+            time.sleep(2)
 
 
-    for pin in Input_pins:
-        GPIO.add_event_detect(pin, GPIO.FALLING, callback=input_trigger, bouncetime=500)
+    def ip():
+        serial = i2c(port=1, address=0x3C)
+        device = ssd1306(serial, rotate=0)
+        # i=0
+        while True:
+            # i+=1
+            ips = check_output(['hostname', '--all-ip-addresses'])
+            # print('ips: %s' % ips)
+            ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
+            ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
+            # device.clear()
+            with canvas(device) as draw:
+                draw.text((20, 0), "Surf naar:", fill="white")
+                draw.text((20, 20), ip1, fill="white")
+            time.sleep(5)
+
+    @socketio.on('startHR')
+    def startHR(spelers):
+        global chosenDev
+        chosenDev = arrDev[0:spelers]
+
+
+    def reconnect_devices():
+        global chosenDev
+        while True:
+            for devices in chosenDev:
+                # print(devices.playerNumber)
+                try:
+                    try:
+                        devices.device.status()
+                    except:
+                        devices.reconnect()
+                        # print(devices.device.status())
+                except:
+                    pass
+            time.sleep(1)
+
+
+    HRMThread = threading.Thread(target=HeartRate)
+    ip_thread= threading.Thread(target=ip)
+    hrm_connect_thread= threading.Thread(target=reconnect_devices)
+    HRMThread.start()
+    ip_thread.start()
+    hrm_connect_thread.start()
 
     if __name__ == '__main__':
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)
-except:
-    print("haha")
+except Exception as ex:
+    print(ex)
+    GPIO.cleanup()
 finally:
     GPIO.cleanup()

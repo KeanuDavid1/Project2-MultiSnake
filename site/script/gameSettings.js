@@ -3,6 +3,7 @@ let diffIndexTracker;
 let modeValue;
 let diffValue;
 let playerValue;
+let invalidSettings = 0;
 
 const buttons = function() {
   // om de mode aan te passen
@@ -55,20 +56,32 @@ const changeIndex = function(settingName, change, array) {
     } else if (!change && gameSettings[settingName] > minPlayers) {
       gameSettings[settingName]--;
     }
+    displayNameInput();
   }
   setValues();
-  displayNameInput();
 };
 
 const displayNameInput = function() {
   const inputContainer = document.querySelector('.js-inputs');
+  const colors = document.querySelector('.js-input-colors');
   inputContainer.innerHTML = '';
-  for (let playerCount = 0; playerCount < gameSettings['players']; playerCount++) {
+  colors.innerHTML = '';
+
+  for (
+    let playerCount = 0;
+    playerCount < gameSettings['players'];
+    playerCount++
+  ) {
     inputContainer.innerHTML += `
-    <div class="c-name-container"><div class="c-name-color${playerCount +1}"></div>
-    <label for="speler${playerCount+1}">Naam:
-    <input type="text" name="speler${playerCount+1}" id="speler${playerCount+1}" class="c-names" value="Speler ${playerCount+1}">
-  </label></div>`;
+    <div class="c-player-names__input-field-container">
+    <span class="js-names-error-message${playerCount + 1} c-error-message">Vereist</span>
+    <label for="speler${playerCount + 1}" class="c-names">
+    <input type="text" name="speler${playerCount + 1}" id="speler${playerCount +
+      1}" class="c-name__input" value="Speler ${playerCount + 1}">
+  </label>
+  </div>`;
+    colors.innerHTML += `<div class="c-name-color color${playerCount +
+      1}"></div>`;
   }
 };
 
@@ -95,21 +108,38 @@ const setValues = function() {
 const settings = function() {
   bodyContent = document.querySelector('body');
 
-
   // dit start het spel en geeft de settings mee
   // als je op de start knop klikt wordt de body gecleared
   // dan wordt er nieuwe html geinjecteerd
   document
-    .querySelector('#settings-startbutton')
+    .querySelector('#settings-nextbutton')
     .addEventListener('click', function() {
-      for(let z = 0; z < gameSettings['players']; z++){
-        y = document.getElementById(`speler${z+1}`);
-        playerNames.push(y.value);
+      // checks input fields
+      enableInteraction();
+
+      // check the names status object to see if all are valid
+      // if they arent valid the counter goes up
+      // the counter gets reset everytime the user presses start
+      // when the check initiates
+      for(let x = 0; x< gameSettings["players"]; x++){
+        if(!Object.values(namesStatus)[x]){
+          invalidSettings++;
         }
-      bodyContent.innerHTML = '';
-      // bodyContentGameArea variabele zit in de gameContent.js file
-      bodyContent.innerHTML = bodyContentGameArea;
-      startGame();
+      }
+      // als de namen in het names status object allemaal
+      // valid waren dat is dit nul en kan het spel starten
+      if (invalidSettings == 0) {
+        for (let z = 0; z < gameSettings['players']; z++) {
+          y = document.getElementById(`speler${z + 1}`);
+          playerNames.push(y.value);
+        }
+        bodyContent.innerHTML = '';
+        // bodyContentGameArea variabele zit in de gameContent.js file
+        bodyContent.innerHTML = bodyContentGameArea;
+        startGame();
+      } else {
+        console.log('Incorrect settings.');
+      }
     });
 };
 
