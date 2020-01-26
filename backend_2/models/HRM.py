@@ -6,13 +6,15 @@ class HRM():
         self.MAC = par_MAC
         self.playerNumber = par_playerNo
         self.delegate = HeartRateDelegate(par_playerNo)
-        try:
-            self.device = btle.Peripheral(par_MAC,iface='0')
-            self.device.setDelegate(self.delegate)
-            self.enable_notify()
-        except:
-            print("Initial connection failed with {0} HRM".format(self.MAC))
-            # raise Exception(self)
+        self.device = btle.Peripheral()
+        # print(self.device.status())
+        # try:
+        #     self.device.connect(par_MAC,iface='0')
+        #     self.device.setDelegate(self.delegate)
+        #     self.enable_notify()
+        # except:
+        #     print("Initial connection failed with {0} HRM".format(self.MAC))
+        #     # raise Exception(self)
 
     @property
     def heart_rate(self):
@@ -29,10 +31,11 @@ class HRM():
 
     def reconnect(self):
         try:
-            self.device.disconnect()
+            # self.device.disconnect()
             self.device.connect(self.MAC,iface='0')
             self.device.setDelegate(self.delegate)
             self.enable_notify()
+
             print('player {0} reonnected!'.format(self.playerNumber))
         except btle.BTLEDisconnectError as ex:
-            self.reconnect()
+            print("Connection failed with: {0}".format(self.MAC))
