@@ -115,6 +115,12 @@ try:
         data = conn.get_data('Select MAX(Hartslag) from Score limit 1')
         return jsonify(data), 200
 
+
+    @app.route(endpoint + "/data/global/scorebord", methods=["GET"])
+    def get_global_game_data():
+        data = conn.get_data('Select * from Score order by Score desc limit 20')
+        return jsonify(data), 200
+
     # logs game & player scores
     @app.route(endpoint + '/save/game', methods=["POST"])
     def save_game_score():
@@ -182,7 +188,7 @@ try:
             # device.clear()
             with canvas(device) as draw:
                 draw.text((20, 0), "Surf naar:", fill="white")
-                draw.text((20, 20), ip1, fill="white")
+                draw.text((20, 20), ip2, fill="white")
             time.sleep(5)
 
     @socketio.on('startHR')
