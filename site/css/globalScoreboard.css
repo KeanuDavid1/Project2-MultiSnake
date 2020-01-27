@@ -39,10 +39,16 @@ Main contains the big scrollable scoreboard
   color: #fff;
   border: 2px solid white;
   background-color: var(--global-color-beta);
-  height: calc(var(--global-baseline) * 80);
+  height: calc(var(--global-baseline) * 56);
   margin-bottom: 24px;
   font-size: 20px;
   overflow-y: scroll;
+}
+
+@media (min-width: 1368px){
+  .c-scoreboard__main{
+    height: calc(var(--global-baseline) * 80);
+  }
 }
 
 ::-webkit-scrollbar{
