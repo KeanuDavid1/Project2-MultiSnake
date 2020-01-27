@@ -42,17 +42,37 @@ Main contains the big scrollable scoreboard
   height: calc(var(--global-baseline) * 80);
   margin-bottom: 24px;
   font-size: 20px;
-  overflow-y: scroll;
+  overflow-y: overlay;
+  
 }
 
-::-webkit-scrollbar{
-  width: 10px;
+::-webkit-scrollbar {
+  width: 5px;
+  /* padding: 5px; */
+  /* scroll-margin-left: 5px; */
+  /* margin: 5px; */
+  /* padding: 5px; */
+  
 }
 
+/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
+  /* padding: 5px; */
 }
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+  /* padding: 5px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: silver;
+  /* padding: 5px; */
+}
 .c-board-padding{
   /* cuz css is good */
   padding: 36px 60px 36px 36px;
