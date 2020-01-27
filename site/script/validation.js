@@ -14,6 +14,15 @@ const isEmpty = function(fieldValue) {
 const addErrors = function(field) {
   field.classList.add('has-error');
 };
+
+const addBorder = function(field){
+  field.classList.add('has-error--border')
+}
+
+const removeBorders = function(field){
+  field.classList.remove('has-error--border')
+}
+
 const removeErrors = function(field) {
   field.classList.remove('has-error');
 };
@@ -36,8 +45,11 @@ const enableInteraction = function() {
     let y = document.getElementById(`speler${z + 1}`);
     if (isEmpty(y.value)) {
       addErrors(document.querySelector(`.js-names-error-message${z+1}`));
+      addBorder(document.querySelector(`#speler${z+1}`))
       namesStatus[`player${z+1}`] = false;
     } else{
+      removeErrors(document.querySelector(`.js-names-error-message${z+1}`));
+      removeBorders(document.querySelector(`#speler${z+1}`))
       namesStatus[`player${z+1}`] = true;
     }
   }

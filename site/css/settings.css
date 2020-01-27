@@ -173,7 +173,7 @@ Een container rond de buttons om ze goed te plaatsen
 Styling of the input fields
 */
 
-.c-settings__item--last{
+.c-settings__item--last {
   margin-bottom: 72px;
 }
 
@@ -205,17 +205,6 @@ Styling of the input fields
   display: flex;
 }
 
-.c-error-message{
-font-size: 16px;
-font-weight: 500;
-color: black;
-display: none;
-}
-
-.has-error{
-  display: block;
-}
-
 /*
 The styling for the square that represent the player
 his color
@@ -233,7 +222,7 @@ his color
   border-radius: 20px;
 }
 
-.color1{
+.color1 {
   background-color: green;
 }
 
@@ -257,11 +246,32 @@ his color
   padding: 5px;
   padding-left: 12px;
   border: none;
-  font-family: "Roboto Slab";
+  font-family: 'Roboto Slab';
 }
 
-.c-name__input:hover{
-  border: 2px var(--global-color-gamma) solid; 
+.c-name__input:hover {
+  border: 2px var(--global-color-gamma) solid;
+  padding: 3px;
+  padding-left: 11px;
+}
+
+/*
+Error messages
+*/
+
+.c-error-message {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  display: none;
+}
+
+.has-error {
+  display: block;
+}
+
+.has-error--border {
+  border: solid var(--global-color-gamma) 2px;
   padding: 3px;
   padding-left: 11px;
 }
