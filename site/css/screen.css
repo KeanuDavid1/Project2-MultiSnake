@@ -453,16 +453,16 @@ A reusable button
 
 .c-clouds {
   position: relative;
-  animation: movingclouds 20s infinite;
+  animation: movingclouds 40s infinite;
   animation-timing-function: linear;
 }
 
 @keyframes movingclouds {
   0% {
-    left: -110%;
+    left: -85%;
   }
   100% {
-    left: 110%;
+    left: 100%;
   }
 }
 
