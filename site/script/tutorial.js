@@ -18,10 +18,10 @@ const listenToVidButtons = function() {
 
   buttonLeft.addEventListener('click', function() {
     videoIndex = videoIndex - 1;
-    if (videoIndex > 6) {
+    if (videoIndex > 7) {
       videoIndex = 0;
     } else if (videoIndex < 0) {
-      videoIndex = 6;
+      videoIndex = 7;
     }
     video.innerHTML = `<video src="${videoPaths[videoIndex]}" autoplay loop></video>`;
     title.innerHTML = tutorialTitles[videoIndex];
@@ -31,10 +31,10 @@ const listenToVidButtons = function() {
 
   buttonRight.addEventListener('click', function() {
     videoIndex = videoIndex + 1;
-    if (videoIndex > 6) {
+    if (videoIndex > 7) {
       videoIndex = 0;
     } else if (videoIndex < 0) {
-      videoIndex = 6;
+      videoIndex = 7;
     }
     video.innerHTML = `<video src="${videoPaths[videoIndex]}" autoplay loop></video>`;
     title.innerHTML = tutorialTitles[videoIndex];
