@@ -51,6 +51,7 @@ function updateGameArea() {
           itemArray.splice(i, 1);
           snake.addNewPiece();
           snake.score += addPoints;
+          snake.scoreChecker();
           snake.healthyFoodCount++;
           displayScore(snake.score, snake.player);
 
@@ -58,6 +59,7 @@ function updateGameArea() {
         } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
           itemArray.splice(i, 1);
           snake.score -= subtractPoints;
+          snake.scoreChecker();
           snake.unhealthyFoodCount++;
           displayScore(snake.score, snake.player);
 

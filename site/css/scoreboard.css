@@ -51,7 +51,6 @@ flex-wrap: wrap;
   color: white;
   display: flex;
   justify-content: center;
-  height: fit-content;
 }
 
 .c-outer-container {
@@ -75,10 +74,11 @@ flex-wrap: wrap;
   height: 60%;
   color: white;
   display: grid;
-  grid-template-columns: 10% 60% 10%;
+  grid-template-columns: 10% 60% 1fr;
   grid-template-rows: repeat(4, 1fr);
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 0;
 }
 
 .c-button-container{
@@ -91,5 +91,10 @@ flex-wrap: wrap;
 
 .c-score-container h4 {
   margin-top: 16px;
+  font-size: 18px;
   margin-bottom: 0px;
+}
+
+.c-score-header{
+  font-size: 20px !important;
 }
