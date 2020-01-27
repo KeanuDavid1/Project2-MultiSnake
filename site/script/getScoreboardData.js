@@ -23,11 +23,13 @@ const showHeartData = function(maxHeartrate) {
   heart.innerHTML = maxHeartrate[0]['MAX(Hartslag)'];
 };
 
-const showLengthData = function(gameLength) {
+const showLengthData = function(data) {
   const length = document.querySelector('.js-length');
-  const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
-  const lengthInSeconds = intLength / 1000;
-  length.innerHTML = lengthInSeconds.toFixed(1);
+  let seconden = Math.floor((data[0]["MAX(Tijd)"]  / 1000) % 60);
+    if (seconden < 10){
+      seconden = `0${seconden}`;
+    }
+  length.innerHTML = `${Math.floor((data[0]["MAX(Tijd)"] / 1000) / 60)}` + `:${seconden}`;
 };
 
 document.addEventListener('DOMContentLoaded', function() {
