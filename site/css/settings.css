@@ -205,17 +205,6 @@ Styling of the input fields
   display: flex;
 }
 
-.c-error-message{
-font-size: 16px;
-font-weight: 500;
-color: black;
-display: none;
-}
-
-.has-error{
-  display: block;
-}
-
 /*
 The styling for the square that represent the player
 his color
@@ -265,3 +254,21 @@ his color
   padding: 3px;
   padding-left: 11px;
 }
+
+
+.c-error-message{
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  display: none;
+  }
+  
+  .has-error{
+    display: block;
+  }
+  
+  .has-error--border {
+    border: solid var(--global-color-gamma) 2px;
+    padding: 3px;
+    padding-left: 11px;
+  }
