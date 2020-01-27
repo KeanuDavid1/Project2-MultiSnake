@@ -178,6 +178,7 @@ try:
     def ip():
         serial = i2c(port=1, address=0x3C)
         device = ssd1306(serial, rotate=0)
+        font = ImageFont.truetype('./OpenSans-Regular.ttf', 14)
         # i=0
         while True:
             # i+=1
@@ -187,8 +188,8 @@ try:
             ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
             # device.clear()
             with canvas(device) as draw:
-                draw.text((20, 0), "Surf naar:", fill="white")
-                draw.text((20, 20), ip2, fill="white")
+                draw.text((20, 0), "Surf naar:", fill="white",font=font)
+                draw.text((20, 20), ip2, fill="white",font=font)
             time.sleep(5)
 
     @socketio.on('startHR')
