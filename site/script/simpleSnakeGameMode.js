@@ -25,9 +25,7 @@ const simpleGameMode = function () {
   }
 
   // geeft alle slangen immunity bij de start
-  for (let snake of snakeArray) {
-    snake.setImmunity();
-  }
+
 
   if (gameSettings['mode'] == 1) {
     console.log('Detected "Attack" game mode')
@@ -39,4 +37,5 @@ const simpleGameMode = function () {
   for (snake of snakeArray) {
     displayLives(snake.health, snake.player);
   }
+  frames = 0
 };
