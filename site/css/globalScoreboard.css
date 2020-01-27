@@ -54,13 +54,9 @@ Main contains the big scrollable scoreboard
 
 ::-webkit-scrollbar{
   width: 10px;
+}
 ::-webkit-scrollbar {
-  width: 5px;
-  /* padding: 5px; */
-  /* scroll-margin-left: 5px; */
-  /* margin: 5px; */
-  /* padding: 5px; */
-  
+  width: 5px; 
 }
 
 /* Track */
