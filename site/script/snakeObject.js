@@ -213,14 +213,22 @@ function snakeObject(
   };
 
   this.setImmunity = function () {
-    this.switchColor();
+    // this.switchColor();
     this.isImmune = true;
     this.startImmunityFrame = frames;
   };
 
   this.checkImmunity = function () {
     // console.log(this.isImmune)
-    if (this.isImmune) {
+    // console.log(frames)
+    if (frames < 100) {
+      this.isImmune = true;
+    }
+    else if (frames == 100) {
+      this.isImmune = false;
+      // this.revertColor();
+    }
+    else if (this.isImmune && frames > 100) {
       if ((frames - this.startImmunityFrame) % 10 == 0) {
         this.switchColor();
       }
@@ -229,6 +237,7 @@ function snakeObject(
         this.revertColor();
       }
     }
+
   };
 
   this.switchColor = function () {
