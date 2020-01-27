@@ -201,7 +201,7 @@ try:
         global chosenDev
         while True:
             for devices in chosenDev:
-                # print(devices.playerNumber)
+                print('reconnect thread active')
                 try:
                     try:
                         devices.device.status()
