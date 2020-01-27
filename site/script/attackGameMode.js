@@ -21,6 +21,8 @@ const checkHighestHeartRates = function () {
     for (let snakePredator of snakeArray) {
         if (snakePredator.player == currentPredatorNumber) {
             snakePredator.predator = true;
+            snakePredator.bodyColor = "Black";
+            snakePredator.updateColor();
             console.log('Current predator player:')
             console.log(playerNames[snakePredator.player[0]])
         }
