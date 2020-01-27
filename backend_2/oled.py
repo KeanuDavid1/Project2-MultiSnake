@@ -14,7 +14,7 @@ with canvas(device) as draw:
     # draw.rectangle(device.bounding_box, outline="white", fill="black")
     # font = ImageFont.truetype('./ComicSansMS3.ttf',20)
     # draw.text((10, 20), "169.254.10.1", fill="red",font=font)
-    image = Image.open('pepe.jpg').resize((device.width, device.height), Image.ANTIALIAS).convert('1')
+    image = Image.open('favicon-32x32.png').resize((device.width, device.height), Image.ANTIALIAS).convert('1')
 
 
 

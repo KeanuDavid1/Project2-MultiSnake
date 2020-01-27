@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Pulse Snake - tutorial</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/screen.css" />
-    <link rel="stylesheet" href="css/tutorial.css" />
-    <script src="script/gameVariables.js"></script>
-    <script src="script/tutorial.js"></script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Pulse Snake - tutorial</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <link rel="stylesheet" href="css/tutorial.css" />
+  <script src="script/gameVariables.js"></script>
+  <script src="script/tutorial.js"></script>
 
-  <body>
-    <div class="c-container">
-  <div class="c-island">
-    <img src="assets/images/HomeScreenBackgroundNoColor.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+  <div class="c-container">
+    <div class="c-island">
+      <img src="assets/images/HomeScreenBackgroundNoColor.png" />
+    </div>
   </div>
-</div>
   <div class="c-container-instructions">
     <h3>Instructies</h3>
     <div class="c-instructions" id="js-instructions">
       <div class="c-explanation">
         <h4 class="c-explanation__title js-title">Gezond voedsel</h4>
-        <p class="c-explanation__description js-description">Wanneer je een gezond stukje voedsel eet krijg je 10 punten, deze punten bepalen hoe hoof je aan het einde van het spel op het scorebord komt te staan. Naast de 10 punten die je krijgt zal je slang ook 1 blokje langer worden.</p>
+        <p class="c-explanation__description js-description">Wanneer je een gezond stukje voedsel eet krijg je 10
+          punten, deze punten bepalen hoe hoof je aan het einde van het spel op het scorebord komt te staan. Naast de 10
+          punten die je krijgt zal je slang ook 1 blokje langer worden.</p>
         <div class="c-explanation__items js-items" id="js-items">
           <h5>Voedsel soorten:</h5>
           <div class="c-item-images">
-          <img class="c-item" src="assets/img/Apple.svg" alt="Appel">
-          <img class="c-item" src="assets/img/Pear.svg" alt="Peer">
-          <img class="c-item" src="assets/img/Carrot.svg" alt="Wortel">
-        </div>
+            <img class="c-item" src="assets/img/Apple.svg" alt="Appel">
+            <img class="c-item" src="assets/img/Pear.svg" alt="Peer">
+            <img class="c-item" src="assets/img/Carrot.svg" alt="Wortel">
+          </div>
         </div>
       </div>
-        <div class="c-carousel-container">
-          <div class="c-button-video js-button-left"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+      <div class="c-carousel-container">
+        <div class="c-button-video js-button-left"><svg id="Layer_1" data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
             <defs>
               <style>
                 .cls-1 {
@@ -53,23 +57,27 @@
             <path id="Polygon_2" data-name="Polygon 2" class="cls-1"
               d="M3,15.46a2,2,0,0,1-.73-2.73A2,2,0,0,1,3,12L23,.46a2,2,0,0,1,2.73.73,2,2,0,0,1,.27,1V25.27a2,2,0,0,1-2,2A2,2,0,0,1,23,27Z" />
           </svg></div>
-        <div class="c-vid-container"><video src="assets/vid/Snake_tutorial_Healty.mp4" autoplay loop></video></div>
-        <div class="c-button-video js-button-right"><svg class="u-rotate" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
-          <defs>
-            <style>
-              .cls-1 {
-                fill: #b32e2b;
-              }
-            </style>
-          </defs>
-          <title>Volgende Tutorial</title>
-          <path id="Polygon_2" data-name="Polygon 2" class="cls-1"
-            d="M3,15.46a2,2,0,0,1-.73-2.73A2,2,0,0,1,3,12L23,.46a2,2,0,0,1,2.73.73,2,2,0,0,1,.27,1V25.27a2,2,0,0,1-2,2A2,2,0,0,1,23,27Z" />
-        </svg></div>
+        <div class="c-vid-container"><video src="assets/vid/Snake_tutorial_Healty.mp4" autoplay muted loop></video>
+        </div>
+        <div class="c-button-video js-button-right"><svg class="u-rotate" id="Layer_1" data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #b32e2b;
+                }
+              </style>
+            </defs>
+            <title>Volgende Tutorial</title>
+            <path id="Polygon_2" data-name="Polygon 2" class="cls-1"
+              d="M3,15.46a2,2,0,0,1-.73-2.73A2,2,0,0,1,3,12L23,.46a2,2,0,0,1,2.73.73,2,2,0,0,1,.27,1V25.27a2,2,0,0,1-2,2A2,2,0,0,1,23,27Z" />
+          </svg></div>
+      </div>
     </div>
-    </div>
-    <input type="button" class="c-button c-button__text u-margin-top-md" name="back" id="back" onclick="window.location.href = 'index.html'" value="Ga terug" />
-    </div>
+    <input type="button" class="c-button c-button__text u-margin-top-md" name="back" id="back"
+      onclick="window.location.href = 'index.html'" value="Ga terug" />
   </div>
-  </body>
+  </div>
+</body>
+
 </html>
