@@ -65,5 +65,5 @@ let tutorialText = [
   'Wanneer je geen levens meer hebt verdwijnt je slang van het speelveld en wordt het vakje met je naam en punten grijs gekleurd. Wanneer je als eerste dood was kan je nog altijd winnen als je de meeste punten had.'
 ];
 
-const socketIP = 'http://172.30.248.143' + ':5000';
+const socketIP = 'http://172.30.248.144' + ':5000';
 let socket;

@@ -1,3 +1,7 @@
+html {
+  padding: 0;
+}
+
 body {
   background-color: var(--global-color-alpha);
   width: 100vw;
@@ -5,13 +9,18 @@ body {
   font-size: 100%;
 }
 
+.o-container{
+  display: flex;
+flex-wrap: wrap;
+}
+
 .c-scoreboard__container {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+
 }
 
 .c-scoreboard__container h3 {
@@ -72,11 +81,15 @@ body {
   margin-right: 10%;
 }
 
+.c-button-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
 .c-score-container h4 {
   margin-top: 16px;
   margin-bottom: 0px;
-}
-
-.u-margin-top-lg {
-  margin-top: 185px;
 }
