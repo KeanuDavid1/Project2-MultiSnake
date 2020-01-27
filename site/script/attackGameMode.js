@@ -22,9 +22,8 @@ const checkHighestHeartRates = function () {
         if (snakePredator.player == currentPredatorNumber) {
             snakePredator.predator = true;
             snakePredator.bodyColor = "Black";
-            snakePredator.updateColor();
-            console.log('Current predator player:')
-            console.log(playerNames[snakePredator.player[0]])
+            snakePredator.switchColor();
         }
+        snakePredator.startImmunity = false;
     }
 }
