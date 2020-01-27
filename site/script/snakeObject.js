@@ -216,16 +216,23 @@ function snakeObject(
     }
   };
 
-  this.setImmunity = function() {
-    if (!this.startImmunity) {
-      this.switchStunColor();
-    }
+  this.setImmunity = function () {
+    // this.switchColor();
     this.isImmune = true;
     this.startImmunityFrame = frames;
   };
 
-  this.checkImmunity = function() {
-    if (this.isImmune) {
+  this.checkImmunity = function () {
+    // console.log(this.isImmune)
+    // console.log(frames)
+    if (frames < 100) {
+      this.isImmune = true;
+    }
+    else if (frames == 100) {
+      this.isImmune = false;
+      // this.revertColor();
+    }
+    else if (this.isImmune && frames > 100) {
       if ((frames - this.startImmunityFrame) % 10 == 0) {
         this.switchStunColor();
       }
@@ -234,6 +241,7 @@ function snakeObject(
         this.revertColor();
       }
     }
+
   };
 
   this.switchStunColor = function() {
