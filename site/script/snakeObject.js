@@ -117,6 +117,13 @@ function snakeObject(
     }
   };
 
+  this.scoreChecker = function(){
+    if (this.score < 0){
+      this.score = 0;
+      displayLives(this.health, this.player);
+    }
+  }
+
   this.collidesWithOwnTail = function() {
     collideCounter = 0;
     for (let snakePiece of this.snakePieces) {

@@ -8,9 +8,9 @@ const showScoreData = function(data) {
   const scorebord = document.querySelector('.js-scorebord');
   let i = 1;
   let n = 0;
-  scorebord.innerHTML = '<h4></h4><h4>Naam</h4><h4>Score</h4>';
+  scorebord.innerHTML = '<h4 class="c-score-header"></h4><h4 class="c-score-header">Naam</h4><h4 class="c-score-header">Score</h4>';
   for (let player in data) {
-    scorebord.innerHTML += `<h4>${i}</h4>
+    scorebord.innerHTML += `<h4>${i}.</h4>
   <h4>${data[n].SpelerNaam}</h4>
   <h4>${data[n].Score}</h4>`;
     i++;
@@ -23,11 +23,13 @@ const showHeartData = function(maxHeartrate) {
   heart.innerHTML = maxHeartrate[0]['MAX(Hartslag)'];
 };
 
-const showLengthData = function(gameLength) {
+const showLengthData = function(data) {
   const length = document.querySelector('.js-length');
-  const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
-  const lengthInSeconds = intLength / 1000;
-  length.innerHTML = lengthInSeconds.toFixed(1);
+  let seconden = Math.floor((data[0]["MAX(Tijd)"]  / 1000) % 60);
+    if (seconden < 10){
+      seconden = `0${seconden}`;
+    }
+  length.innerHTML = `${Math.floor((data[0]["MAX(Tijd)"] / 1000) / 60)}` + `:${seconden}`;
 };
 
 document.addEventListener('DOMContentLoaded', function() {

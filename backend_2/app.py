@@ -118,7 +118,7 @@ try:
 
     @app.route(endpoint + "/data/global/scorebord", methods=["GET"])
     def get_global_game_data():
-        data = conn.get_data('Select * from Score order by Score desc limit 20')
+        data = conn.get_data('Select * from Score where SpelerNaam not like "Speler %" order by Score desc limit 20')
         return jsonify(data), 200
 
     # logs game & player scores
@@ -202,7 +202,7 @@ try:
         global chosenDev
         while True:
             for devices in chosenDev:
-                # print(devices.playerNumber)
+                print('reconnect thread active')
                 try:
                     try:
                         devices.device.status()

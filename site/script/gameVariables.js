@@ -24,6 +24,7 @@ let maxPlayers = 4;
 let arrDiffs = ['Makkelijk', 'Normaal', 'Moeilijk'];
 let arrModes = ['Classic', 'Attack'];
 let playerNames = [];
+let timeScore = 5;
 
 // canvas & snake variables
 let snakeBlockSize = 36;
@@ -32,7 +33,7 @@ let canvasWidth = 1366;
 let canvasHeight = 1024;
 let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
-let subtractPoints = 50;
+let subtractPoints = 25;
 let addPoints = 10;
 
 // tutorial variables
@@ -43,7 +44,8 @@ let videoPaths = [
   'assets/vid/Snake_tutorial_outofbounds.mp4',
   'assets/vid/Snake_tutorial_2snakes.mp4',
   'assets/vid/Snake_tutorial_2snakes2.mp4',
-  'assets/vid/Snake_tutorial_death.mp4'
+  'assets/vid/Snake_tutorial_death.mp4',
+  'assets/vid/snake_tutorial_predator.mp4'
 ];
 let videoIndex = 0;
 let tutorialTitles = [
@@ -53,7 +55,8 @@ let tutorialTitles = [
   'Buiten het speelveld',
   '2 Slangen hoofd tegen hoofd',
   '2 Slangen hoofd tegen staart',
-  'Slang gaat dood'
+  'Slang gaat dood',
+  'Attack gamemode'
 ];
 let tutorialText = [
   'Wanneer je een gezond stukje voedsel eet krijg je 10 punten, deze punten bepalen hoe hoof je aan het einde van het spel op het scorebord komt te staan. Naast de 10 punten die je krijgt zal je slang ook 1 blokje langer worden.',
@@ -62,7 +65,8 @@ let tutorialText = [
   'Wanneer je tegen de randen van het speelveld botst verlies je een leven en zal je slang in een willekeurige richting verder bewegen.',
   'Wanneer 2 slangen met elkaar botsen hoofd tegen hoofd dan verliezen beide slangen een leven.',
   'Wanneer een slang tegen een andere slang zijn staart bots zal er een leven afgetrokken worden van de slang die botste.',
-  'Wanneer je geen levens meer hebt verdwijnt je slang van het speelveld en wordt het vakje met je naam en punten grijs gekleurd. Wanneer je als eerste dood was kan je nog altijd winnen als je de meeste punten had.'
+  'Wanneer je geen levens meer hebt verdwijnt je slang van het speelveld en wordt het vakje met je naam en punten grijs gekleurd. Wanneer je als eerste dood was kan je nog altijd winnen als je de meeste punten had.',
+  'Als je in de attack spelmodus speelt is het de bedoeling om zo veel mogelijk te bewegen en dus de hoogste hartslag te hebben, de persoon/slang met de hoogste hartslag is imuun voor obstakels, de randen van het speelveld en andere slangen. De slang met de hoogste hartslag kan dus jagen op de andere slangen op het spelbord. De slang met de hoogste hartslag zal zwart worden.'
 ];
 
 const socketIP = 'http://169.254.10.1' + ':5000';

@@ -39,20 +39,24 @@ Main contains the big scrollable scoreboard
   color: #fff;
   border: 2px solid white;
   background-color: var(--global-color-beta);
-  height: calc(var(--global-baseline) * 80);
+  height: calc(var(--global-baseline) * 56);
   margin-bottom: 24px;
   font-size: 20px;
   overflow-y: overlay;
   
 }
 
+@media (min-width: 1368px){
+  .c-scoreboard__main{
+    height: calc(var(--global-baseline) * 80);
+  }
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
 ::-webkit-scrollbar {
-  width: 5px;
-  /* padding: 5px; */
-  /* scroll-margin-left: 5px; */
-  /* margin: 5px; */
-  /* padding: 5px; */
-  
+  width: 5px; 
 }
 
 /* Track */
@@ -94,6 +98,7 @@ it contains a players info
 
 .c-row--info{
   margin-bottom: 24px;
+  text-decoration: underline;
 }
 
 /*

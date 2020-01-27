@@ -33,13 +33,17 @@ const showGlobalScoreData = function(data) {
   let i = 1;
   let n = 0;
   for (let player in data) {
-    let tijd = data[n].Tijd / 1000;
+    let seconden = Math.floor((data[n].Tijd / 1000) % 60);
+    if (seconden < 10){
+      seconden = `0${seconden}`;
+    }
+    let tijd = `${Math.floor((data[n].Tijd / 1000) / 60)}` + `:${seconden}`;
     scorebord.innerHTML += `<div class="c-row">
   <p class="u-span-column-1">${i}</p>
   <p class="u-span-column-2">
   ${data[n].SpelerNaam}
   </p>
-  <p class="u-span-column-5">${tijd.toFixed(1)}</p>
+  <p class="u-span-column-5">${tijd}</p>
   <p class="u-span-column-1">${data[n].Score}</p>
 </div>`;
     i++;
