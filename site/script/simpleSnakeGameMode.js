@@ -31,11 +31,6 @@ const simpleGameMode = function () {
 
   if (gameSettings['mode'] == 1) {
     console.log('Detected "Attack" game mode')
-    for (let snek of snakeArray) {
-      snek.heartrate = Math.round(Math.random() * 100)
-      console.log(snek.heartrate)
-    }
-
     setAttackGameMode();
   }
 
