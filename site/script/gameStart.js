@@ -26,7 +26,7 @@ const startGame = function() {
       snakeBlockSize = 40;
       maxAmountRocks = maxAmountRocks * 0.5;
       movementSpeed = 2;
-      subtractPoints = 25;
+      subtractPoints = 10;
       snakePieceDistance = snakeBlockSize + 0;
     
     // hard difficulty

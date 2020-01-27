@@ -42,12 +42,27 @@ const enableInteraction = function() {
   // want de check begint opnieuw
   invalidSettings = 0;
   for (let z = 0; z < gameSettings['players']; z++) {
+
+    // DOM elements
     let y = document.getElementById(`speler${z + 1}`);
+    let message = document.querySelector(`.js-names-error-message${z+1}`)
+    let inputField = document.querySelector(`#speler${z+1}`);
+
     if (isEmpty(y.value)) {
-      addErrors(document.querySelector(`.js-names-error-message${z+1}`));
-      addBorder(document.querySelector(`#speler${z+1}`))
+      // add errors on empty values
+      addErrors(message);
+      addBorder(inputField)
+      message.innerHTML = "Vereist";
       namesStatus[`player${z+1}`] = false;
-    } else{
+    } else if(y.value.length > 20){
+      // add errors on too long values
+      addErrors(message);
+      addBorder(inputField)
+      message.innerHTML = "Te lang";
+      namesStatus[`player${z+1}`] = false;
+    }
+    
+    else{
       removeErrors(document.querySelector(`.js-names-error-message${z+1}`));
       removeBorders(document.querySelector(`#speler${z+1}`))
       namesStatus[`player${z+1}`] = true;

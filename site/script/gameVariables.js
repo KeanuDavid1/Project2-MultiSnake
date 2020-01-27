@@ -24,6 +24,7 @@ let maxPlayers = 4;
 let arrDiffs = ['Makkelijk', 'Normaal', 'Moeilijk'];
 let arrModes = ['Classic', 'Attack'];
 let playerNames = [];
+let timeScore = 5;
 
 // canvas & snake variables
 let snakeBlockSize = 36;
@@ -32,7 +33,7 @@ let canvasWidth = 1366;
 let canvasHeight = 1024;
 let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
-let subtractPoints = 50;
+let subtractPoints = 25;
 let addPoints = 10;
 
 // tutorial variables
