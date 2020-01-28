@@ -29,6 +29,7 @@ try:
     dev4 = HRM('A0:9E:1A:34:79:35', 3)
     arrDev = [dev1,dev2,dev3,dev4]
     chosenDev = []
+    scanner = btle.Scanner()
     # GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(Input_pins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -143,6 +144,15 @@ try:
                                  [item['Naam'], item['Hartslag'],
                                   item['Score'], item['Tijd']])
         return jsonify(message="ok"), 200
+
+    @app.route(endpoint + '/bluetooth/getDevices', methods=["GET"])
+    def get_BTdevices():
+        scan_results = scanner.scan(3)
+        result = []
+        for scan in scan_results:
+            if scan.getValueText(0x09).lower().find("polar") != -1:
+                result.append({"mac": scan.addr,"name": scan.getValueText(0x09)})
+        return jsonify(result),200
 
     def HeartRate():
         while True:
