@@ -24,7 +24,7 @@ html{
 Tutorial button on the top right
 */
 
-.c-info {
+.c-info-1 {
   position: absolute;
   right: 30px;
   top: 30px;
@@ -42,14 +42,38 @@ Tutorial button on the top right
   justify-content: space-between;
 }
 
+.c-info-2 {
+  position: absolute;
+  right: 230px;
+  top: 30px;
+  width: 240px;
+  height: 60px;
+  background-color: #fff;
+  z-index: 3;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: var(--global-color-delta);
+  border: solid 1px var(--global-color-delta);
+  text-decoration: none;
+  justify-content: space-between;
+}
+
 .c-info__text{
   padding-left: 30px;
 }
 
-.c-info__icon{
+.c-info__icon-1{
   height: 100%;
   position: relative;
   right: 1px;
+}
+
+.c-info__icon-2{
+  height: 60%;
+  position: relative;
+  right: 10px;
 }
 
 /* 
