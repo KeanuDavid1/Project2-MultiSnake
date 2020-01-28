@@ -11,7 +11,7 @@
   <script src="script/handleData.js"></script>
   <script src="script/utilityFunctions.js"></script>
   <script src="script/sendDataToDatabase.js"></script>
-  
+
   <script src="script/gameVariables.js"></script>
   <script src="script/bodyComponent.js"></script>
   <script src="script/updateFrame.js"></script>
@@ -64,6 +64,7 @@
         <div class="c-title">Spel Instellingen</div>
         <div class="c-settings">
           <!-- selects the game mode -->
+          <div class="c-warning-attack"></div>
           <div class="js-mode c-settings__item">
             <div class="c-settings__title">Modus</div>
             <div class="c-options">
@@ -83,6 +84,7 @@
                 </svg>
               </label>
               <div class="c-options__selected">(mode)</div>
+
               <input type="button" name="right-mode" id="right-mode" class="o-hide-accessible c-options__button" />
               <label for="right-mode" class="c-options__icon c-options__icon--right">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
@@ -99,6 +101,7 @@
                 </svg>
               </label>
             </div>
+
           </div>
           <!-- selects the difficulty-->
           <div class="js-difficulty c-settings__item">
@@ -177,28 +180,28 @@
           <!-- the settings where the player have to give their names -->
           <div class="c-settings-names">
             <p class="c-settings-names__title">Vul hier je namen in</p>
-            
+
             <div class="c-player-names js-inputs">
               <!-- a container for the error message and the input field -->
               <div class="c-player-names__input-field-container">
                 <span class="js-names-error-message1 c-error-message"></span>
                 <label for="speler1" class="c-names">
-                <input type="text" name="speler1" id="speler1" class="c-name__input js-name-input1" value="Speler 1">
-              </label>
+                  <input type="text" name="speler1" id="speler1" class="c-name__input js-name-input1" value="Speler 1">
+                </label>
               </div>
 
             </div>
+          </div>
+          <!-- the corresponding colors -->
+          <div class="c-player-colors js-input-colors">
+            <div class="c-name-color color1"></div>
+          </div>
+
+          <!-- end of c-settings -->
         </div>
-        <!-- the corresponding colors -->
-        <div class="c-player-colors js-input-colors">
-        <div class="c-name-color color1"></div>
       </div>
 
-      <!-- end of c-settings -->
-    </div>    
-    </div>
 
-          
       <div class="c-body__item">
         <div class="c-button-container">
           <input type="button" value="Terug" class="c-button c-button__text" id="settings-backbutton"

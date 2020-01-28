@@ -101,6 +101,13 @@ const getDOMContent = function () {
 // set the values of the settings
 const setValues = function () {
   modeValue.innerHTML = arrModes[gameSettings['mode']];
+  if (arrModes[gameSettings['mode']] == 'Attack') {
+    document.querySelector(".c-warning-attack").innerHTML = `<a href="#">Klik hier</a> om te verbinden met de hartslagsensoren, indien nog
+    niet verbonden.`
+  }
+  else {
+    document.querySelector(".c-warning-attack").innerHTML = ""
+  }
   diffValue.innerHTML = arrDiffs[gameSettings['difficulty']];
   playerValue.innerHTML = gameSettings['players'];
 };
