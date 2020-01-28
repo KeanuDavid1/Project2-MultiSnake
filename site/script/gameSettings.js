@@ -102,7 +102,7 @@ const getDOMContent = function () {
 const setValues = function () {
   modeValue.innerHTML = arrModes[gameSettings['mode']];
   if (arrModes[gameSettings['mode']] == 'Attack') {
-    document.querySelector(".c-warning-attack").innerHTML = `<a href="#">Klik hier</a> om te verbinden met de hartslagsensoren, indien nog
+    document.querySelector(".c-warning-attack").innerHTML = `<a href="bluetooth.html">Klik hier</a> om te verbinden met de hartslagsensoren, indien nog
     niet verbonden.`
   }
   else {
