@@ -266,6 +266,32 @@ Error messages
   display: none;
 }
 
+.c-devices{
+  height: 50vh;
+  /* width: 80vh; */
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+}
+.c-devices__item{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+.c-devices__item select, .c-devices__item input{
+margin: 0 8px;
+}
+
+
+select:required:invalid{
+  color: grey;
+}
+
+option{
+  color: black;
+}
+
 .has-error {
   display: block;
 }

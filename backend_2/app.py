@@ -23,11 +23,11 @@ from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
 try:
     endpoint = '/api/snakedata'
     Input_pins = [18,23,24,25,1,12,16,20,21,26,6,19,5,13,27,22]
-    dev1 = HRM('A0:9E:1A:34:79:38', 0)
-    dev2 = HRM('A0:9E:1A:34:79:37', 1)
-    dev3 = HRM('A0:9E:1A:34:79:36', 2)
-    dev4 = HRM('A0:9E:1A:34:79:35', 3)
-    arrDev = [dev1,dev2,dev3,dev4]
+    # dev1 = HRM('A0:9E:1A:34:79:38', 0)
+    # dev2 = HRM('A0:9E:1A:34:79:37', 1)
+    # dev3 = HRM('A0:9E:1A:34:79:36', 2)
+    # dev4 = HRM('A0:9E:1A:34:79:35', 3)
+    arrDev = [0,0,0,0]
     chosenDev = []
     scanner = btle.Scanner()
     # GPIO.cleanup()
@@ -145,17 +145,26 @@ try:
                                   item['Score'], item['Tijd']])
         return jsonify(message="ok"), 200
 
-    @app.route(endpoint + '/bluetooth/getDevices', methods=["GET"])
+    @app.route(endpoint + '/bluetooth/getDevices', methods=["GET","POST"])
     def get_BTdevices():
-        scan_results = scanner.scan(3)
-        result = []
-        for scan in scan_results:
-            try:
-                if scan.getValueText(0x09).lower().find("polar") != -1:
-                    result.append({"mac": scan.addr,"name": scan.getValueText(0x09)})
-            except:
-                pass
-        return jsonify(result),200
+        if(request.method == "GET"):
+            scan_results = scanner.scan(3)
+            result = []
+            for scan in scan_results:
+                try:
+                    if scan.getValueText(0x09).lower().find("polar") != -1:
+                        result.append({"mac": scan.addr,"name": scan.getValueText(0x09)})
+                except:
+                    pass
+            return jsonify(result),200
+        if(request.method == "POST"):
+            global arrDev
+            data = request.get_json()
+            arrDev[data['player']] = HRM(data['mac'], data['player'])
+            return jsonify("ok"), 200
+
+
+
 
     def HeartRate():
         while True:
@@ -220,6 +229,7 @@ try:
                     try:
                         devices.device.status()
                     except:
+                        print("trying to connect with: {}".format(devices.MAC))
                         devices.reconnect()
                         # print(devices.device.status())
                 except:
