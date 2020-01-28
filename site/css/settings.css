@@ -12,6 +12,14 @@ Alle components om de settings page te stylen
   }
 }
 
+select:required:invalid{
+  color: grey;
+}
+
+option{
+  color: black;
+}
+
 .o-container {
   display: flex;
   justify-content: center;
@@ -283,14 +291,12 @@ Error messages
 margin: 0 8px;
 }
 
-
-select:required:invalid{
-  color: grey;
+.c-link-bt{
+  text-decoration: none;
 }
 
-option{
-  color: black;
-}
+
+
 
 .has-error {
   display: block;
