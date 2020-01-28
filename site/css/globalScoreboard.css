@@ -43,7 +43,6 @@ Main contains the big scrollable scoreboard
   margin-bottom: 24px;
   font-size: 20px;
   overflow-y: overlay;
-  
 }
 
 @media (min-width: 1368px){
@@ -51,6 +50,11 @@ Main contains the big scrollable scoreboard
     height: calc(var(--global-baseline) * 80);
   }
 }
+
+/*
+Custom scrollbar
+(not supported on all browsers)
+*/
 
 ::-webkit-scrollbar{
   width: 10px;
@@ -77,6 +81,8 @@ Main contains the big scrollable scoreboard
   background: silver;
   /* padding: 5px; */
 }
+
+
 .c-board-padding{
   /* cuz css is good */
   padding: 36px 60px 36px 36px;
@@ -86,6 +92,20 @@ Main contains the big scrollable scoreboard
 c-row is needed when you add a new score to the board
 it contains a players info
 */
+
+.c-scoreboard__header{
+  position: fixed;
+  /* a fixed width is required for the fixed element */
+  width: 53.125rem;
+  background-color: var(--global-color-beta);
+  height: 7.5%;
+  padding: 36px 60px 0 36px;
+}
+
+.c-scoreboard_scores {
+  padding: 0 60px 36px 36px;
+}
+
 
 .c-row{
   width: 100%;
@@ -97,8 +117,10 @@ it contains a players info
 }
 
 .c-row--info{
-  margin-bottom: 24px;
+  margin-bottom: 0px;
   text-decoration: underline;
+  font-size: 24px;
+  grid-template-rows: auto;
 }
 
 /*

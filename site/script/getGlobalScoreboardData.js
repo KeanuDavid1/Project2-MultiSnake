@@ -38,7 +38,8 @@ const showGlobalScoreData = function(data) {
       seconden = `0${seconden}`;
     }
     let tijd = `${Math.floor((data[n].Tijd / 1000) / 60)}` + `:${seconden}`;
-    scorebord.innerHTML += `<div class="c-row">
+    scorebord.innerHTML += `
+  <div class="c-row">
   <p class="u-span-column-1">${i}</p>
   <p class="u-span-column-2">
   ${data[n].SpelerNaam}
