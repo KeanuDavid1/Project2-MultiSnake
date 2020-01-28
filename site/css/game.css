@@ -218,3 +218,13 @@ on the game screen
   margin-bottom: 4px;
   background-color: var(--global-color-gamma);
 }
+
+.c-warning-attack{
+font-size: 0.6em;
+padding-bottom: 36px;
+color: black;
+line-height: 0px;
+}
+.c-warning-attack a{
+  color: black;
+}
