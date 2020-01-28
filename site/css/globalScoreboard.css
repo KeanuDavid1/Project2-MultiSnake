@@ -103,6 +103,8 @@ it contains a players info
 }
 
 .c-scoreboard_scores {
+  position: relative;
+  top: 20%;
   padding: 0 60px 36px 36px;
 }
 
