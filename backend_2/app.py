@@ -150,8 +150,11 @@ try:
         scan_results = scanner.scan(3)
         result = []
         for scan in scan_results:
-            if scan.getValueText(0x09).lower().find("polar") != -1:
-                result.append({"mac": scan.addr,"name": scan.getValueText(0x09)})
+            try:
+                if scan.getValueText(0x09).lower().find("polar") != -1:
+                    result.append({"mac": scan.addr,"name": scan.getValueText(0x09)})
+            except:
+                pass
         return jsonify(result),200
 
     def HeartRate():
