@@ -100,6 +100,7 @@ it contains a players info
   background-color: var(--global-color-beta);
   height: 7.5%;
   padding: 36px 60px 0 36px;
+  z-index: 100;
 }
 
 .c-scoreboard_scores {
