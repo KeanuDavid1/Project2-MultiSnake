@@ -193,6 +193,8 @@ try:
                     # break
                 except Exception as ex:
                     # print('Exception: {0}'.format(ex))
+                    logging.error(str(ex))
+                    pass
                 # print(devices.playerNumber)
                 # print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
                 socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
@@ -200,21 +202,25 @@ try:
 
 
     def ip():
-        serial = i2c(port=1, address=0x3C)
-        device = ssd1306(serial, rotate=0)
-        font = ImageFont.truetype('./OpenSans-Regular.ttf', 14)
-        # i=0
         while True:
-            # i+=1
-            ips = check_output(['hostname', '--all-ip-addresses'])
-            # print('ips: %s' % ips)
-            ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
-            ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
-            # device.clear()
-            with canvas(device) as draw:
-                draw.text((20, 0), "Surf naar:", fill="white",font=font)
-                draw.text((20, 20), ip2, fill="white",font=font)
-            time.sleep(5)
+            try:
+                serial = i2c(port=1, address=0x3C)
+                device = ssd1306(serial, rotate=0)
+                font = ImageFont.truetype('./OpenSans-Regular.ttf', 14)
+                # i=0
+                while True:
+                    # i+=1
+                    ips = check_output(['hostname', '--all-ip-addresses'])
+                    # print('ips: %s' % ips)
+                    ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
+                    ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
+                    # device.clear()
+                    with canvas(device) as draw:
+                        draw.text((20, 0), "Surf naar:", fill="white",font=font)
+                        draw.text((20, 20), ip2, fill="white",font=font)
+                    time.sleep(5)
+            except:
+                pass
 
     @socketio.on('startHR')
     def startHR(spelers):
