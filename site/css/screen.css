@@ -47,6 +47,9 @@ All the font-families used in the website
   --global-color-gamma-5-light: #b34a48;
 
   --global-baseline: 8px;
+
+  --global-border: #fff 2px solid;
+
 }
 
 /*
