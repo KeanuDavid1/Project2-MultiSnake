@@ -1,7 +1,7 @@
 //Dit is de callback bij een key press event, we kijken naar welk toets er op geklikt werd en binden acties eraan.
 
 const keypressed = function () {
-    console.log(event.key);
+    // console.log(event.key);
     if (event.key == "ArrowUp") {
         if (snakeArray[0].snakePieces[0].direction != "down") {
             snakeArray[0].snakePieces[0].moveup();
