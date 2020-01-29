@@ -67,8 +67,9 @@ Tutorial button on the top right
 }
 
 .c-info-1:focus, .c-info-2:focus{
-  outline: white;
+  outline: var(--global-color-gamma);
   outline-style: solid;
+  outline-width: 2px;
 }
 
 .c-info__text {
