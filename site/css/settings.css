@@ -153,6 +153,9 @@ Options bevat de twee buttons en de waarde tussenin
 
 .c-options__button:focus + .c-options__icon {
   fill: var(--global-color-beta);
+  outline-offset: 5px;
+  outline-color: white;
+  outline-style: solid;
 }
 
 .c-options__icon--left:active {
@@ -267,10 +270,11 @@ The styling for the square that represent the player his color
   font-family: 'Roboto Slab';
 }
 
-.c-name__input:hover {
+.c-name__input:hover, .c-name__input:focus {
   border: 2px var(--global-color-gamma) solid;
   padding: 3px;
   padding-left: 11px;
+  outline: none;
 }
 
 /*
