@@ -1,12 +1,3 @@
-@keyframes fadesettings {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 select:required:invalid {
   color: grey;
 }
@@ -14,6 +5,10 @@ select:required:invalid {
 option {
   color: black;
 }
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
 
 /*
 Objects: Container
@@ -26,6 +21,10 @@ Custom container stylin for settings page
   justify-content: center;
   animation: fadesettings 0.5s ease-out;
 }
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
 
 /*
 Components: Svg styling
@@ -44,17 +43,6 @@ Styling voor de svg elementen
   bottom: 15%;
   width: 40%;
   height: auto;
-}
-
-@media (max-width: 960px) {
-  .c-platform {
-    position: absolute;
-    z-index: -2;
-    margin: 0 auto;
-    bottom: 18%;
-    width: 60rem;
-    height: auto;
-  }
 }
 
 /* 
@@ -82,15 +70,6 @@ het bevindt zich in een o-container
   text-align: center;
 }
 
-@media (min-width: 1368px) {
-  .c-title {
-    font-size: 36px;
-    margin-bottom: calc(var(--global-baseline) * 10);
-    font-weight: 500;
-    text-align: center;
-  }
-}
-
 .c-body__item--main-content {
   flex-grow: 2;
   display: flex;
@@ -108,13 +87,6 @@ de buttons om de waarde te veranderen
 .c-settings {
   font-size: 20px;
   width: 100%;
-}
-
-@media (min-width: 1368px) {
-  .c-settings {
-    font-size: 24px;
-    width: 100%;
-  }
 }
 
 .c-settings__item {
@@ -153,21 +125,20 @@ Options bevat de twee buttons en de waarde tussenin
 
 .c-options__button:focus + .c-options__icon {
   fill: var(--global-color-beta);
-  outline-offset: 5px;
-  outline-color: white;
-  outline-style: solid;
 }
 
 .c-options__icon--left:active {
   width: 28px;
   height: 24px;
   padding: 1px;
+  outline: none;
 }
 
 .c-options__icon--right:active {
   width: 28px;
   height: 24px;
   padding: 1px;
+  outline: none;
 }
 
 /*
@@ -270,7 +241,8 @@ The styling for the square that represent the player his color
   font-family: 'Roboto Slab';
 }
 
-.c-name__input:hover, .c-name__input:focus {
+.c-name__input:hover,
+.c-name__input:focus {
   border: 2px var(--global-color-gamma) solid;
   padding: 3px;
   padding-left: 11px;
@@ -361,7 +333,43 @@ game mode
   justify-content: center;
 }
 
-.c-player-select{
+.c-player-select {
   display: flex;
   align-items: center;
+}
+
+/*------------------------------------*\
+  #MEDIA QUERIES & KEYFRAMES
+\*------------------------------------*/
+
+@media (max-width: 960px) {
+  .c-platform {
+    bottom: 18%;
+    width: 60rem;
+  }
+}
+
+@media (min-width: 1368px) {
+  .c-title {
+    font-size: 36px;
+    margin-bottom: calc(var(--global-baseline) * 10);
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1368px) {
+  .c-settings {
+    font-size: 24px;
+    width: 100%;
+  }
+}
+
+@keyframes fadesettings {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

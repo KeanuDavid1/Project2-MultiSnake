@@ -65,7 +65,7 @@ The scoreboard styling
   position: fixed;
   width: 53.125rem;
   background-color: var(--global-color-beta);
-  height: 7.5%;
+  height: 4%;
   padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5)
     0 calc(var(--global-baseline) * 4.5);
   z-index: 100;
@@ -94,9 +94,22 @@ The scoreboard styling
   grid-template-rows: auto;
 }
 
+.c-scoreboard__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @media (min-width: 1368px) {
   .c-scoreboard__main {
     height: calc(var(--global-baseline) * 80);
+  }
+}
+
+@media (min-width: 1368px){
+  .c-scoreboard__header{
+    height: 7.5%;
   }
 }
 

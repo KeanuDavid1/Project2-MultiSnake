@@ -12,6 +12,7 @@ const init = function() {
     socketIP + '/api/snakedata/data/global/scorebord',
     showGlobalScoreData
   );
+  document.querySelector('.js-global-scoreboard') = "";
 };
 
 // const showMostPlayedDiffData = function(mostPlayedDiff) {

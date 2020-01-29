@@ -33,7 +33,7 @@ let canvasHeight = 1024;
 let snakePieceDistance = snakeBlockSize + 0;
 let itemSize = snakeBlockSize + 10;
 let subtractPoints = 25;
-let addPoints = 10;
+let addPoints = 15;
 let timeScore = 5;
 
 // tutorial variables
