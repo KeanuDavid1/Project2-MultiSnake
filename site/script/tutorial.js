@@ -45,29 +45,29 @@ const listenToVidButtons = function() {
 
 const displayItems = function(index) {
   const itemContainer = document.querySelector('.js-items');
-  const itemShowcase = document.getElementById('js-items');
-  // itemShowcase.style.display = 'block';
+  itemContainer.classList.remove('display-no-items');
+  console.log(itemContainer.classList)
+  console.log("Current index:")
+  console.log(index)
   if (index == 0) {
-    itemShowcase.style.display = 'flex';
     itemContainer.innerHTML = `<h5>Voedsel soorten:</h5>
     <div class="c-item-images">
     <img class="c-item" src="assets/img/Apple.svg" alt="Appel">
     <img class="c-item" src="assets/img/Pear.svg" alt="Peer">
     <img class="c-item" src="assets/img/Carrot.svg" alt="Wortel">`;
   } else if (index == 1) {
-    itemShowcase.style.display = 'flex';
     itemContainer.innerHTML = `<h5>Voedsel soorten:</h5>
     <div class="c-item-images">
     <img class="c-item" src="assets/img/Burger.svg" alt="Hamburger">
     <img class="c-item" src="assets/img/Pizza.svg" alt="Pizza">`;
   } else if (index == 2) {
-    itemShowcase.style.display = 'flex';
     itemContainer.innerHTML = `<h5>Obstakel soorten:</h5>
     <div class="c-item-images">
     <img class="c-item" src="assets/img/Stone1.svg" alt="Steen 1">
     <img class="c-item" src="assets/img/Stone2.svg" alt="Steen 2">`;
   } else {
-    itemShowcase.style.display = 'none';
+    itemContainer.classList.add('display-no-items') ;
+    console.log(itemContainer.classList)
   }
 };
 
