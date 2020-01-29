@@ -33,6 +33,7 @@ const verwerkData = function(data) {
             <div>
                 ${dev['name']}
             </div>
+            <div class="c-player-select">
             <select required name="speler" id="speler">
                 <option value="" disabled selected hidden>Speler</option>
                 <option value="0">Groen</option>
@@ -40,7 +41,8 @@ const verwerkData = function(data) {
                 <option value="2">Geel</option>
                 <option value="3">Blauw</option>
             </select>
-            <input disabled type="button" value="Connect" class="js-connect">
+            </div>
+            <input disabled type="button" value="Connect" class="js-connect c-button-connect">
         </li>`;
     }
     for (let child of document.querySelector('.c-devices').children) {

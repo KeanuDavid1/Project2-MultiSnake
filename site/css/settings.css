@@ -296,8 +296,6 @@ margin: 0 8px;
 }
 
 
-
-
 .has-error {
   display: block;
 }
@@ -306,4 +304,25 @@ margin: 0 8px;
   border: solid var(--global-color-gamma) 2px;
   padding: 3px;
   padding-left: 11px;
+}
+
+.c-button-connect {
+  width: 120px;
+  height: 30px;
+  background: var(--global-color-beta);
+  border: none;
+  font-family: 'Roboto Slab';
+  border-radius: 10px;
+  margin-bottom: 48px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-player-select{
+  display: flex;
+  align-items: center;
 }

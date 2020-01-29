@@ -69,5 +69,5 @@ let tutorialText = [
   'Als je in de attack spelmodus speelt is het de bedoeling om zo veel mogelijk te bewegen en dus de hoogste hartslag te hebben, de persoon/slang met de hoogste hartslag is imuun voor obstakels, de randen van het speelveld en andere slangen. De slang met de hoogste hartslag kan dus jagen op de andere slangen op het spelbord. De slang met de hoogste hartslag zal zwart worden.'
 ];
 
-const socketIP = 'http://192.168.0.252' + ':5000';
+const socketIP = 'http://172.30.248.92' + ':5000';
 let socket;
