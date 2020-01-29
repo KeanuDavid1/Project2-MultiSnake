@@ -38,4 +38,5 @@ class HRM():
 
             print('player {0} reonnected!'.format(self.playerNumber))
         except btle.BTLEDisconnectError as ex:
+            logging.error("Connection failed with: {0} \n Error: {}".format(self.MAC,ex))
             print("Connection failed with: {0}".format(self.MAC))
