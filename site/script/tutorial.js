@@ -46,19 +46,22 @@ const listenToVidButtons = function() {
 const displayItems = function(index) {
   const itemContainer = document.querySelector('.js-items');
   const itemShowcase = document.getElementById('js-items');
-  itemShowcase.style.display = 'block';
+  // itemShowcase.style.display = 'block';
   if (index == 0) {
+    itemShowcase.style.display = 'flex';
     itemContainer.innerHTML = `<h5>Voedsel soorten:</h5>
     <div class="c-item-images">
     <img class="c-item" src="assets/img/Apple.svg" alt="Appel">
     <img class="c-item" src="assets/img/Pear.svg" alt="Peer">
     <img class="c-item" src="assets/img/Carrot.svg" alt="Wortel">`;
   } else if (index == 1) {
+    itemShowcase.style.display = 'flex';
     itemContainer.innerHTML = `<h5>Voedsel soorten:</h5>
     <div class="c-item-images">
     <img class="c-item" src="assets/img/Burger.svg" alt="Hamburger">
     <img class="c-item" src="assets/img/Pizza.svg" alt="Pizza">`;
   } else if (index == 2) {
+    itemShowcase.style.display = 'flex';
     itemContainer.innerHTML = `<h5>Obstakel soorten:</h5>
     <div class="c-item-images">
     <img class="c-item" src="assets/img/Stone1.svg" alt="Steen 1">
