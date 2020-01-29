@@ -68,5 +68,5 @@ let tutorialText = [
   'Wanneer je geen levens meer hebt verdwijnt je slang van het speelveld en wordt het vakje met je naam en punten grijs gekleurd. Wanneer je als eerste dood was kan je nog altijd winnen als je de meeste punten had.',
   'Als je in de attack spelmodus speelt is het de bedoeling om zo veel mogelijk te bewegen en dus de hoogste hartslag te hebben, de persoon/slang met de hoogste hartslag is immuun voor obstakels, de randen van het speelveld en andere slangen. De slang met de hoogste hartslag kan dus jagen op de andere slangen op het spelbord. De slang met de hoogste hartslag zal zwart worden.'
 ];
-const socketIP = window.location.host + ':5000';
+const socketIP = 'http://' + window.location.host + ':5000';
 let socket;

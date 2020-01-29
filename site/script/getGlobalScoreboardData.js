@@ -7,6 +7,7 @@ const init = function() {
   //   socketIP + '/api/snakedata/data/global/max_heartrate',
   //   showGlobalHeartrateData
   // );
+  console.log(socketIP);
   handleData(
     socketIP + '/api/snakedata/data/global/scorebord',
     showGlobalScoreData
