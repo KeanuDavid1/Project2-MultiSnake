@@ -1,11 +1,15 @@
-html{
+html {
   padding: 0;
 }
 
-.o-container{
+.o-container {
   display: flex;
   flex-direction: column;
 }
+
+/*---------------------/
+  COMPONENTS
+/---------------------*/
 
 .c-island {
   display: flex;
@@ -21,6 +25,8 @@ html{
 }
 
 /*
+Components: Tutorial button
+---
 Tutorial button on the top right
 */
 
@@ -60,17 +66,17 @@ Tutorial button on the top right
   justify-content: space-between;
 }
 
-.c-info__text{
+.c-info__text {
   padding-left: 30px;
 }
 
-.c-info__icon-1{
+.c-info__icon-1 {
   height: 100%;
   position: relative;
   right: 1px;
 }
 
-.c-info__icon-2{
+.c-info__icon-2 {
   height: 60%;
   position: relative;
   right: 10px;
@@ -92,7 +98,7 @@ These components contain styling on main page elements
   margin-bottom: 48px;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-menu-container {
     display: flex;
     justify-content: center;
@@ -115,23 +121,17 @@ These components contain styling on main page elements
   height: 70px;
 }
 
-/* .c-menu__caption {
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 24px;
-  text-align: center;
-} */
-
-.c-button + .c-button{
+.c-button + .c-button {
   margin-left: calc(var(--global-baseline) * 2);
 }
 
 /*
+Components: Sponsor labels
+---
 De sponsor labels vanonder op het scherm
 */
 
-.c-sponsors{
-  background-color: #fff;
+.c-sponsors {
   position: fixed;
   bottom: 0;
   left: 0;

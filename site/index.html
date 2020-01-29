@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Pulse Snake</title>
+    <link rel="stylesheet" href="css/screen.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/titlescreen.css" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Pulse Snake</title>
-  <link rel="stylesheet" href="css/screen.css" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/titlescreen.css" />
-  <script src="script/buttonFunctionalityHomePage.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#ffffff" />
-</head>
-
-<body>
-  <div class="o-container">
-    <a class="c-info-1" href="tutorial.html">
-      <p class="c-info__text">Tutorial</p>
-      <img class="c-info__icon-1" src="assets/img/tutorialicon.svg" alt="">
-    </a>
-    <a class="c-info-2" href="bluetooth.html">
-      <p class="c-info__text">Hartslagsensoren</p>
-      <img class="c-info__icon-2" src="assets/img/favorite-24px@2x.png" alt="">
-    </a>
-    <div class="c-clouds-container">
-      <img class="c-clouds" src="assets/images/Cloud.png">
-      <img class="c-clouds" src="assets/images/Cloud.png">
-    </div>
-    <div class="c-island">
+  <body>
+    <div class="o-container">
+      <a class="c-info-1" href="tutorial.html">
+        <p class="c-info__text">Tutorial</p>
+        <img class="c-info__icon-1" src="assets/img/tutorialicon.svg" alt="" />
+      </a>
+      <a class="c-info-2" href="bluetooth.html">
+        <p class="c-info__text">Hartslagsensoren</p>
+        <img
+          class="c-info__icon-2"
+          src="assets/img/favorite-24px@2x.png"
+          alt=""
+        />
+      </a>
+      <div class="c-clouds-container">
+        <img class="c-clouds" src="assets/images/Cloud.png" />
+        <img class="c-clouds" src="assets/images/Cloud.png" />
+      </div>
+      <div class="c-island">
         <img src="assets/images/HomeScreenBackgroundNoColor.png" />
-    </div>
-    <div class="c-menu-container">
-      <div class="c-menu">
-        <div class="c-menu__button">
-          <input type="button" class="c-button c-button__text" name="gamestart" id="gamestart" onclick="window.location.href = 'game.html'" value="Start spel" />
-          <input type="button" class="c-button c-button__text" name="scoreboard" id="scoreboard" onclick="window.location.href = 'Ranglijst.html'" value="Ranglijst"/>
+      </div>
+      <div class="c-menu-container">
+        <div class="c-menu">
+          <div class="c-menu__button">
+            <input
+              type="button"
+              class="c-button c-button__text"
+              name="gamestart"
+              id="gamestart"
+              onclick="window.location.href = 'game.html'"
+              value="Start spel"
+            />
+            <input
+              type="button"
+              class="c-button c-button__text"
+              name="scoreboard"
+              id="scoreboard"
+              onclick="window.location.href = 'ranglijst.html'"
+              value="Ranglijst"
+            />
+          </div>
         </div>
       </div>
-      <!-- <div class="c-menu__caption">
-        Berend Vandenbussche - Keanu David - Szymon Szymczak
-      </div> -->
     </div>
-  </div>
-  <div class="c-sponsor-container">
-    <div class="c-sponsors">
-      <img src="assets/images/logo_mct.svg" alt="logo mct" />
-      <img src="assets/images/logo_inno_campus.jpg" alt="logo innovatie campus" />
-      <img src="assets/images/logo_sport_en_bewegen.svg" alt="logo sport en bewegen" />
+    <div class="c-sponsor-container">
+      <div class="c-sponsors">
+        <img src="assets/images/logo-mct.png" alt="MCT-logo" />
+        <img
+          src="assets/images/logo_sport_en_bewegen.svg"
+          alt="Logo Sport & Bewegen"
+        />
+        <img
+          src="assets/images/logo_inno_campus.png"
+          alt="Logo Sport Innovatie Campus"
+        />
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

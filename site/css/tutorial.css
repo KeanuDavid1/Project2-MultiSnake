@@ -4,11 +4,15 @@ body {
   height: 100vmin;
 }
 
-video{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+video {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/*---------------------/
+  COMPONENTS
+/---------------------*/
 
 .c-container {
   display: flex;
@@ -18,6 +22,74 @@ video{
   animation: move-island 0.5s ease-out forwards;
 }
 
+.c-container-instructions {
+  position: absolute;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  left: 2%;
+}
+
+.c-instructions {
+  background-color: var(--global-color-beta);
+  height: 70%;
+  width: 45%;
+  border: 2px white solid;
+}
+
+.c-explanation {
+  width: 90%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-explanation__items {
+  height: 100px;
+  width: 100%;
+}
+
+.c-carousel-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.c-button-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c-button-video svg {
+  height: 60px;
+}
+
+.c-item-images {
+  display: flex;
+}
+
+.c-item {
+  height: 50px;
+}
+
+.c-item + .c-item {
+  margin-left: 10px;
+}
+
+/*---------------------/
+  UTILITIES
+/---------------------*/
+
+.u-rotate {
+  transform: rotate(180deg);
+}
+
+.u-margin-top-md {
+  margin-top: 48px;
+}
+
 @keyframes move-island {
   0% {
     transform: translateX(0%);
@@ -25,67 +97,4 @@ video{
   100% {
     transform: translateX(40%);
   }
-}
-
-.c-container-instructions{
-    position: absolute;
-    top: 0px;
-    height: 100vh;
-    width: 100vw;
-}
-
-.c-instructions {
-  background-color: var(--global-color-beta);
-  height: 70%;
-  width: 50%;
-  border: 2px white solid;
-}
-
-.c-explanation{
-  width: 90%;
-  height: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.c-carousel-container{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-}
-
-.c-button-video{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c-button-video svg{
-  height: 60px;
-}
-
-.c-explanation__items{
-  height: 100px;
-  width: 100%;
-}
-
-.c-item-images{
-  display: flex;
-}
-
-.c-item{
-  height: 50px;
-}
-
-.c-item + .c-item{
-  margin-left: 10px;
-}
-
-.u-rotate{
-  transform: rotate(180deg);
-}
-
-.u-margin-top-md{
-  margin-top: 48px;
 }

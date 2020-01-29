@@ -37,7 +37,7 @@ All the font-families used in the website
   --global-color-alpha-5-dark: #6268b3;
   --global-color-alpha-10-dark: #515cb3;
 
-  --global-color-delta:#718FCC;
+  --global-color-delta: #718fcc;
 
   --global-color-beta: #74af78;
 
@@ -55,7 +55,8 @@ All the font-families used in the website
     Default markup for page level elements
 */
 
-html, body {
+html,
+body {
   font-size: 1em;
   line-height: 1.5;
   font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
@@ -63,7 +64,7 @@ html, body {
   overflow: hidden;
 }
 
-body{
+body {
   background-color: var(--global-color-alpha);
 }
 
@@ -222,10 +223,6 @@ a:focus {
       Creates vertical whitespace between adjacent sections inside a row
   */
 
-.o-section {
-  /* overflow-x: hidden; */
-}
-
 .o-section + .o-section {
   margin-top: 24px;
 }
@@ -368,7 +365,6 @@ a:focus {
   height: 1px;
   padding: 0;
   margin: -1px;
-  /* overflow: hidden; */
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
@@ -406,7 +402,7 @@ A reusable button
   color: #fff;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-button {
     width: calc(var(--global-baseline) * 32.5);
     height: calc(var(--global-baseline) * 8.75);
@@ -420,7 +416,7 @@ A reusable button
     border-radius: 10px;
     padding: 0;
   }
-  
+
   .c-button__text {
     font-size: 1.7rem;
     color: #fff;
@@ -439,11 +435,13 @@ A reusable button
   outline: none;
 }
 
-/*------------------------------------*\
-  #cloud components
-\*------------------------------------*/
+/*
 
+Component: Clouds
+---
+The floating clouds in the background
 
+*/
 
 .c-clouds-container {
   position: absolute;
@@ -481,39 +479,4 @@ A reusable button
 
 .u-align-flex-end {
   align-items: flex-end;
-}
-
-/*
-    Media Queries
-    ---
-    EXAMPLE Media Queries for Responsive Design.
-    These examples override the primary ('mobile first') styles.
-    Modify as content requires.
-*/
-
-/* Extra small devices (portrait phones, less than 576px)
-   No media query since this is the default in Bootstrap
-*/
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 58px;
-    line-height: 64px;
-  }
-  html {
-    padding: 48px 48px 24px;
-  }
-}
-
-/* Large devices (landscape tablets, desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
 }

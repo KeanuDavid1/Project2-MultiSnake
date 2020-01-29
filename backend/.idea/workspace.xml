@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03290db3-d7bf-40e0-8729-9d218d9789fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../site/assets/images/howest-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../site/assets/images/logo-mct.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../site/assets/images/logo_inno_campus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/assets/images/logo_mct.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/assets/images/logo_sport_en_bewegen.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/assets/images/oldhomescreen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../site/assets/images/archive/oldhomescreen.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/assets/images/title_screen_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/../site/assets/images/archive/title_screen_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/css/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/../site/css/game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/css/globalScoreboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../site/css/ranglijst.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/../site/css/screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/../site/css/settings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/css/titlescreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/../site/css/titlescreen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/css/tutorial.css" beforeDir="false" afterPath="$PROJECT_DIR$/../site/css/tutorial.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/../site/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/ranglijst.html" beforeDir="false" afterPath="$PROJECT_DIR$/../site/ranglijst.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/scoreboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/../site/scoreboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/attackGameMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/script/attackGameMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/bodyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/script/bodyComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/buttonFunctionalityHomePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/displayPlayerInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/script/displayPlayerInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/gameArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/script/gameArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/gameAreaSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/script/gameAreaSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/script/gameVariables.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/script/gameVariables.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

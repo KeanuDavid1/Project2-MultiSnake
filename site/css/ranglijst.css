@@ -1,10 +1,23 @@
-body, html {
+body,
+html {
   background-color: var(--global-color-alpha);
   padding: 0px;
   overflow-y: auto;
 }
 
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 1px;
+}
+
+/*---------------------/
+  COMPONENTS
+/---------------------*/
+
 /*
+Components: Scoreboards
+---
 The container that contains all scoreboards
 and the title
 */
@@ -23,18 +36,16 @@ and the title
 }
 
 /*
-Scoreboard contains the scoreboards
+Components: Scoreboard
+---
+The scoreboard styling
 */
 
-.c-scoreboard{
+.c-scoreboard {
   width: 100%;
 }
 
-/*
-Main contains the big scrollable scoreboard
-*/
-
-.c-scoreboard__main{
+.c-scoreboard__main {
   width: calc(100% - 4px);
   color: #fff;
   border: 2px solid white;
@@ -45,97 +56,62 @@ Main contains the big scrollable scoreboard
   overflow-y: overlay;
 }
 
-@media (min-width: 1368px){
-  .c-scoreboard__main{
-    height: calc(var(--global-baseline) * 80);
-  }
+.c-board-padding {
+  padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5)
+    calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 4.5);
 }
 
-/*
-Custom scrollbar
-(not supported on all browsers)
-*/
-
-::-webkit-scrollbar{
-  width: 10px;
-}
-::-webkit-scrollbar {
-  width: 5px; 
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-  /* padding: 5px; */
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #fff;
-  border-radius: 10px;
-  /* padding: 5px; */
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: silver;
-  /* padding: 5px; */
-}
-
-
-.c-board-padding{
-  /* cuz css is good */
-  padding: 36px 60px 36px 36px;
-}
-
-/*
-c-row is needed when you add a new score to the board
-it contains a players info
-*/
-
-.c-scoreboard__header{
+.c-scoreboard__header {
   position: fixed;
-  /* a fixed width is required for the fixed element */
   width: 53.125rem;
   background-color: var(--global-color-beta);
   height: 7.5%;
-  padding: 36px 60px 0 36px;
+  padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5)
+    0 calc(var(--global-baseline) * 4.5);
   z-index: 100;
 }
 
-.c-scoreboard_scores {
+.c-scoreboard__scores {
   position: relative;
   top: 20%;
-  padding: 0 60px 36px 36px;
+  padding: 0 calc(var(--global-baseline) * 7.5)
+    calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 4.5);
 }
 
-
-.c-row{
+.c-row {
   width: 100%;
   display: grid;
   grid-template-columns: 16px repeat(8, 1fr);
   grid-template-rows: 24px;
   grid-gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: calc(var(--global-baseline) * 2);
 }
 
-.c-row--info{
-  margin-bottom: 0px;
+.c-row--info {
+  margin-bottom: 0;
   text-decoration: underline;
   font-size: 24px;
   grid-template-rows: auto;
 }
 
+@media (min-width: 1368px) {
+  .c-scoreboard__main {
+    height: calc(var(--global-baseline) * 80);
+  }
+}
+
 /*
+Components: Sub scoreboards
+---
 The two scoreboards on the bottom
 */
 
-.c-scoreboard__sub{
+.c-scoreboard__sub {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  margin-bottom: 80px;
+  margin-bottom: calc(var(--global-baseline) * 10);
 }
 
 .c-board__item {
@@ -150,7 +126,7 @@ The two scoreboards on the bottom
   align-items: center;
 }
 
-.c-board__item--main{
+.c-board__item--main {
   width: 100%;
 }
 
@@ -160,16 +136,12 @@ The two scoreboards on the bottom
 }
 
 /*
+Components: Navigation button
+---
 The styling of the button
 */
 
-a:visited{
-  color: #fff;
-  text-decoration: none;
-  padding-top: 1px;
-}
-
-.c-button__container{
+.c-button__container {
   width: 100%;
   flex-grow: 1;
   display: flex;
@@ -177,6 +149,9 @@ a:visited{
   justify-content: center;
 }
 
+/*---------------------/
+  UTILITIES
+/---------------------*/
 
 /*
     Utilities: Grid
@@ -184,8 +159,7 @@ a:visited{
     Utility classes to specify grid spans
 */
 
-
-.u-text-align{
+.u-text-align {
   text-align: center;
 }
 
@@ -220,4 +194,31 @@ a:visited{
 .u-span-row-2 {
   height: 100%;
   grid-row: span 2;
+}
+
+/*
+Custom scrollbar
+*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: silver;
 }
