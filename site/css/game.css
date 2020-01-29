@@ -14,6 +14,8 @@ body {
 /---------------------*/
 
 /*
+Components: Game area
+---
 The area that is the play area, 
 it's the same as the canvas in size
 */
@@ -24,10 +26,6 @@ it's the same as the canvas in size
   flex-wrap: nowrap;
 }
 
-/*
-The canvas that is drawn in js
-*/
-
 .c-canvas {
   height: auto;
   background-image: url(../assets/images/gamescreenplatform16-9.svg);
@@ -36,6 +34,8 @@ The canvas that is drawn in js
 }
 
 /*
+Components: Player UI
+---
 The div's surrounding the playercards;
 .c-playerinfo contains the 'playerframe', 'difficulty & mode' + 'back button',
 .c-playerframe contains the playercards
@@ -77,7 +77,7 @@ with their individual info
   font-size: 24px;
 }
 
-@media (min-height: 770px){
+@media (min-height: 770px) {
   .c-playercard {
     background-color: var(--global-color-beta);
     width: 100%;
@@ -94,6 +94,8 @@ with their individual info
 }
 
 /*
+Components: Player Color flair
+---
 The flairs that indicates a players snake color
 */
 
@@ -123,7 +125,7 @@ The flairs that indicates a players snake color
   padding: 8px;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-container__info {
     width: 100%;
     padding: calc(var(--global-baseline) * 2);
@@ -131,6 +133,8 @@ The flairs that indicates a players snake color
 }
 
 /*
+Components: Player Info
+---
 The info of a player: score, hp & name
 */
 
@@ -142,7 +146,7 @@ The info of a player: score, hp & name
   width: 100%;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-playercard__info {
     display: flex;
     justify-content: space-between;
@@ -167,6 +171,8 @@ The info of a player: score, hp & name
 }
 
 /*
+Components: Timer
+---
 The timer before the game starts
 */
 
@@ -185,6 +191,8 @@ The timer before the game starts
 }
 
 /*
+Components: Game Info
+---
 Displays the game info below the players card
 on the game screen
 */
@@ -195,7 +203,7 @@ on the game screen
   justify-content: flex-start;
   align-items: flex-end;
   flex-wrap: wrap;
-  padding-left: 30px;
+  padding-left: calc(var(--global-baseline) * 3.75);
   padding-bottom: calc(var(--global-baseline) * 2);
   font-size: 30px;
 }
@@ -217,14 +225,4 @@ on the game screen
 .c-button--game {
   margin-bottom: 4px;
   background-color: var(--global-color-gamma);
-}
-
-.c-warning-attack{
-font-size: 0.6em;
-padding-bottom: 36px;
-color: black;
-line-height: 0px;
-}
-.c-warning-attack a{
-  color: black;
 }
