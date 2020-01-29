@@ -46,9 +46,6 @@ const listenToVidButtons = function() {
 const displayItems = function(index) {
   const itemContainer = document.querySelector('.js-items');
   itemContainer.classList.remove('display-no-items');
-  console.log(itemContainer.classList)
-  console.log("Current index:")
-  console.log(index)
   if (index == 0) {
     itemContainer.innerHTML = `<h5>Voedsel soorten:</h5>
     <div class="c-item-images">
@@ -67,7 +64,6 @@ const displayItems = function(index) {
     <img class="c-item" src="assets/img/Stone2.svg" alt="Steen 2">`;
   } else {
     itemContainer.classList.add('display-no-items') ;
-    console.log(itemContainer.classList)
   }
 };
 
