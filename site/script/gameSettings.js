@@ -145,7 +145,7 @@ const settings = function () {
         bodyContent.innerHTML = bodyContentGameArea;
         startGame();
       } else {
-        console.log('Incorrect settings.');
+        // console.log('Incorrect settings.');
       }
     });
 };
