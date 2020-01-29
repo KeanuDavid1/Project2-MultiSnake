@@ -16,11 +16,12 @@ from PIL import ImageFont, ImageDraw, Image
 from luma.core.interface.serial import i2c
 from luma.core.render import canvas
 from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
-
+import logging
 
 
 
 try:
+    logging.basicConfig(filename="logeven.txt", level=logging.INFO, format="%(asctime)s - %(message)s")
     endpoint = '/api/snakedata'
     Input_pins = [18,23,24,25,1,12,16,20,21,26,6,19,5,13,27,22]
     # dev1 = HRM('A0:9E:1A:34:79:38', 0)
@@ -126,7 +127,7 @@ try:
     @app.route(endpoint + '/save/game', methods=["POST"])
     def save_game_score():
         body = request.get_json()
-        print(body)
+        # print(body)
         data = conn.set_data('insert into Game (tijd, hartslag, mode, aantalspelers, moeilijkheid, timestamp) '
                              'values (%s, %s, %s, %s, %s, current_timestamp)',
                              [body['Tijd'], body['Hartslag'],
@@ -137,7 +138,7 @@ try:
     @app.route(endpoint + '/save/player', methods=["POST"])
     def save_player_score():
         body = request.get_json()
-        print(body)
+        # print(body)
         for item in body:
             data = conn.set_data('insert into Score (SpelerNaam, hartslag, Score, Tijd, GameId) '
                                  'values (%s, %s, %s, %s, (select GameId from Game order by GameId desc limit 1))',
@@ -183,6 +184,7 @@ try:
                 except AttributeError as ex:
                     # print("No answer recived from: {0}".format(devices.MAC))
                     # print('device: {0}, was removed'.format(devices.MAC))
+                    logging.error(str(ex))
                     pass
                     # arrDev.remove(devices)
                     # print('remaining devices: {0}',len(arrDev))
@@ -190,9 +192,9 @@ try:
                     #     raise Exception('no devices detected, stopping thread...')
                     # break
                 except Exception as ex:
-                    print('Exception: {0}'.format(ex))
-                print(devices.playerNumber)
-                print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
+                    # print('Exception: {0}'.format(ex))
+                # print(devices.playerNumber)
+                # print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
                 socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
             time.sleep(2)
 
@@ -224,15 +226,16 @@ try:
         global chosenDev
         while True:
             for devices in chosenDev:
-                print('reconnect thread active')
+                # print('reconnect thread active')
                 try:
                     try:
                         devices.device.status()
                     except:
-                        print("trying to connect with: {}".format(devices.MAC))
+                        # print("trying to connect with: {}".format(devices.MAC))
                         devices.reconnect()
                         # print(devices.device.status())
-                except:
+                except Exception as ex:
+                    logging.error(str(ex))
                     pass
             time.sleep(1)
 
@@ -247,7 +250,7 @@ try:
     if __name__ == '__main__':
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)
 except Exception as ex:
-    print(ex)
+    logging.error(str(ex))
     GPIO.cleanup()
 finally:
     GPIO.cleanup()
