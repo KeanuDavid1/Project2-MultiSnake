@@ -193,6 +193,8 @@ try:
                     # break
                 except Exception as ex:
                     # print('Exception: {0}'.format(ex))
+                    logging.error(str(ex))
+                    pass
                 # print(devices.playerNumber)
                 # print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
                 socketio.emit('hr', {'hr': devices.heart_rate, 'player': devices.playerNumber})
