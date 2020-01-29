@@ -28,6 +28,7 @@ const startGame = function() {
       movementSpeed = 2;
       subtractPoints = 10;
       snakePieceDistance = snakeBlockSize + 0;
+      addPoints = 10;
     
     // hard difficulty
     } else if (gameSettings['difficulty'] == 2) {
@@ -36,6 +37,7 @@ const startGame = function() {
       subtractPoints = 50;
       itemSize = 48;
       movementSpeed = 4;
+      addPoints = 25;
       snakePieceDistance = snakeBlockSize + 0;
     }
     simpleGameMode();
