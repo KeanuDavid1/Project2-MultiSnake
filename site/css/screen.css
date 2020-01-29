@@ -451,13 +451,13 @@ The floating clouds in the background
 
 .c-clouds {
   position: relative;
-  animation: movingclouds 40s infinite;
+  animation: movingclouds 60s infinite;
   animation-timing-function: linear;
 }
 
 @keyframes movingclouds {
   0% {
-    left: -85%;
+    left: -65%;
   }
   100% {
     left: 100%;
