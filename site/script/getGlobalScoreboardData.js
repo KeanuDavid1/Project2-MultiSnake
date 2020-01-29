@@ -1,42 +1,54 @@
 const init = function() {
-  handleData(
-    socketIP + '/api/snakedata/data/global/game_length',
-    showGlobalLengthData
-  );
-  handleData(
-    socketIP + '/api/snakedata/data/global/max_heartrate',
-    showGlobalHeartrateData
-  );
+  // handleData(
+  //   socketIP + '/api/snakedata/data/global/game_length',
+  //   showMostPlayedDiffData
+  // );
+  // handleData(
+  //   socketIP + '/api/snakedata/data/global/max_heartrate',
+  //   showGlobalHeartrateData
+  // );
   handleData(
     socketIP + '/api/snakedata/data/global/scorebord',
     showGlobalScoreData
   );
+  document.querySelector('.js-global-scoreboard') = '';
 };
 
-const showGlobalLengthData = function(gameLength) {
-  const length = document.querySelector('.js-global-length');
-  const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
-  const lengthInMinutes = intLength / 1000;
-  length.innerHTML = lengthInMinutes.toFixed(1);
-};
+// const showMostPlayedDiffData = function(mostPlayedDiff) {
+//   const diff = document.querySelector('.js-most-played-diff');
+//   // const intLength = parseInt(gameLength[0]['MAX(Tijd)']);
+//   // const lengthInMinutes = intLength / 1000;
+//   // length.innerHTML = lengthInMinutes.toFixed(1);
+//   diff.innerHTML = mostPlayedDiff;
+// };
 
-const showGlobalHeartrateData = function(maxHeartrate) {
-  console.log(maxHeartrate[0]['MAX(Hartslag)']);
-  const globalHeart = document.querySelector('.js-global-heartbeat');
-  globalHeart.innerHTML = parseInt(maxHeartrate[0]['MAX(Hartslag)']);
-};
+// const showGlobalHeartrateData = function(maxHeartrate) {
+//   console.log(maxHeartrate[0]['MAX(Hartslag)']);
+//   const globalHeart = document.querySelector('.js-global-heartbeat');
+//   globalHeart.innerHTML = parseInt(maxHeartrate[0]['MAX(Hartslag)']);
+// };
 
 const showGlobalScoreData = function(data) {
+  // console.log(data)
   const scorebord = document.querySelector('.js-global-scoreboard');
+  scorebord.innerHTML = '';
   let i = 1;
   let n = 0;
-  scorebord.innerHTML = '<h4>No.</h4><h4>Naam</h4><h4>Tijd</h4><h4>Score</h4>';
   for (let player in data) {
-    let tijd = data[n].Tijd /1000
-    scorebord.innerHTML += `<h4>${i}</h4>
-  <h4>${data[n].SpelerNaam}</h4>
-  <h4>${tijd.toFixed(1)}</h4>
-  <h4>${data[n].Score}</h4>`;
+    let seconden = Math.floor((data[n].Tijd / 1000) % 60);
+    if (seconden < 10) {
+      seconden = `0${seconden}`;
+    }
+    let tijd = `${Math.floor(data[n].Tijd / 1000 / 60)}` + `:${seconden}`;
+    scorebord.innerHTML += `
+  <div class="c-row">
+  <p class="u-span-column-1">${i}</p>
+  <p class="u-span-column-2">
+  ${data[n].SpelerNaam}
+  </p>
+  <p class="u-span-column-5">${tijd}</p>
+  <p class="u-span-column-1">${data[n].Score}</p>
+</div>`;
     i++;
     n++;
   }

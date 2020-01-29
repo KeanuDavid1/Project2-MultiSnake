@@ -1,11 +1,15 @@
-html{
+html {
   padding: 0;
 }
 
-.o-container{
+.o-container {
   display: flex;
   flex-direction: column;
 }
+
+/*---------------------/
+  COMPONENTS
+/---------------------*/
 
 .c-island {
   display: flex;
@@ -21,10 +25,12 @@ html{
 }
 
 /*
+Components: Tutorial button
+---
 Tutorial button on the top right
 */
 
-.c-info {
+.c-info-1 {
   position: absolute;
   right: 30px;
   top: 30px;
@@ -42,14 +48,45 @@ Tutorial button on the top right
   justify-content: space-between;
 }
 
-.c-info__text{
+.c-info-2 {
+  position: absolute;
+  right: 230px;
+  top: 30px;
+  width: 240px;
+  height: 60px;
+  background-color: #fff;
+  z-index: 3;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: var(--global-color-delta);
+  border: solid 1px var(--global-color-delta);
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.c-info-1:focus,
+.c-info-2:focus {
+  outline: var(--global-color-gamma);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+.c-info__text {
   padding-left: 30px;
 }
 
-.c-info__icon{
+.c-info__icon-1 {
   height: 100%;
   position: relative;
   right: 1px;
+}
+
+.c-info__icon-2 {
+  height: 60%;
+  position: relative;
+  right: 10px;
 }
 
 /* 
@@ -65,9 +102,10 @@ These components contain styling on main page elements
   justify-content: center;
   flex-grow: 1;
   align-items: flex-end;
+  margin-bottom: 48px;
 }
 
-@media (min-width: 1368px){
+@media (min-width: 1368px) {
   .c-menu-container {
     display: flex;
     justify-content: center;
@@ -90,23 +128,17 @@ These components contain styling on main page elements
   height: 70px;
 }
 
-/* .c-menu__caption {
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 24px;
-  text-align: center;
-} */
-
-.c-button + .c-button{
+.c-button + .c-button {
   margin-left: calc(var(--global-baseline) * 2);
 }
 
 /*
+Components: Sponsor labels
+---
 De sponsor labels vanonder op het scherm
 */
 
-.c-sponsors{
-  background-color: #fff;
+.c-sponsors {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -120,4 +152,10 @@ De sponsor labels vanonder op het scherm
 .c-sponsors img {
   width: 90px;
   margin-left: 12px;
+}
+
+.c-sponsers__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

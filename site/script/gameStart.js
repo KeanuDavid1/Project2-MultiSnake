@@ -26,8 +26,9 @@ const startGame = function() {
       snakeBlockSize = 40;
       maxAmountRocks = maxAmountRocks * 0.5;
       movementSpeed = 2;
-      subtractPoints = 25;
+      subtractPoints = 10;
       snakePieceDistance = snakeBlockSize + 0;
+      addPoints = 10;
     
     // hard difficulty
     } else if (gameSettings['difficulty'] == 2) {
@@ -36,10 +37,10 @@ const startGame = function() {
       subtractPoints = 50;
       itemSize = 48;
       movementSpeed = 4;
+      addPoints = 25;
       snakePieceDistance = snakeBlockSize + 0;
     }
     simpleGameMode();
     gameStartTime = Date.now();
-    //Hier roep ik de methode aan die het voedsel laat spawnen (generateFood.js)
   }, 3000);
 };

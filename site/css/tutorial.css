@@ -4,16 +4,93 @@ body {
   height: 100vmin;
 }
 
-video{
-    height: 300px;
+video {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/*---------------------/
+  COMPONENTS
+/---------------------*/
 
 .c-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
-  animation: move-island 1s ease-out forwards;
+  animation: move-island 0.5s ease-out forwards;
+}
+
+.c-container-instructions {
+  position: absolute;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  left: 2%;
+}
+
+.c-instructions {
+  background-color: var(--global-color-beta);
+  height: 70%;
+  width: 45%;
+  border: var(--global-border);
+}
+
+.c-explanation {
+  width: 90%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-explanation__items {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.c-item-images {
+  display: flex;
+  width: auto;
+  margin-left: calc(var(--global-baseline) * 2);
+}
+
+.c-item {
+  height: 50px;
+}
+
+.c-item + .c-item {
+  margin-left: 10px;
+}
+
+.c-carousel-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.c-button-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c-button-video svg {
+  height: 60px;
+}
+
+/*---------------------/
+  UTILITIES
+/---------------------*/
+
+.u-rotate {
+  transform: rotate(180deg);
+}
+
+.u-margin-top-md {
+  margin-top: 48px;
 }
 
 @keyframes move-island {
@@ -25,22 +102,12 @@ video{
   }
 }
 
-.c-container-instructions{
-    position: absolute;
-    top: 0px;
-    height: 100vh;
-    width: 100vw;
+@media (min-width: 1368px){
+  .c-explanation__items {
+    display: block;
+  }
 }
 
-.c-instructions {
-  background-color: var(--global-color-beta);
-  height: 80%;
-  width: 50%;
-  border: 2px white solid;
-}
-
-.c-vid-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.display-no-items {
+  display: none;
 }
