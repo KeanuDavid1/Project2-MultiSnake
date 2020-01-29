@@ -32,14 +32,15 @@ const init = function() {
 const showGlobalScoreData = function(data) {
   // console.log(data)
   const scorebord = document.querySelector('.js-global-scoreboard');
+  scorebord.innerHTML = '';
   let i = 1;
   let n = 0;
   for (let player in data) {
     let seconden = Math.floor((data[n].Tijd / 1000) % 60);
-    if (seconden < 10){
+    if (seconden < 10) {
       seconden = `0${seconden}`;
     }
-    let tijd = `${Math.floor((data[n].Tijd / 1000) / 60)}` + `:${seconden}`;
+    let tijd = `${Math.floor(data[n].Tijd / 1000 / 60)}` + `:${seconden}`;
     scorebord.innerHTML += `
   <div class="c-row">
   <p class="u-span-column-1">${i}</p>

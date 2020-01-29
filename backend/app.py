@@ -193,7 +193,6 @@ try:
                     # break
                 except Exception as ex:
                     # print('Exception: {0}'.format(ex))
-                    logging.error(str(ex))
                     pass
                 # print(devices.playerNumber)
                 # print("Player Number: {0} | Heart rate: {1}".format(devices.playerNumber,devices.heart_rate))
@@ -202,25 +201,32 @@ try:
 
 
     def ip():
+        #time.sleep(10)
+        serial = i2c(port=1, address=0x3C)
+        device = ssd1306(serial, rotate=0)
+        # font = ImageFont.truetype('./OpenSans-Regular.ttf', 14)
         while True:
             try:
-                serial = i2c(port=1, address=0x3C)
-                device = ssd1306(serial, rotate=0)
-                font = ImageFont.truetype('./OpenSans-Regular.ttf', 14)
+
                 # i=0
-                while True:
-                    # i+=1
-                    ips = check_output(['hostname', '--all-ip-addresses'])
-                    # print('ips: %s' % ips)
-                    ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
-                    ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
-                    # device.clear()
+                # i+=1
+
+                ips = check_output(['hostname', '--all-ip-addresses'])
+                # print('ips: %s' % ips)
+                ip1 = str(ips).split(' ', 1)[-1].split(' ', 1)[0].lstrip('b\'')
+                ip2 = str(ips).split(' ', 1)[0].split(' ', 1)[0].lstrip('b\'')
+                # device.clear()
+                if(ip2.find('n') != -1 or ip2.find('169') != -1):
                     with canvas(device) as draw:
-                        draw.text((20, 0), "Surf naar:", fill="white",font=font)
-                        draw.text((20, 20), ip2, fill="white",font=font)
-                    time.sleep(5)
-            except:
-                pass
+                        draw.text((30, 20), "Opstarten...", fill="white")
+                else:
+                    with canvas(device) as draw:
+                        draw.text((20, 0), "Surf naar:", fill="white")
+                        draw.text((20, 20), ip2, fill="white")
+                time.sleep(5)
+            except Exception as ex:
+                print(ex)
+                logging.error(str(ex))
 
     @socketio.on('startHR')
     def startHR(spelers):
@@ -257,6 +263,4 @@ try:
         socketio.run(app, host="0.0.0.0", port=5000, debug=0)
 except Exception as ex:
     logging.error(str(ex))
-    GPIO.cleanup()
-finally:
     GPIO.cleanup()
