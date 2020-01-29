@@ -305,8 +305,8 @@ Styling for the bluetooth settings
 .c-devices {
   height: 50vh;
   overflow-y: auto;
-  background-color: #fff;
-  border-radius: 24px;
+  background-color: var(--global-color-beta);
+  border: var(--global-border);
   padding: 24px;
 }
 .c-devices__item {

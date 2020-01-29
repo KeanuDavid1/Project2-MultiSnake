@@ -48,7 +48,7 @@ The scoreboard styling
 .c-scoreboard__main {
   width: calc(100% - 4px);
   color: #fff;
-  border: 2px solid white;
+  border: var(--global-border);
   background-color: var(--global-color-beta);
   height: calc(var(--global-baseline) * 56);
   margin-bottom: 24px;
@@ -116,7 +116,7 @@ The two scoreboards on the bottom
 
 .c-board__item {
   color: #fff;
-  border: 2px solid white;
+  border: var(--global-border);
   background-color: var(--global-color-beta);
   width: 49%;
   height: 460px;
