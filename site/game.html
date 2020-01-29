@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Snake Adventure | Game</title>
+  <title>Pulse Snake - Game</title>
   <!-- all the js game files -->
   <script src="script/socketio/dist/socket.io.js"></script>
   <script src="script/handleData.js"></script>
@@ -23,16 +23,13 @@
 
   <script src="script/snakeObject.js"></script>
   <script src="script/gameStart.js"></script>
-  <script src="script/attackGameMode.js"></script>
   <script src="script/simpleSnakeGameMode.js"></script>
   <script src="script/spawnSnake.js"></script>
   <script src="script/foodObjects.js"></script>
   <script src="script/gameStartTimer.js"></script>
   <script src="script/textObject.js"></script>
   <script src="script/displayPlayerInfo.js"></script>
-  <script src="script/handleHR.js"></script>
 
-  <script src="script/validation.js"></script>
   <script src="script/gameContent.js"></script>
   <script src="script/gameSettings.js"></script>
 
@@ -51,20 +48,19 @@
 
 <body>
   <div class="o-container">
-
+    
     <div class="c-clouds-container">
       <img class="c-clouds" src="assets/images/Cloud.png">
       <img class="c-clouds" src="assets/images/Cloud.png">
     </div>
-    <!-- <div class="c-platform">
+    <div class="c-platform">
       <img src="assets/img/settingspage-platform.svg" alt="">
-    </div> -->
+    </div>
     <div class="c-body">
       <div class="c-body__item c-body__item--main-content">
         <div class="c-title">Spel Instellingen</div>
         <div class="c-settings">
           <!-- selects the game mode -->
-          <div class="c-warning-attack"></div>
           <div class="js-mode c-settings__item">
             <div class="c-settings__title">Modus</div>
             <div class="c-options">
@@ -84,7 +80,6 @@
                 </svg>
               </label>
               <div class="c-options__selected">(mode)</div>
-
               <input type="button" name="right-mode" id="right-mode" class="o-hide-accessible c-options__button" />
               <label for="right-mode" class="c-options__icon c-options__icon--right">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
@@ -101,7 +96,6 @@
                 </svg>
               </label>
             </div>
-
           </div>
           <!-- selects the difficulty-->
           <div class="js-difficulty c-settings__item">
@@ -141,7 +135,7 @@
             </div>
           </div>
           <!-- selects the number of players -->
-          <div class="js-players c-settings__item c-settings__item--last">
+          <div class="js-players c-settings__item">
             <div class="c-settings__title">Aantal spelers</div>
             <div class="c-options">
               <input type="button" name="left-player" id="left-player" class="o-hide-accessible c-options__button" />
@@ -177,34 +171,21 @@
               </label>
             </div>
           </div>
-          <!-- the settings where the player have to give their names -->
-          <div class="c-settings-names">
-            <p class="c-settings-names__title">Vul hier je namen in</p>
-
-            <div class="c-player-names js-inputs">
-              <!-- a container for the error message and the input field -->
-              <div class="c-player-names__input-field-container">
-                <span class="js-names-error-message1 c-error-message"></span>
-                <label for="speler1" class="c-names">
-                  <input type="text" name="speler1" id="speler1" class="c-name__input js-name-input1" value="Speler 1">
-                </label>
-              </div>
-
-            </div>
-          </div>
-          <!-- the corresponding colors -->
-          <div class="c-player-colors js-input-colors">
-            <div class="c-name-color color1"></div>
-          </div>
         </div>
+        <div class="c-names-container js-inputs">
+          <div class="c-name-container">
+            <div class="c-name-color1"></div>
+            <label for="speler1">Naam:
+            <input type="text" name="speler1" id="speler1" class="c-names" placeholder="Speler 1">
+          </label>
+          </div>
       </div>
-
-
+      </div>
       <div class="c-body__item">
         <div class="c-button-container">
           <input type="button" value="Terug" class="c-button c-button__text" id="settings-backbutton"
             name="settings-backbutton" />
-          <input type="button" value="Volgende" class="c-button c-button__text" id="settings-nextbutton"
+          <input type="button" value="Start!" class="c-button c-button__text" id="settings-startbutton"
             name="settings-startbutton" />
         </div>
       </div>

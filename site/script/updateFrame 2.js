@@ -17,14 +17,10 @@ function updateGameArea() {
 
       //toon score & levens wanneer het spel start
       displayScore(snake.score, snake.player);
-
+      
       // kijkt of de slang een andere slang aanraakt
       // en of de slang niet immuum is
-      if (snake.collidesWithOtherSnake() && !snake.isImmune) {
-        snake.health -= 1;
-        snake.setImmunity();
-        displayLives(snake.health, snake.player);
-      }
+      snake.collidesWithOtherSnake();
 
       //Checkt of de snake-head out of bounds is.
       //SnakePieces[0] verwijst naar de Snake head (de eerste part van snake)
@@ -55,6 +51,7 @@ function updateGameArea() {
           itemArray.splice(i, 1);
           snake.addNewPiece();
           snake.score += addPoints;
+          snake.scoreChecker();
           snake.healthyFoodCount++;
           displayScore(snake.score, snake.player);
 
@@ -62,6 +59,7 @@ function updateGameArea() {
         } else if (item.hitObj(snake.snakePieces[0]) && item.type == 1) {
           itemArray.splice(i, 1);
           snake.score -= subtractPoints;
+          snake.scoreChecker();
           snake.unhealthyFoodCount++;
           displayScore(snake.score, snake.player);
 
@@ -76,7 +74,7 @@ function updateGameArea() {
               'red'
             )
           );
-        } 
+        }
         // voor obstakels
         else if (
           item.hitObj(snake.snakePieces[0]) &&
@@ -109,7 +107,11 @@ function updateGameArea() {
       if (snake.isDead == false) {
         gameOver = false;
       }
+
+      // end of snake is not dead if statement
     }
+
+    // end of snake loop
   }
 
   if (gameOver == true) {
