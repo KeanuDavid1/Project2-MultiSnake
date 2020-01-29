@@ -1,10 +1,11 @@
-body, html {
+body,
+html {
   background-color: var(--global-color-alpha);
   padding: 0px;
   overflow-y: auto;
 }
 
-a:visited{
+a:visited {
   color: #fff;
   text-decoration: none;
   padding-top: 1px;
@@ -40,11 +41,11 @@ Components: Scoreboard
 The scoreboard styling
 */
 
-.c-scoreboard{
+.c-scoreboard {
   width: 100%;
 }
 
-.c-scoreboard__main{
+.c-scoreboard__main {
   width: calc(100% - 4px);
   color: #fff;
   border: 2px solid white;
@@ -55,26 +56,29 @@ The scoreboard styling
   overflow-y: overlay;
 }
 
-.c-board-padding{
-  padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5) calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 4.5);
+.c-board-padding {
+  padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5)
+    calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 4.5);
 }
 
-.c-scoreboard__header{
+.c-scoreboard__header {
   position: fixed;
   width: 53.125rem;
   background-color: var(--global-color-beta);
   height: 7.5%;
-  padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5) 0 calc(var(--global-baseline) * 4.5);
+  padding: calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 7.5)
+    0 calc(var(--global-baseline) * 4.5);
   z-index: 100;
 }
 
 .c-scoreboard__scores {
   position: relative;
   top: 20%;
-  padding: 0 calc(var(--global-baseline) * 7.5) calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 4.5);
+  padding: 0 calc(var(--global-baseline) * 7.5)
+    calc(var(--global-baseline) * 4.5) calc(var(--global-baseline) * 4.5);
 }
 
-.c-row{
+.c-row {
   width: 100%;
   display: grid;
   grid-template-columns: 16px repeat(8, 1fr);
@@ -83,15 +87,15 @@ The scoreboard styling
   margin-bottom: calc(var(--global-baseline) * 2);
 }
 
-.c-row--info{
+.c-row--info {
   margin-bottom: 0;
   text-decoration: underline;
   font-size: 24px;
   grid-template-rows: auto;
 }
 
-@media (min-width: 1368px){
-  .c-scoreboard__main{
+@media (min-width: 1368px) {
+  .c-scoreboard__main {
     height: calc(var(--global-baseline) * 80);
   }
 }
@@ -102,7 +106,7 @@ Components: Sub scoreboards
 The two scoreboards on the bottom
 */
 
-.c-scoreboard__sub{
+.c-scoreboard__sub {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -122,7 +126,7 @@ The two scoreboards on the bottom
   align-items: center;
 }
 
-.c-board__item--main{
+.c-board__item--main {
   width: 100%;
 }
 
@@ -137,7 +141,7 @@ Components: Navigation button
 The styling of the button
 */
 
-.c-button__container{
+.c-button__container {
   width: 100%;
   flex-grow: 1;
   display: flex;
@@ -145,6 +149,9 @@ The styling of the button
   justify-content: center;
 }
 
+/*---------------------/
+  UTILITIES
+/---------------------*/
 
 /*
     Utilities: Grid
@@ -152,8 +159,7 @@ The styling of the button
     Utility classes to specify grid spans
 */
 
-
-.u-text-align{
+.u-text-align {
   text-align: center;
 }
 
@@ -192,14 +198,13 @@ The styling of the button
 
 /*
 Custom scrollbar
-(not supported on all browsers)
 */
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar {
-  width: 5px; 
+  width: 5px;
 }
 
 /* Track */
