@@ -28,7 +28,7 @@ const init = function() {
 // };
 
 const showGlobalScoreData = function(data) {
-  console.log(data)
+  // console.log(data)
   const scorebord = document.querySelector('.js-global-scoreboard');
   let i = 1;
   let n = 0;

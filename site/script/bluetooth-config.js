@@ -26,7 +26,7 @@ const verwerkData = function(data) {
   } else {
     document.querySelector('.c-devices').innerHTML = '';
     for (let dev of data) {
-      console.log(dev);
+      // console.log(dev);
       document.querySelector(
         '.c-devices'
       ).innerHTML += `<li class="c-devices__item" MAC="${dev['mac']}">
@@ -63,7 +63,7 @@ const sendAddress = function(e) {
   let data = `{ "player": ${
     item.querySelector('select').value
   }, "mac": "${item.getAttribute('MAC')}" }`;
-  console.log(data);
+  // console.log(data);
   handleData(
     `${socketIP}/api/snakedata/bluetooth/getDevices`,
     function(data) {
