@@ -66,6 +66,11 @@ Tutorial button on the top right
   justify-content: space-between;
 }
 
+.c-info-1:focus, .c-info-2:focus{
+  outline: white;
+  outline-style: solid;
+}
+
 .c-info__text {
   padding-left: 30px;
 }
