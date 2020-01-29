@@ -66,6 +66,13 @@ Tutorial button on the top right
   justify-content: space-between;
 }
 
+.c-info-1:focus,
+.c-info-2:focus {
+  outline: var(--global-color-gamma);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
 .c-info__text {
   padding-left: 30px;
 }
@@ -145,4 +152,10 @@ De sponsor labels vanonder op het scherm
 .c-sponsors img {
   width: 90px;
   margin-left: 12px;
+}
+
+.c-sponsers__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
