@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Pulse Snake - Scorebord</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/screen.css" />
+    <link rel="stylesheet" href="css/ranglijst.css" />
+    <script src="script/getGlobalScoreboardData.js"></script>
+    <script src="script/handleData.js"></script>
+    <script src="script/gameVariables.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <div class="c-scoreboard-container">
+      <!-- the screen title -->
+      <div class="c-title">
+        <h3>Ranglijst</h3>
+      </div>
+
+      <div class="c-scoreboard">
+        <!-- the main scoreboard -->
+        <div class="c-scoreboard__main">
+          <div class="c-scoreboard__header">
+            <div class="c-row c-row--info">
+              <p class="u-span-column-1"></p>
+              <p class="u-span-column-2">Naam</p>
+              <p class="u-span-column-5">Tijd</p>
+              <p class="u-span-column-1">Score</p>
+            </div>
+          </div>
+          <div class="c-scoreboard__scores js-global-scoreboard"></div>
+        </div>
+        <!-- the sub scoreboard for heartrate & length -->
+        <!-- <div class="c-scoreboard__sub">
+          <div class="c-board__item">
+            <h4>Meest gespeelde moeilijkheid</h4>
+            <h1 class="js-most-played-diff">0</h1>
+            <h4>seconden</h4>
+          </div>
+
+          <div class="c-board__item">
+            <h4>Snelste hartslag</h4>
+            <h1 class="js-global-heartbeat">0</h1>
+            <h4>slagen per minuut</h4>
+          </div>
+        </div> -->
+      </div>
+      <div class="c-button__container">
+        <input
+          type="button"
+          value="Ga terug"
+          class="c-button c-button__text"
+          onclick="window.location.href = 'index.html'"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -4,17 +4,45 @@ const simpleGameMode = function() {
   //Doe de timer weg wanneer het spel start
   const timer = document.getElementById('js-timer__container');
   timer.style.display = 'none';
-  //Spawn snake head
-  snakeArray.push(new snakeObject(100, 100, 0));
-  //Voegt 2 body parts toe
-  snakeArray[0].addNewPiece();
-  snakeArray[0].addNewPiece();
-  //Spawnt 1 voedsel stukje
-  generateFood();
-  //Bepaalt de start direction
-  // snakeArray[0].snakePieces[0].direction = "up";
-  snakeArray[0].snakePieces[0].movedown();
+  //Spawn aantal snakes die ingesteld is in gameSettings.js
+  spawnSnake(gameSettings['players']);
+  //Spawnt 1 voedsel stukjes
+  generateItem();
   //Luistert naar de key presses
   document.addEventListener('keydown', keypressed);
-  setInterval(generateFood, 6000);
+  socket = io.connect(socketIP);
+  socket.addEventListener('gameInput', socketInput);
+  socket.addEventListener('hr', handleHR);
+  spelers = gameSettings['players'];
+  socket.emit('startHR', spelers);
+
+  setInterval(generateItem, (10 - gameSettings['players']) * 700);
+
+  // spawn a set amount before the game starts
+  for (r = 0; r < 5; r++) {
+    generateRock();
+    rockCounter++;
+  }
+
+  // geeft alle slangen immunity bij de start
+
+  if (gameSettings['mode'] == 1) {
+    console.log('Detected "Attack" game mode');
+    setAttackGameMode();
+  }
+
+  setInterval(function() {
+    for (snake of snakeArray) {
+      if (!snake.isDead) {
+        snake.score += timeScore;
+      }
+    }
+  }, 5000);
+
+  setInterval(generateRock, 10000);
+
+  for (snake of snakeArray) {
+    displayLives(snake.health, snake.player);
+  }
+  frames = 0;
 };

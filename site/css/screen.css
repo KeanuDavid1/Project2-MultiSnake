@@ -33,11 +33,13 @@ All the font-families used in the website
 
   /* Alpha Colors */
 
-  --global-color-alpha: #6b70b3;
+  --global-color-alpha: #84c2d8;
   --global-color-alpha-5-dark: #6268b3;
   --global-color-alpha-10-dark: #515cb3;
 
-  --global-color-beta: #70bd51;
+  --global-color-delta: #718fcc;
+
+  --global-color-beta: #74af78;
 
   --global-color-omega: #ff8333;
 
@@ -53,16 +55,16 @@ All the font-families used in the website
     Default markup for page level elements
 */
 
-html {
+html,
+body {
   font-size: 1em;
   line-height: 1.5;
   font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
   color: #111;
+  overflow: hidden;
 }
 
 body {
-  max-width: 100%;
-  margin: auto;
   background-color: var(--global-color-alpha);
 }
 
@@ -170,13 +172,14 @@ a {
 
 a:visited,
 a:active {
-  color: white;
   text-decoration: none;
+  color: var(--global-color-delta);
 }
 
 a:hover,
 a:focus {
-  color: var(--global-color-alpha-10-dark);
+  text-decoration: none;
+  color: var(--global-color-delta);
 }
 
 /*------------------------------------*\
@@ -190,7 +193,6 @@ a:focus {
 */
 
 .o-row {
-  overflow: auto;
   position: relative;
   padding: 24px 24px 0;
 }
@@ -211,6 +213,8 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
   max-width: 102.5rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /*
@@ -218,10 +222,6 @@ a:focus {
       ---
       Creates vertical whitespace between adjacent sections inside a row
   */
-
-.o-section {
-  overflow-x: hidden;
-}
 
 .o-section + .o-section {
   margin-top: 24px;
@@ -365,7 +365,6 @@ a:focus {
   height: 1px;
   padding: 0;
   margin: -1px;
-  overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
@@ -373,46 +372,6 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
-
-/* 
-
-Components: Menu
----
-These components contain styling on main page elements
-
-*/
-
-.c-menu-container {
-  display: flex;
-  align-items: center;
-  height: 100vmin;
-}
-
-.c-menu {
-  width: calc(var(--global-baseline) * 45);
-  height: auto;
-  margin: 0 auto;
-  background-color: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: white;
-}
-
-.c-menu__title {
-  font-size: 3rem;
-  margin-bottom: calc(var(--global-baseline) * 9);
-}
-
-.c-menu__button {
-  margin-bottom: calc(var(--global-baseline) * 2);
-}
-
-.c-menu__caption {
-  font-size: 1rem;
-  width: 100%;
-  text-align: center;
-}
 
 /*
 
@@ -423,30 +382,91 @@ A reusable button
 */
 
 .c-button {
-  width: calc(var(--global-baseline) * 32.5);
-  height: calc(var(--global-baseline) * 8.75);
-  background-color: var(--global-color-beta);
-  margin-bottom: inherit;
+  width: calc(var(--global-baseline) * 25);
+  height: calc(var(--global-baseline) * 6.25);
+  background: var(--global-color-beta);
   border: none;
   font-family: 'Roboto Slab';
+  border-radius: 10px;
+  margin-bottom: 48px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .c-button__text {
-  font-size: 1.5rem;
-  color: inherit;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media (min-width: 1368px) {
+  .c-button {
+    width: calc(var(--global-baseline) * 32.5);
+    height: calc(var(--global-baseline) * 8.75);
+    background: var(--global-color-beta);
+    margin-bottom: 60px;
+    border: none;
+    font-family: 'Roboto Slab';
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 0;
+  }
+
+  .c-button__text {
+    font-size: 1.7rem;
+    color: #fff;
+  }
 }
 
 .c-button:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
+  outline: none;
 }
 
 .c-button:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
   border: solid 2px;
+  outline: none;
+}
+
+/*
+
+Component: Clouds
+---
+The floating clouds in the background
+
+*/
+
+.c-clouds-container {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.c-clouds {
+  position: relative;
+  animation: movingclouds 60s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes movingclouds {
+  0% {
+    left: -65%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.c-clouds + .c-clouds {
+  margin-left: 40%;
+  margin-top: 5%;
 }
 
 /*------------------------------------*\
@@ -457,37 +477,6 @@ A reusable button
   margin-bottom: calc(var(--global-baseline) * 2);
 }
 
-/*
-    Media Queries
-    ---
-    EXAMPLE Media Queries for Responsive Design.
-    These examples override the primary ('mobile first') styles.
-    Modify as content requires.
-*/
-
-/* Extra small devices (portrait phones, less than 576px)
-   No media query since this is the default in Bootstrap
-*/
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 58px;
-    line-height: 64px;
-  }
-  html {
-    padding: 48px 48px 24px;
-  }
-}
-
-/* Large devices (landscape tablets, desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+.u-align-flex-end {
+  align-items: flex-end;
 }

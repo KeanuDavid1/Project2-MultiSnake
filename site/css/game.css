@@ -5,38 +5,176 @@ html {
   margin: 0;
 }
 
+body {
+  background-color: var(--global-color-alpha);
+}
+
 /*---------------------/
   COMPONENTS
-  /---------------------*/
+/---------------------*/
+
+/*
+Components: Game area
+---
+The area that is the play area, 
+it's the same as the canvas in size
+*/
 
 .c-game-area {
-  height: 100vmin;
-  width: auto;
-  padding: 0;
+  height: 100vh;
   display: flex;
-  /* border: cyan 1px solid; */
+  flex-wrap: nowrap;
 }
 
 .c-canvas {
-  background-color: none;
-  height: 100vmin;
-  width: 1366px;
-  /* border: darkblue 1px solid; */
+  height: auto;
+  background-image: url(../assets/images/gamescreenplatform16-9.svg);
+  background-size: cover;
+  width: 70%;
 }
 
-.c-game-area__background {
-  height: 100%;
-  width: 1366px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
+/*
+Components: Player UI
+---
+The div's surrounding the playercards;
+.c-playerinfo contains the 'playerframe', 'difficulty & mode' + 'back button',
+.c-playerframe contains the playercards
+with their individual info
+*/
+
+.c-playerinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.c-playercard h3{
-  margin: 16px;
-  margin-top: 32px;
+
+.c-playerframe {
+  width: 100%;
+  flex-grow: 2;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: calc(var(--global-baseline) * 6);
+}
+
+.c-playerframe__cards {
+  width: 100%;
+}
+
+.c-playercard {
+  background-color: var(--global-color-beta);
+  width: 100%;
+  height: 90px;
+  margin-bottom: calc(var(--global-baseline) * 2);
+  display: flex;
+}
+
+.c-playercard h3 {
+  margin: 0;
   color: #fff;
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
 }
+
+@media (min-height: 770px) {
+  .c-playercard {
+    background-color: var(--global-color-beta);
+    width: 100%;
+    height: 120px;
+    display: flex;
+  }
+  .c-playercard h3 {
+    margin: 0;
+    color: #fff;
+    width: 100%;
+    height: fit-content;
+    font-size: 30px;
+  }
+}
+
+/*
+Components: Player Color flair
+---
+The flairs that indicates a players snake color
+*/
+
+.c-playercard__flair {
+  height: 100%;
+  width: 10px;
+}
+
+.c-flair__0 {
+  background-color: green;
+}
+
+.c-flair__1 {
+  background-color: #b32e2b;
+}
+
+.c-flair__2 {
+  background-color: #c8a51a;
+}
+
+.c-flair__3 {
+  background-color: #3e4cb3;
+}
+
+.c-container__info {
+  width: 100%;
+  padding: 8px;
+}
+
+@media (min-width: 1368px) {
+  .c-container__info {
+    width: 100%;
+    padding: calc(var(--global-baseline) * 2);
+  }
+}
+
+/*
+Components: Player Info
+---
+The info of a player: score, hp & name
+*/
+
+.c-playercard__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+}
+
+@media (min-width: 1368px) {
+  .c-playercard__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: calc(var(--global-baseline) * 2);
+    width: 100%;
+  }
+}
+
+.c-score {
+  margin-left: calc(var(--global-baseline) * 2);
+  color: #fff;
+  font-size: 40px;
+  margin-right: calc(var(--global-baseline) * 2);
+}
+
+.c-lives {
+  margin-left: calc(var(--global-baseline) * 2);
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/*
+Components: Timer
+---
+The timer before the game starts
+*/
 
 .c-timer {
   width: 100vw;
@@ -50,4 +188,41 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*
+Components: Game Info
+---
+Displays the game info below the players card
+on the game screen
+*/
+
+.c-gameinfo__container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding-left: calc(var(--global-baseline) * 3.75);
+  padding-bottom: calc(var(--global-baseline) * 2);
+  font-size: 30px;
+}
+
+.c-gameinfo {
+  color: #000;
+  width: 100%;
+}
+
+.c-gameinfo p + p {
+  margin-bottom: calc(var(--global-baseline) * 4);
+}
+
+.c-gameinfo__level {
+  margin-bottom: var(--global-baseline);
+  font-weight: 500;
+}
+
+.c-button--game {
+  margin-bottom: 4px;
+  background-color: var(--global-color-gamma);
 }

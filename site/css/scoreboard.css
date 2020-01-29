@@ -1,0 +1,100 @@
+html {
+  padding: 0;
+}
+
+body {
+  background-color: var(--global-color-alpha);
+  width: 100vw;
+  height: 100vmin;
+  font-size: 100%;
+}
+
+.o-container{
+  display: flex;
+flex-wrap: wrap;
+}
+
+.c-scoreboard__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
+.c-scoreboard__container h3 {
+  margin-bottom: 60px;
+}
+
+.c-scoreboard__boards {
+  display: flex;
+}
+
+.c-scoreboard__board {
+  width: 400px;
+  height: 400px;
+  background-color: var(--global-color-beta);
+  border: 2px white solid;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.c-scoreboard__board + .c-scoreboard__board {
+  margin-left: 16px;
+}
+
+.c-board__title {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.c-outer-container {
+  display: flex;
+  color: white;
+  width: 100%;
+  height: 70%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.c-length-container h4 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.c-score-container {
+  width: 100%;
+  height: 60%;
+  color: white;
+  display: grid;
+  grid-template-columns: 10% 60% 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0;
+}
+
+.c-button-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.c-score-container h4 {
+  margin-top: 16px;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.c-score-header{
+  font-size: 20px !important;
+}

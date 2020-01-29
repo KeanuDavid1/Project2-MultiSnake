@@ -1,0 +1,363 @@
+@keyframes fadesettings {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+select:required:invalid {
+  color: grey;
+}
+
+option {
+  color: black;
+}
+
+/*
+Objects: Container
+---
+Custom container stylin for settings page
+*/
+
+.o-container {
+  display: flex;
+  justify-content: center;
+  animation: fadesettings 0.5s ease-out;
+}
+
+/*
+Components: Svg styling
+---
+Styling voor de svg elementen
+*/
+
+.c-clouds-container {
+  top: 20%;
+}
+
+.c-platform {
+  position: absolute;
+  z-index: -2;
+  margin: 0 auto;
+  bottom: 15%;
+  width: 40%;
+  height: auto;
+}
+
+@media (max-width: 960px) {
+  .c-platform {
+    position: absolute;
+    z-index: -2;
+    margin: 0 auto;
+    bottom: 18%;
+    width: 60rem;
+    height: auto;
+  }
+}
+
+/* 
+Components: Body Component
+---
+De body dat de title en de settings bevat,
+het bevindt zich in een o-container
+*/
+
+.c-body {
+  width: 536px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-body__item {
+  width: 100%;
+}
+
+.c-title {
+  font-size: 30px;
+  margin-bottom: calc(var(--global-baseline) * 7);
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (min-width: 1368px) {
+  .c-title {
+    font-size: 36px;
+    margin-bottom: calc(var(--global-baseline) * 10);
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+.c-body__item--main-content {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+Components: Settings
+---
+De settings klasse is de parent van de titel & 
+de buttons om de waarde te veranderen
+*/
+
+.c-settings {
+  font-size: 20px;
+  width: 100%;
+}
+
+@media (min-width: 1368px) {
+  .c-settings {
+    font-size: 24px;
+    width: 100%;
+  }
+}
+
+.c-settings__item {
+  margin-bottom: calc(var(--global-baseline) * 6);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*
+Components: Options Setter
+---
+Options bevat de twee buttons en de waarde tussenin
+*/
+
+.c-options {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+}
+
+.c-options__selected {
+  font-weight: 400;
+}
+
+.c-options__icon {
+  width: 30px;
+  height: 26px;
+}
+
+.c-options__icon--right {
+  transform: rotate(180deg);
+  margin-top: 3px;
+}
+
+.c-options__button:focus + .c-options__icon {
+  fill: var(--global-color-beta);
+}
+
+.c-options__icon--left:active {
+  width: 28px;
+  height: 24px;
+  padding: 1px;
+}
+
+.c-options__icon--right:active {
+  width: 28px;
+  height: 24px;
+  padding: 1px;
+}
+
+/*
+Components: Button Container
+---
+Een container rond de buttons om ze goed te plaatsen
+*/
+
+.c-button-container {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.c-button + .c-button {
+  margin-left: calc(var(--global-baseline) * 2);
+}
+
+/*
+Components: Input names
+---
+Styling of the input fields
+*/
+
+.c-settings__item--last {
+  margin-bottom: 72px;
+}
+
+.c-settings-names {
+  width: 100%;
+}
+
+.c-settings-names__title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.c-player-names {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  margin-bottom: var(--global-baseline);
+}
+
+.c-player-names__input-field-container {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.c-names {
+  width: 100%;
+  display: flex;
+}
+
+/*
+Components: Input player color
+---
+The styling for the square that represent the player his color
+*/
+
+.c-player-colors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+}
+
+.c-name-color {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.color1 {
+  background-color: green;
+}
+
+.color2 {
+  background-color: red;
+}
+
+.color3 {
+  background-color: yellow;
+}
+
+.color4 {
+  background-color: blue;
+}
+
+.c-name__input {
+  width: 100%;
+  height: 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 12px;
+  border: none;
+  font-family: 'Roboto Slab';
+}
+
+.c-name__input:hover {
+  border: 2px var(--global-color-gamma) solid;
+  padding: 3px;
+  padding-left: 11px;
+}
+
+/*
+Components: Input error messages
+---
+Error messages for the name input fields
+*/
+
+.c-error-message {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  display: none;
+}
+
+.has-error {
+  display: block;
+}
+
+.has-error--border {
+  border: solid var(--global-color-gamma) 2px;
+  padding: 3px;
+  padding-left: 11px;
+}
+
+/*
+Components: Bluetooth settings
+---
+Styling for the bluetooth settings
+*/
+
+.c-devices {
+  height: 50vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+}
+.c-devices__item {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+.c-devices__item select,
+.c-devices__item input {
+  margin: 0 8px;
+}
+
+.c-link-bt {
+  text-decoration: none;
+}
+
+/*
+Components: Bluetooth settings warning
+---
+A warning that displays when you select the attack
+game mode
+*/
+
+.c-warning-attack {
+  font-size: 0.6em;
+  padding-bottom: 36px;
+  color: black;
+  line-height: 0px;
+}
+
+.c-warning-attack a {
+  color: black;
+}
+
+.c-button-connect {
+  width: 120px;
+  height: 30px;
+  background: var(--global-color-beta);
+  border: none;
+  font-family: 'Roboto Slab';
+  border-radius: 10px;
+  margin-bottom: 48px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-player-select{
+  display: flex;
+  align-items: center;
+}

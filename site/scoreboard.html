@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Pulse Snake - Scorebord</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <link rel="stylesheet" href="css/scoreboard.css" />
+  <script src="script/getScoreboardData.js"></script>
+  <script src="script/handleData.js"></script>
+  <script src="script/gameVariables.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+<div class="o-container">
+    <div class="c-clouds-container">
+        <img class="c-clouds" src="assets/images/Cloud.png">
+        <img class="c-clouds" src="assets/images/Cloud.png">
+      </div>
+    <div class="c-scoreboard__container">
+    <h3>Scorebord</h3>
+    <div class="c-scoreboard__boards">
+    <div class="c-scoreboard__board">
+        <div class="c-board__title"><h4>Lengte spel</h4></div>
+        <div class="c-outer-container">
+            <h1 class="js-length">01:18</h1>
+            <h4>seconden</h4>
+        </div>
+    </div>
+    <div class="c-scoreboard__board">
+        <div class="c-board__title"><h4>Hoogste scores</h4></div>
+        <div class="c-score-container js-scorebord">
+        </div>
+    </div>
+    <div class="c-scoreboard__board">
+        <div class="c-board__title"><h4>Snelste hartslag</h4></div>
+        <div class="c-outer-container">
+            <h1 class="js-heartbeat">192</h1>
+            <h4>slagen per minuut</h4>
+        </div>
+    </div>
+</div>
+</div>
+<div class="c-button-container">
+    <input type="button" class="c-button c-button__text" name="next" id="next" onclick="window.location.href = 'index.html'" value="Volgende" />
+</div>
+    
+
+</div>
+</html>
